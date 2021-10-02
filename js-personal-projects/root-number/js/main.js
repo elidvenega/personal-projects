@@ -5,12 +5,13 @@
 
 
 // one solution
-const input = parseInt(prompt("Enter a number:"));
-const result = Math.sqrt(input)
+let input = parseInt(prompt("Enter a number:"));
+let result = alert(Math.sqrt(input));
+
+// document.querySelector(".answer").innerHTML = result;
 
 
 // Will work on this and make it work
-
 
 // const button = document.querySelector("#btn");
 
