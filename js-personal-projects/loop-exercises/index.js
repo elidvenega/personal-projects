@@ -71,17 +71,20 @@ let str1 = "javascript";
 //     }
 // }
 
-// for (let i = 0; i < str1.length; i++) {
-//   if ((i + 1) % 2 == 0) {
-//     console.log(str1[i].toString());
-//   } else {
-//     console.log("Z");
-//   }
-//  // console.log(str1[i]);
-// }
-
-let result = [];
 
 for (let i = 0; i < str1.length; i++) {
-  console.log(str1[i]);
+  if ((i + 1) % 2 === 0) {
+    let result = str1[i].toString();
+    let arr = [];
+    console.log(arr.push(result));
+  } else {
+    console.log("Z");
+  }
+  // console.log(str1[i]);
 }
+
+// let result;
+
+// for (let i = 0; i < str1.length; i++) {
+//   console.log(str1[i]);
+// }
