@@ -66,18 +66,13 @@ let str1 = "javascript";
 // for (let i = 0; i < str1.length; i++) {
 //   if ((i + 1) % 2 == 0) {
 //     console.log((i += "z"));
-//   } else {
-//     console.log("Wrong");
 //   }
 // }
 
 for (let i = 0; i < str1.length; i++) {
-  if ((i + 1) % 2 === 0) {
-    let result = str1[i].toString();
+  if ((i + 2) % 2 == 0) {
     let output = "";
-    console.log((output += result));
-  } else {
-    console.log("wrong");
+    let result = str1[i];
+    console.log((output += result + "Z"));
   }
-  // console.log(str1[i]);
 }
