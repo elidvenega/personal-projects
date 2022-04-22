@@ -63,28 +63,21 @@ let str1 = "javascript";
 // HINT: You can use  if((i+1) % 2 == 0) to check for even indexes
 // Make sure output is a string
 
-// for(let i = 0; i < str1.length; i++) {
-//     if((i+1) % 2 == 0) {
-//         console.log(i += 'z');
-//     } else {
-//         console.log('Wrong');
-//     }
+// for (let i = 0; i < str1.length; i++) {
+//   if ((i + 1) % 2 == 0) {
+//     console.log((i += "z"));
+//   } else {
+//     console.log("Wrong");
+//   }
 // }
-
 
 for (let i = 0; i < str1.length; i++) {
   if ((i + 1) % 2 === 0) {
     let result = str1[i].toString();
-    let arr = [];
-    console.log(arr.push(result));
+    let output = "";
+    console.log((output += result));
   } else {
-    console.log("Z");
+    console.log("wrong");
   }
   // console.log(str1[i]);
 }
-
-// let result;
-
-// for (let i = 0; i < str1.length; i++) {
-//   console.log(str1[i]);
-// }
