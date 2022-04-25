@@ -68,11 +68,27 @@ let str1 = "javascript";
 //     console.log((i += "z"));
 //   }
 // }
+// 1 answer
+// let output = "";
+// for (let i = 0; i < str1.length; i++) {
+//   if ((i + 2) % 2 == 0) {
+//     let result = str1[i];
+//     console.log((output += result + "Z"));
+//   }
+// }
 
-for (let i = 0; i < str1.length; i++) {
-  if ((i + 2) % 2 == 0) {
-    let output = "";
-    let result = str1[i];
-    console.log((output += result + "Z"));
-  }
-}
+// 2nd answer
+// for (let i = 0; i < str1.length; i++) {
+//   if ((i + 2) % 2 == 0) {
+//     let result = str1[i];
+//     console.log(result);
+//   } else {
+//     console.log("Z");
+//   }
+// }
+
+
+// Exercise 6)
+
+
+
