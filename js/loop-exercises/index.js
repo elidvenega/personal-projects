@@ -87,8 +87,37 @@ let str1 = "javascript";
 //   }
 // }
 
-
 // Exercise 6)
+// Check if a string contains the letter “y”. Print “yes”
+// if it does and “no” if it does not.
+//let str2 = "don’t know why";
+// Example output:
+// “yes”
 
+// for (let i = 0; i < str2.length; i++) {
+//   if (str2[i] === "y") {
+//     console.log("yes");
+//   }
+// }
 
+// Exercise 7)
+//Given a number n Calculate the factorial of the number
+// let n2 = 4; //  4 * 3 * 2 * 1 = 24
+// // Example output: 24
+// let factorial = 1;
 
+// for (let i = 1; i <= n2; i++) {
+//   console.log((factorial *= i));
+// }
+
+const factorialOf = (integer) => {
+  let factorial = 1;
+
+  for (let i = 1; i <= integer; i++) {
+    factorial *= i;
+  }
+
+  return factorial;
+};
+
+console.log(factorialOf(4));
