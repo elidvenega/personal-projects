@@ -1,12 +1,12 @@
 "use strict";
 // Improve the game a bit
 function guessNumber() {
-  var randomNum = Math.floor(Math.random() * 50);
+  let randomNum = Math.floor(Math.random() * 50);
 
   // output to the console for debugging
   console.log(randomNum);
   //   declare a variable
-  var guess;
+  let guess;
   guess = prompt("Please enter a number between and 50");
   console.log("Your guess is:" + guess);
 
@@ -17,6 +17,6 @@ function guessNumber() {
   } else if (guess == randomNum) {
     window.alert("You guessed it. You Win!");
   } else {
-      window.alert("Error")
+    window.alert("Error");
   }
 }
