@@ -1,5 +1,3 @@
-"use strict";
-
 // Just practice loops basic
 
 // for(let i = 0; i < 10; i++) {
@@ -121,3 +119,25 @@ const factorialOf = (integer) => {
 };
 
 console.log(factorialOf(4));
+
+// Exercise 8)
+// Write a program that will allow someone to guess a
+// four digit pin exactly 4 times.
+let pin = 0704;
+
+function guessGame(number) {
+  number = Math.floor(Math.random() * 20);
+  document.write(number);
+  var guess = prompt("Guess a number: ");
+  while (guess != number) {
+    //   80       86
+    if (number < guess) {
+      guess = prompt("You've guessed too high! Keep guessing!");
+    } else {
+      guess = prompt("You've guessed too low! Keep guessing!");
+    }
+  }
+  document.write("Good Job!");
+}
+
+guessGame();
