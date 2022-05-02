@@ -125,19 +125,27 @@ console.log(factorialOf(4));
 // four digit pin exactly 4 times.
 let pin = 0704;
 
-function guessGame(number) {
-  number = Math.floor(Math.random() * 20);
-  document.write(number);
-  var guess = prompt("Guess a number: ");
-  while (guess != number) {
-    //   80       86
-    if (number < guess) {
-      guess = prompt("You've guessed too high! Keep guessing!");
-    } else {
-      guess = prompt("You've guessed too low! Keep guessing!");
-    }
-  }
-  document.write("Good Job!");
-}
+// function guessGame(number) {
+//   number = Math.floor(Math.random() * 20);
+//   document.write(number);
+//   var guess = prompt("Guess a number: ");
+//   while (guess != number) {
+//     //   80       86
+//     if (number < guess) {
+//       guess = prompt("You've guessed too high! Keep guessing!");
+//     } else {
+//       guess = prompt("You've guessed too low! Keep guessing!");
+//     }
+//   }
+//   document.write("Good Job!");
+// }
 
-guessGame();
+// guessGame();
+
+function guessPin(attempts) {
+  let guess = prompt("Enter four digit pin:");
+  attempts = 4;
+
+  if (guess <= attempts) {
+  }
+}
