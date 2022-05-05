@@ -123,7 +123,24 @@ console.log(factorialOf(4));
 // Exercise 8)
 // Write a program that will allow someone to guess a
 // four digit pin exactly 4 times.
+// Write a for loop then conditionals inside
 let pin = 0704;
+
+function guessPin(attempts) {
+  let guess = prompt("Enter four digit pin:");
+  attempts = 4;
+  for (let i = 0; guess < 5; i++) {
+    if (attempts == pin) {
+      console.log("you guess right");
+    } else if (attempts != pin) {
+      console.log("Wrong guess");
+    } else {
+      console.log("wrong pin");
+    }
+  }
+}
+
+guessPin();
 
 // function guessGame(number) {
 //   number = Math.floor(Math.random() * 20);
@@ -141,11 +158,3 @@ let pin = 0704;
 // }
 
 // guessGame();
-
-function guessPin(attempts) {
-  let guess = prompt("Enter four digit pin:");
-  attempts = 4;
-
-  if (guess <= attempts) {
-  }
-}
