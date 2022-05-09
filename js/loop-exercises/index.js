@@ -126,17 +126,20 @@ console.log(factorialOf(4));
 // Write a for loop then conditionals inside
 
 function guessPin() {
-  let pin = 0704;
-  let num = 122;
+  let pin = "0704";
   let guess = prompt("Pin number: ");
-  // This works
-  if (guess == num) {
+  //This works
+  if (guess == pin) {
     console.log("right pin");
-  } else {
+  } else if (guess != pin) {
     console.log("Wrong pin");
+  } else if (guess != pin) {
+    console.log("Wrong pin again");
+  } else {
+    console.log("No more tries");
   }
   // for (let i = 0; guess < 5; i++) {
-  //   if (attempts == pin) {
+  //   if (guess == pin) {
   //     console.log("you guess right");
   //   } else if (attempts != pin) {
   //     console.log("Wrong guess");
