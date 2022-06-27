@@ -1,20 +1,20 @@
 "use strict";
 
 // fetch data from text file
-async function fetchText() {
-  let resp = await fetch("/readme.txt");
+// async function fetchText() {
+//   let resp = await fetch("/readme.txt");
 
-  console.log(resp.status); //200
-  console.log(resp.statusText); //ok
+//   console.log(resp.status); //200
+//   console.log(resp.statusText); //ok
 
-  if (resp.status === 200) {
-    let data = await resp.text();
-  } else {
-    console.log("error 404");
-  }
-}
+//   if (resp.status === 200) {
+//     let data = await resp.text();
+//   } else {
+//     console.log("error 404");
+//   }
+// }
 
-fetchText();
+// fetchText();
 
 // get data from json file
 
@@ -58,7 +58,7 @@ async function getUsers() {
     let data = await res.json();
     return data;
   } catch (error) {
-    console.log(error);
+    console.log('error big time');
   }
 }
 
@@ -81,7 +81,7 @@ async function renderUsers() {
     let container = document.querySelector(".container");
     container.innerHTML = html;
   } catch (error) {
-    console.log("error");
+    console.log("error big time");
   }
 }
 
