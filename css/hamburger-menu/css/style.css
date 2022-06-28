@@ -56,8 +56,8 @@ body {
   justify-content: space-between;
   background: #2d3436;
   color: #fff;
-  height: 50px;
-  padding: 16px;
+  height: 55px;
+  padding: 26px;
 }
 
 .menu {
@@ -68,9 +68,11 @@ body {
   padding: 0;
 }
 
+/* getting all */
 .menu > li {
   margin: 0 1rem;
   overflow: hidden;
+  font-size: 1.2rem;
 }
 
 .menu-button-container {
