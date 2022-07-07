@@ -21,7 +21,7 @@
 
 //Use Recursion to Create a Range of Numbers
 
-function rangeOfNumbers(startNum, endNum) {
+/* function rangeOfNumbers(startNum, endNum) {
   if (startNum <= endNum) {
     const countUp = rangeOfNumbers(startNum + 1);
     countUp.push(endNum);
@@ -31,5 +31,21 @@ function rangeOfNumbers(startNum, endNum) {
   }
 }
 
-console.log(rangeOfNumbers(5, 10));
+console.log(rangeOfNumbers(5, 10)); */
 // output [5,6,7,8,9,10]
+
+// Solution
+function rangeOfNumbers(startNum, endNum) {
+  // you subtract 2nd and 1st number if equal to zero you return 0
+  // you return startNum if equal to zero
+  if (endNum - startNum === 0) {
+    return [startNum];
+  } else {
+    
+    var numbers = rangeOfNumbers(startNum, endNum - 1);
+    numbers.push(endNum);
+    return numbers;
+  }
+}
+
+console.log(rangeOfNumbers(5, 10));
