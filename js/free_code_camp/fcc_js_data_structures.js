@@ -35,17 +35,84 @@ console.log(rangeOfNumbers(5, 10)); */
 // output [5,6,7,8,9,10]
 
 // Solution
-function rangeOfNumbers(startNum, endNum) {
-  // you subtract 2nd and 1st number if equal to zero you return 0
-  // you return startNum if equal to zero
-  if (endNum - startNum === 0) {
-    return [startNum];
-  } else {
-    
-    var numbers = rangeOfNumbers(startNum, endNum - 1);
-    numbers.push(endNum);
-    return numbers;
-  }
-}
+// function rangeOfNumbers(startNum, endNum) {
+//   // you subtract 2nd and 1st number if equal to zero you return 0
+//   // you return startNum if equal to zero
+//   if (endNum - startNum === 0) {
+//     return [startNum];
+//   } else {
 
-console.log(rangeOfNumbers(5, 10));
+//     var numbers = rangeOfNumbers(startNum, endNum - 1);
+//     numbers.push(endNum);
+//     return numbers;
+//   }
+// }
+
+// console.log(rangeOfNumbers(5, 10));
+
+// DESTRUCTURING OBJECTS
+/* const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80,
+};
+
+// Only change code below this line
+
+const { yesterday, today } = HIGH_TEMPERATURES;
+
+console.log(yesterday);
+
+
+ */
+
+
+// DESTRUCTURING OBJECTS INTO FUNCTIONS
+const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85
+};
+
+// Only change code below this line
+const half = ({ max , min}) => (max + min) / 2.0; 
+// Only change code above this line
+
+console.log(half);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
