@@ -152,19 +152,11 @@ function guessPin() {
 
 guessPin();
 
-// function guessGame(number) {
-//   number = Math.floor(Math.random() * 20);
-//   document.write(number);
-//   var guess = prompt("Guess a number: ");
-//   while (guess != number) {
-//     //   80       86
-//     if (number < guess) {
-//       guess = prompt("You've guessed too high! Keep guessing!");
-//     } else {
-//       guess = prompt("You've guessed too low! Keep guessing!");
-//     }
-//   }
-//   document.write("Good Job!");
-// }
+// Loops
 
-// guessGame();
+let arr = [1, 2, 3, 4, 5];
+let arr2 = [];
+
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr2.push(arr[i]));
+}
