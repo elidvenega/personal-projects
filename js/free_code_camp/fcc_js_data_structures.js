@@ -108,7 +108,7 @@ console.log(yesterday);
 // console.log(temp);
 
 // Use Caution When Reinitializing Variables Inside a Loop
-function zeroArray(m, n) {
+/* function zeroArray(m, n) {
   // Creates a 2-D array with m rows and n columns of zeroes
   let newArray = [];
   for (let i = 0; i < m; i++) {
@@ -126,3 +126,34 @@ function zeroArray(m, n) {
 
 let matrix = zeroArray(3, 2);
 console.log(matrix);
+ */
+
+// Copy an Array with the Spread Operator
+function copyMachine(arr, num) {
+  let newArr = [];
+  while (num >= 1) {
+    // Only change code below this line
+    newArr.push([...arr]);
+    // Only change code above this line
+    num--;
+  }
+  return newArr;
+}
+
+console.log(copyMachine([true, false, true], 2));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
