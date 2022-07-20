@@ -85,24 +85,44 @@ console.log(yesterday);
 // Use getters and setters to Control Access to an Object
 
 // Only change code below this line
-class Thermostat {
-  constructor(fahrenheit) {
-    this.fahrenheit = fahrenheit;
-  }
+// class Thermostat {
+//   constructor(fahrenheit) {
+//     this.fahrenheit = fahrenheit;
+//   }
 
-  get celsius() {
-    return (5 / 9) * (this.fahrenheit - 32);
-  }
+//   get celsius() {
+//     return (5 / 9) * (this.fahrenheit - 32);
+//   }
 
-  set celsius(celsius) {
-    this.fahrenheit = (celsius * 9.0) / 5 + 32;
+//   set celsius(celsius) {
+//     this.fahrenheit = (celsius * 9.0) / 5 + 32;
+//   }
+// }
+// // Only change code above this line
+
+// const thermos = new Thermostat(76); // Setting in Fahrenheit scale
+// let temp = thermos.temperature; // 24.44 in Celsius
+// thermos.temperature = 26;
+// temp = thermos.temperature; // 26 in Celsius
+
+// console.log(temp);
+
+// Use Caution When Reinitializing Variables Inside a Loop
+function zeroArray(m, n) {
+  // Creates a 2-D array with m rows and n columns of zeroes
+  let newArray = [];
+  for (let i = 0; i < m; i++) {
+    // Adds the m-th row into newArray
+    let row = [];
+    for (let j = 0; j < n; j++) {
+      // Pushes n zeroes into the current row to create the columns
+      row.push(0);
+    }
+    // Pushes the current row, which now has n zeroes in it, to the array
+    newArray.push(row);
   }
+  return newArray;
 }
-// Only change code above this line
 
-const thermos = new Thermostat(76); // Setting in Fahrenheit scale
-let temp = thermos.temperature; // 24.44 in Celsius
-thermos.temperature = 26;
-temp = thermos.temperature; // 26 in Celsius
-
-console.log(temp);
+let matrix = zeroArray(3, 2);
+console.log(matrix);
