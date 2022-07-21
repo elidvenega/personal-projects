@@ -129,31 +129,31 @@ console.log(matrix);
  */
 
 // Copy an Array with the Spread Operator
-function copyMachine(arr, num) {
-  let newArr = [];
-  while (num >= 1) {
-    // Only change code below this line
-    newArr.push([...arr]);
-    // Only change code above this line
-    num--;
+// function copyMachine(arr, num) {
+//   let newArr = [];
+//   while (num >= 1) {
+//     // Only change code below this line
+//     newArr.push([...arr]);
+//     // Only change code above this line
+//     num--;
+//   }
+//   return newArr;
+// }
+
+// console.log(copyMachine([true, false, true], 2));
+
+///////////////////////////////////////////
+
+// Check For The Presence of an Element With indexOf
+
+function quickCheck(arr, elem) {
+  // checks if element is there in array
+  if (arr.indexOf(elem) >= 0) {
+    return true;
+  } else {
+    return false;
   }
-  return newArr;
 }
-
-console.log(copyMachine([true, false, true], 2));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(
+  quickCheck(["squash", "onions", "shallots", "berries", "apples"], "apples")
+);
