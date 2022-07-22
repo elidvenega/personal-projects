@@ -24,19 +24,36 @@
     <h1 class="text">Helloooooooo</h1>
 
     <script>
+      // const text = document.querySelector(".text");
+      // const newText = `Hello I'm the new text`;
+
+      /* 
+      *****************************************************
+      functions
+      */
+      ///////--- function to be use to add text to DOM
+      // function addText(firstWord, SecondWord) {
+      //   let bothWords = `${firstWord} ${SecondWord}`;
+      //   return bothWords;
+      // }
+      // //text content
+      // //text.textContent = 'New Text';
+
+      // // innerHTML not reccommended
+      // text.innerHTML = addText("Hello", "There");
+
+      /* 
+     ****************************************************
+     Objects
+     
+     */
       const text = document.querySelector(".text");
-      const newText = `Hello I'm the new text`;
+      const obj = {
+        greet1: "Have a nice day",
+        greet2: "Be pleasant",
+      };
 
-      //   function to be use to add text to DOM
-      function addText(firstWord, SecondWord) {
-        let bothWords = `${firstWord} ${SecondWord}`;
-        return bothWords;
-      }
-      //text content
-      //text.textContent = 'New Text';
-
-      // innerHTML not reccommended
-      text.innerHTML = addText("Hello", "There");
+      text.textContent = obj.greet2;
     </script>
   </body>
 </html>
