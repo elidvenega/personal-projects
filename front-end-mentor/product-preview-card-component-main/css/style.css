@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
+:root {
+  --background-color: #fce7f3;
+  --white-color: #fff;
+  --light-grey: #9ca3af;
+  --card-price-color: #047857;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: "Titillium Web", sans-serif;
+  line-height: 1.4;
+  min-height: 100vh;
+  max-width: 100%;
+}
+
+.card-container {
+  background-color: var(--white-color);
+  border-radius: 3%;
+  margin: auto;
+  margin-top: 3rem;
+  max-width: 20rem;
+}
+
+.card-img-container {
+  background: url("../images/image-product-mobile.jpg") no-repeat center
+    center/cover;
+  border-radius: 3% 3% 0 0;
+  min-height: 35vh;
+  width: 100%;
+}
+
+.card-text {
+  margin: 0 1.2rem 0 1.2rem;
+  padding: 0.2rem;
+}
+
+.card-perfume-text {
+  color: var(--light-grey);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+  padding: 0.3rem;
+  margin-top: 0.5rem;
+}
+
+.card-text h1,
+h2 {
+  font-size: 1.9rem;
+  font-weight: bold;
+}
+
+.card-price {
+  margin: 0 1.2rem 0 1.2rem;
+}
+
+.card-green-text {
+  font-size: 2rem;
+  font-weight: bolder;
+  color: var(--card-price-color);
+}
+
+.card-small-text {
+  color: var(--light-grey);
+  font-size: 0.8rem;
+  margin-left: 1rem;
+  position: relative;
+  bottom: 0.5rem;
+  text-decoration: line-through;
+}
+
+.card-button-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.card-button {
+  background-color: var(--card-price-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.7rem;
+  border: none;
+  border-radius: 3%;
+  color: var(--white-color);
+  padding: 0.9rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  width: 18rem;
+}
+
+/* utilities */
+
+.m-top {
+  margin-top: 0.5rem;
+}
+
+.grey-text {
+  color: var(--light-grey);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+@media (min-width: 900px) {
+  .card-container {
+    display: grid;
+    border-radius: 7px;
+    grid-template-columns: 3fr 1fr;
+    max-width: 52rem;
+  }
+
+  .card-img-container {
+    background: url("../images/image-product-desktop.jpg") no-repeat center
+      center/cover;
+    border-radius: 7px 0 0 7px;
+    width: 100%;
+  }
+
+  .card-text {
+    margin: 2rem 1.2rem 2rem 1.2rem;
+  }
+
+  .mt {
+    margin-top: 4rem;
+  }
+}
+
+@media (max-width: 330px) {
+  .card-container {
+    max-width: 18rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .card-container {
+    max-width: 15rem;
+  }
+}

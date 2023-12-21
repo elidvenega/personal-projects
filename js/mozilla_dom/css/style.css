@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  text-align: center;
+  padding: 15px;
+}
+
+.container {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+button {
+  width: 200px;
+}
+
+.output {
+  text-align: center;
+  font-size: 2rem;
+  padding: 15px;
+}

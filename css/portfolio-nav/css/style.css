@@ -1,0 +1,147 @@
+*,::before,::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.nav {
+  display: flex;
+  font-size: 1.2rem;
+  justify-content: space-between;
+  background-color: #036273;
+  background: linear-gradient(to left, #036273, #ca424f);
+  color: #fff;
+  height: 6rem;
+  padding: 1rem;
+  z-index: 2;
+  /* // position: sticky;
+  // top: 0;
+  // z-index: 2; */
+}
+
+.nav a {
+  color: #fff;
+  list-style: none;
+}
+
+.nav .menu {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 10%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: #fff;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@media (max-width: 650px) {
+  .menu-button-container {
+    display: flex;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100vw;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: #036273;
+    background: linear-gradient(to left, #036273, #ca424f);
+  }
+  .menu > li:not(:last-child) {
+    border-bottom: 1px solid #3b393c;
+  }
+
+  .menu > li:hover {
+    background-color: #036273;
+    background: linear-gradient(to left, #ca424f, #036273);
+  }
+
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+    background-color: #fff;
+    border-radius: 2px;
+    display: block;
+    font-weight: bold;
+    height: 0.7rem;
+    width: 4rem;
+    position: absolute;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .menu-button::before {
+    content: "";
+    margin-top: -8px;
+  }
+
+  .menu-button::after {
+    content: "";
+    margin-top: 8px;
+  }
+
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu li {
+    border: 1px solid #036273;
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+}
+
+
+
+
+

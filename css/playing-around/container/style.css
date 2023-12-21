@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  max-width: 100%;
+  /* background-color: #030712; */
+}
+
+/* .container {
+  background-color: #075985;
+  color: #fff;
+  padding: 10rem;
+  max-width: 85%;
+  margin: auto;
+  /* text-align: center; */
+/* }  */ 
+
+.container {
+    background-color: aqua;
+    text-wrap: wrap;
+}
+
+.no-wrap {
+    text-wrap: nowrap;
+}

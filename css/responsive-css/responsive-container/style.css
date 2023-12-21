@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #065f46;
+    color: #fff;
+    width: 100%;
+    max-width: 800px;
+    padding: 1rem;
+}

@@ -1,0 +1,17 @@
+.container {
+ display: flex;
+ justify-content: center;
+ flex-direction: column;
+ margin: auto;
+ padding: 1rem;
+ width: 45%;
+}
+
+ul {
+  padding: 1rem;
+  list-style: none;
+}
+
+li {
+  padding: 0.5rem;
+}

@@ -1,0 +1,67 @@
+:root {
+  --color-one: #dc2626;
+  --color-two: #166534;
+  --color-three: #0e7490;
+  --color-four: #7c3aed;
+  --white-color: #fff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Courier New", Courier, monospace;
+  max-width: 100%;
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  /* margin-top: 1rem; */
+  padding: 1rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  /* align-items: stretch; */
+  flex-wrap: wrap;
+  /* max-width: 85rem; */
+  margin: auto;
+  /* padding: 5rem; */
+  /* height: 100vh; */
+  background-color: #ddd;
+  border: 12px solid black;
+}
+
+.color-container-one {
+  background-color: var(--color-one);
+  color: var(--white-color);
+  padding: 2rem;
+  flex: 5;
+}
+
+.color-container-two {
+  background-color: var(--color-two);
+  color: var(--white-color);
+  padding: 2rem;
+  flex: 1;
+}
+
+.color-container-three {
+  background-color: var(--color-three);
+  color: var(--white-color);
+  padding: 9rem;
+  flex: 1;
+}
+
+.color-container-four {
+  background-color: var(--color-four);
+  color: var(--white-color);
+  padding: 9rem;
+}

@@ -1,0 +1,78 @@
+:root {
+  --bacground-image: url("https://img.freepik.com/free-vector/hand-drawn-video-game-background_23-2150307800.jpg");
+  --background-form-image: url("https://img.freepik.com/free-vector/hand-drawn-video-game-background_23-2150315377.jpg");
+  --background-color: #0284c7;
+  --primary-color: #f43f5e;
+  --button-hover-color: #be123c;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bacground-image) no-repeat center center/cover;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  line-height: 1.4;
+  max-width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.form-login {
+  background: var(--background-form-image) no-repeat center center/cover;
+  border-radius: 5%;
+  margin: auto;
+  margin-top: 5rem;
+  width: 90%;
+  padding: 4rem;
+  text-align: center;
+}
+
+.form-login h1 {
+  color: #fff;
+  font-size: 2.3rem;
+  margin: 1rem;
+}
+
+label {
+  color: #fff;
+}
+
+input[type="text"] {
+  padding: 0.9rem 1rem;
+  text-transform: capitalize;
+  width: 100%;
+}
+
+input[type="password"] {
+  padding: 0.9rem 1rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.login-btn {
+  background-color: var(--primary-color);
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  padding: 0.6rem;
+  margin: 1rem;
+}
+
+.login-btn:hover {
+  background-color: var(--button-hover-color);
+  cursor: pointer;
+}
+
+@media (min-width: 900px) {
+  .form-login {
+    width: 28%;
+  }
+}

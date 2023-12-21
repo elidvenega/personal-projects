@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0f172a;
+}
+
+.container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.btn {
+  border: none;
+  padding: 0.5rem;
+  background-color: #64748b;
+  color: #fff;
+}
+
+/* Modifier Classes */
+.btn--secondary-color {
+  background-color: #991b1b;
+}
+
+.btn--third-color {
+  background-color: #065f46;
+}

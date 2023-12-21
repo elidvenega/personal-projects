@@ -1,0 +1,43 @@
+:root {
+  --color_one: #14532d;
+  --color_two: #115e59;
+  --border_colorone: #312e81;
+  --border_colortwo: #be185d;
+  --white_color: #fff;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 100%;
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+}
+
+.box-one {
+  background: var(--color_one);
+  border: var(--border_colorone) 1rem solid;
+  color: var(--white_color);
+  padding: 3rem;
+  min-height: 100%;
+  max-width: 100%;
+  margin-bottom: 2rem;
+}
+
+.box-two {
+  background: var(--color_two);
+  border: var(--border_colortwo) 15px solid;
+  color: var(--white_color);
+  padding: 3rem;
+  height: 100%;
+  max-width: 80%;
+}

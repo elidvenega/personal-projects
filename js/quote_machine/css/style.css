@@ -1,0 +1,89 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  font-size: 1.3rem;
+  width: 40%;
+  margin: auto;
+  padding: 1rem;
+}
+
+h1 {
+  color: #fff;
+  font-size: 3rem;
+  padding: 1rem;
+}
+
+.card {
+  background: #0984e3;
+  margin-top: 3rem;
+  text-align: center;
+  padding: 3rem;
+  border-radius: 1%;
+}
+
+.button {
+  background: #9b59b6;
+  color: #fff;
+  font-size: 1rem;
+  padding: 1rem;
+  width: 30%;
+  border: none;
+  border-radius: 5%;
+  margin: 0.6rem;
+}
+
+.button:hover {
+  background: #8e44ad;
+}
+
+#quote {
+  color: #fff;
+}
+
+@media (max-width: 650px) {
+  .container {
+    font-size: 1.3rem;
+    width: 100%;
+    margin: auto;
+    padding: 1rem;
+  }
+
+  h1 {
+    color: #fff;
+    font-size: 3rem;
+    padding: 1rem;
+  }
+
+  .card {
+    background: #0984e3;
+    margin-top: 3rem;
+    text-align: center;
+    padding: 3rem;
+    border-radius: 1%;
+  }
+
+  .button {
+    background: #9b59b6;
+    color: #fff;
+    font-size: 1rem;
+    padding: 1rem;
+    width: 30%;
+    border: none;
+    border-radius: 5%;
+    margin: 0.6rem;
+  }
+
+  .button:hover {
+    background: #8e44ad;
+  }
+
+  #quote {
+    color: #fff;
+  }
+}
