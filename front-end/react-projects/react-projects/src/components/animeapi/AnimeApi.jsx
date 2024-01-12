@@ -18,6 +18,7 @@ export default function AnimeAPI() {
   useEffect(() => {
     animeQuotes();
   }, []);
+
   return (
     <>
       <h1>API Anime</h1>

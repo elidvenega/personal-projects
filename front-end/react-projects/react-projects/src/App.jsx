@@ -7,10 +7,10 @@ import "./App.css";
 // import Home from "./pages/Home";
 // import Image from "./components/pictures/Image";
 // import Video from "./components/video/Video";
-// import AnimeAPI from "./components/animeapi/AnimeApi";
+import AnimeAPI from "./components/animeapi/AnimeApi";
 // import List from "./components/renderdatalist/List";
 // import Todo from "./components/reducer-context/Todo";
-import { CustomHoooks } from "./components/custom-hooks/CustomHoooks";
+// import { CustomHoooks } from "./components/custom-hooks/CustomHoooks";
 export default function App() {
   // let Component
   // switch (window.location.pathname) {
@@ -63,10 +63,10 @@ export default function App() {
         desc={"Best Pokemon"}
       /> */}
       {/* <Video /> */}
-      {/* <AnimeAPI /> */}
+      <AnimeAPI />
       {/* <List /> */}
       {/* <Todo /> */}
-      <CustomHoooks />
+      {/* <CustomHoooks /> */}
     </>
   );
 }
