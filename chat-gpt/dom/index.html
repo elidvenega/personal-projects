@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Example</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <button onclick="createAndUpdate()">Create and Update</button>
+    <button onclick="remove()">Remove</button>
+
+    <script>
+      function createAndUpdate() {
+        createParagraph("Hello, DOM!");
+        updateParagraph("app", "Updated text!");
+      }
+
+      function remove() {
+        removeParagraph("app");
+      }
+
+      function createParagraph(text) {
+        const paragraph = document.createElement("p");
+        paragraph.textContent = text;
+        document.getElementById("app").appendChild(paragraph);
+      }
+
+      function updateParagraph(id, newText) {
+        const paragraph = document.getElementById(id);
+        if (paragraph) {
+          paragraph.textContent = newText;
+        }
+      }
+
+      function removeParagraph(id) {
+        const paragraph = document.getElementById(id);
+        if (paragraph) {
+          paragraph.remove();
+        }
+      }
+    </script>
+  </body>
+</html>
