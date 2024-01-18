@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #eab308;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+
+      .flex-container {
+        background-color: azure;
+        max-width: 50ch;
+        padding: 4rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin: auto;
+      }
+
+      .flex-square {
+        background-color: #06b6d4;
+        width: 2rem;
+        padding: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex-square"></div>
+      <div class="flex-square"></div>
+      <div class="flex-square"></div>
+    </div>
+  </body>
+</html>
