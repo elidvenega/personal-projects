@@ -11,6 +11,7 @@ const fetchData = () => {
 };
 
 const AsyncComponent = () => {
+  // state is null because it does not want state to be empty
   const [data, setData] = useState(null);
 
   useEffect(() => {

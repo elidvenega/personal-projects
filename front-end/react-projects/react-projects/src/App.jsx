@@ -1,4 +1,5 @@
 import "./App.css";
+import DataFetchingComponent from "./components/effect/EffectHook";
 // import Carousel from "./components/Carousel/Carousel";
 // import Accordion from "./components/accordion/Accordion";
 // import Navbar from "./components/navbar/Navbar";
@@ -11,7 +12,7 @@ import "./App.css";
 // import List from "./components/renderdatalist/List";
 // import Todo from "./components/reducer-context/Todo";
 // import { CustomHoooks } from "./components/custom-hooks/CustomHoooks";
-import ParentComponent from "./components/suspense/ParentComponent";
+// import ParentComponent from "./components/suspense/ParentComponent";
 export default function App() {
   // let Component
   // switch (window.location.pathname) {
@@ -68,7 +69,8 @@ export default function App() {
       {/* <List /> */}
       {/* <Todo /> */}
       {/* <CustomHoooks /> */}
-      <ParentComponent />
+      {/* <ParentComponent /> */}
+      <DataFetchingComponent />
     </>
   );
 }
