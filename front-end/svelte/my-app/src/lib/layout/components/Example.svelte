@@ -1,5 +1,5 @@
 <script>
-  let greet = "hello";
+  let greet = "Hello Svelte and Thanks";
 
   const randomWords = ["Ok", "great", "allright", "today"];
 </script>
