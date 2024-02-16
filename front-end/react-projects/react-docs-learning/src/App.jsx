@@ -1,5 +1,6 @@
 import "./App.css";
-import AllProps from "./components/props/AllProps";
+// import AllProps from "./components/props/AllProps";
+import Rendering from "./components/conditionalrender/Rendering";
 
 function App() {
   const h1 = `Is React Docs Practice`;
@@ -7,7 +8,8 @@ function App() {
   return (
     <>
       <h1>{h1}</h1>
-      <AllProps />
+      {/* <AllProps /> */}
+      <Rendering />
     </>
   );
 }
