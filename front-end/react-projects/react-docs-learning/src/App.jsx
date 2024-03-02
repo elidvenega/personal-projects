@@ -1,11 +1,12 @@
 import "./App.css";
-import PreservingState from "./components/renderingandpreservingstate/rendering";
+// import PreservingState from "./components/renderingandpreservingstate/rendering";
 // import AllProps from "./components/props/AllProps";
 // import Rendering from "./components/conditionalrender/Rendering";
 // import List from "./components/renderingLists/Lists";
 // import Button from "./components/events/Button";
 // import MovingDot from "./components/updatingobjs/UpdateObj";
-
+// import ReduceFunc from "./components/reducer/ReduceFunc";
+import TaskApp from "./components/reducer/TasksApp";
 
 function App() {
   const h1 = `Is React Docs Practice`;
@@ -18,7 +19,9 @@ function App() {
       {/* <List /> */}
       {/* <Button /> */}
       {/* <MovingDot /> */}
-      <PreservingState />
+      {/* <PreservingState /> */}
+      {/* <ReduceFunc /> */}
+      <TaskApp />
     </>
   );
 }
