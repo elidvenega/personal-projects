@@ -3,7 +3,7 @@ import { useState } from 'react';
 export default function TaskList({tasks, onChangeTask, onDeleteTask}) {
   return (
     <ul>
-      {tasks.map((task) => (
+      {tasks.map((task) => ( 
         <li key={task.id}>
           <Task task={task} onChange={onChangeTask} onDelete={onDeleteTask} />
         </li>
