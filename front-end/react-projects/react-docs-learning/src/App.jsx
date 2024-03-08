@@ -7,8 +7,8 @@ import "./App.css";
 // import MovingDot from "./components/updatingobjs/UpdateObj";
 // import ReduceFunc from "./components/reducer/ReduceFunc";
 // import TaskApp from "./components/reducer/TasksApp";
-import ContextFunc from "./components/context/ContextFunc";
-
+// import ContextFunc from "./components/context/ContextFunc";
+import TaskApp from "./components/reducerandcontext/TaskApp";
 
 function App() {
   const h1 = `Is React Docs Practice`;
@@ -24,7 +24,8 @@ function App() {
       {/* <PreservingState /> */}
       {/* <ReduceFunc /> */}
       {/* <TaskApp /> */}
-      <ContextFunc />
+      {/* <ContextFunc /> */}
+      <TaskApp />
     </>
   );
 }
