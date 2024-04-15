@@ -26,7 +26,8 @@
   }
 
   function deleteTodo() {
-    
+    todoList.splice(index, 1);
+    todoList = todoList;
   }
 </script>
 
@@ -34,9 +35,24 @@
 <div class="todo-list-container">
   <input class="input" placeholder="add todo" type="text" name="todo-list" />
   <button class="add-todo-button" on:click={deleteTodo}>Add Todo</button>
+  <br/>
+  {#each todoList as item, index}
+  <input bind:checked={item} type="checkbox">
+    
+  {/each}
 </div>
 
-<style>
+
+
+
+<!-- // {#each todoList as item, index}
+//   <input bind:checked={item.status} type="checkbox" />
+//   <span class:checked={item.status}>{item.text}</span>
+//   <!-- svelte-ignore a11y-click-events-have-key-events -->
+//   <!-- svelte-ignore a11y-no-static-element-interactions -->
+<!-- //   <span on:click={() => removeFromList(index)}>❌</span>
+//   <br />
+<style> --> -->
   :root {
     --color-one: #f97316;
     --font-size: 1rem;
