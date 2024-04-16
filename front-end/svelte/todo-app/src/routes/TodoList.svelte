@@ -36,14 +36,15 @@
   <input bind:value={newItem} class="input" placeholder="add todo" type="text" name="todo-list" />
   <button class="add-todo-button" on:click={addTodo}>Add Todo</button>
   <br />
-  {#each todoList as item, index}
+</div>
+
+{#each todoList as item, index}
   <input bind:checked={item.status} type="checkbox" />
   <span class:checked={item.status}>{item.task}</span>
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <!-- svelte-ignore a11y-no-static-element-interactions -->
   <span on:click={() => deleteTodo(index)}>❌</span>
 {/each}
-</div>
 
 
 
@@ -63,7 +64,7 @@
 
   .todo-list-container {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     margin-top: 2rem;
     gap: 5px;
