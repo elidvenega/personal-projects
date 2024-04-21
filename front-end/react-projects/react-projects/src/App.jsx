@@ -1,5 +1,5 @@
 import "./App.css";
-import InputWithRef from "./components/useref/refHook";
+// import InputWithRef from "./components/useref/refHook";
 //import DataFetchingComponent from "./components/effect/EffectHook";
 // import Carousel from "./components/Carousel/Carousel";
 // import Accordion from "./components/accordion/Accordion";
@@ -8,7 +8,7 @@ import InputWithRef from "./components/useref/refHook";
 // import About from "./pages/About";
 // import Home from "./pages/Home";
 // import Image from "./components/pictures/Image";
-// import Video from "./components/video/Video";
+import Video from "./components/video/Video";
 // import AnimeAPI from "./components/animeapi/AnimeApi";
 // import List from "./components/renderdatalist/List";
 // import Todo from "./components/reducer-context/Todo";
@@ -66,14 +66,14 @@ export default function App() {
         alt={"pikachu"}
         desc={"Best Pokemon"}
       /> */}
-      {/* <Video /> */}
+      <Video />
       {/* <AnimeAPI /> */}
       {/* <List /> */}
       {/* <Todo /> */}
       {/* <CustomHoooks /> */}
       {/* <ParentComponent /> */}
       {/* <DataFetchingComponent /> */}
-      <InputWithRef />
+      {/* <InputWithRef /> */}
     </>
   );
 }
