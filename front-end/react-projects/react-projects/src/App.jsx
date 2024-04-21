@@ -1,4 +1,5 @@
 import "./App.css";
+// import PropsEx from "./props/PropsEx";
 // import InputWithRef from "./components/useref/refHook";
 //import DataFetchingComponent from "./components/effect/EffectHook";
 // import Carousel from "./components/Carousel/Carousel";
@@ -9,9 +10,9 @@ import "./App.css";
 // import Home from "./pages/Home";
 // import Image from "./components/pictures/Image";
 // import Video from "./components/video/Video";
-import AnimeAPI from "./components/animeapi/AnimeApi";
+// import AnimeAPI from "./components/animeapi/AnimeApi";
 // import List from "./components/renderdatalist/List";
-// import Todo from "./components/reducer-context/Todo";
+import Todo from "./components/reducer-context/Todo";
 // import { CustomHoooks } from "./components/custom-hooks/CustomHoooks";
 // import ParentComponent from "./components/suspense/ParentComponent";
 
@@ -51,13 +52,18 @@ export default function App() {
         desc={"Best Pokemon"}
       /> */}
       {/* <Video /> */}
-      <AnimeAPI />
+      {/* <AnimeAPI /> */}
       {/* <List /> */}
-      {/* <Todo /> */}
+      <Todo />
       {/* <CustomHoooks /> */}
       {/* <ParentComponent /> */}
       {/* <DataFetchingComponent /> */}
       {/* <InputWithRef /> */}
+      {/* <PropsEx 
+      title={"Digimon"}
+      info={"This will be about digimon"}
+      src={"https://cdn.vox-cdn.com/thumbor/hEzfldwonV5XVJ_c80Ix3QDPwh4=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/21940788/Digimon_Adventure_2020_episode_6.jpg"}
+      alt={"Digimon"}  />*/}
     </>
   );
 }
