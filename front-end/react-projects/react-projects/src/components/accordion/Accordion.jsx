@@ -3,7 +3,7 @@ import Panel from "./Panel";
 import "./Accordion.css";
 
 export default function Accordion() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(1);
   return (
     <>
       <div className="accordion">
@@ -28,7 +28,7 @@ export default function Accordion() {
           likely candidate for the ancestor of the modern domestic apple.
         </Panel>
         <Panel
-          title="Ex3"
+          title="Example 3"
           isActive={activeIndex === 3}
           onShow={() => setActiveIndex(3)}
         >
@@ -37,7 +37,7 @@ export default function Accordion() {
           explicabo voluptatibus.
         </Panel>
         <Panel
-          title="Ex4"
+          title="Example 4"
           isActive={activeIndex === 4}
           onShow={() => setActiveIndex(4)}
         >

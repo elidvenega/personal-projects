@@ -4,18 +4,18 @@ import "./anime.css";
 export default function AnimeAPI() {
   const [anime, setAnime] = useState([]);
 
-  async function animeQuotes() {
-    try {
-      const resp = await fetch("https://animechan.xyz/api/quotes");
-      const data = await resp.json();
-      console.log(data);
-      setAnime(data);
-    } catch (e) {
-      console.log("error", e);
-    }
-  }
-
   useEffect(() => {
+    async function animeQuotes() {
+      try {
+        const resp = await fetch("https://animechan.xyz/api/quotes");
+        const data = await resp.json();
+        console.log(data);
+        setAnime(data);
+      } catch (e) {
+        console.log("error", e);
+      }
+    }
+
     animeQuotes();
   }, []);
 
