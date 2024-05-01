@@ -9,7 +9,20 @@
   };
 </script>
 
-<Child  
-heading ={data.heading} 
-paragraph={data.text} 
-name={data.name} />
+<section>
+  <Child heading={data.heading} paragraph={data.text} name={data.name} />
+</section>
+
+<section>
+  <Child heading={data.heading} paragraph={data.text} name={data.name} />
+</section>
+
+<section>
+<Child heading={data.heading} paragraph={data.text} name={data.name} />
+</section>
+
+<style>
+  section {
+    padding: 2rem;
+  }
+</style>
