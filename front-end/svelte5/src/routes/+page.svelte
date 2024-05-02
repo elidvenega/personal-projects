@@ -1,4 +1,6 @@
 <script>
+  import RunesExamples from "./components/RunesExamples.svelte";
+
 </script>
 
 <svelte:head>
@@ -7,7 +9,7 @@
 </svelte:head>
 
 <section>
-	Hello
+	<RunesExamples />
 </section>
 
 <style>
