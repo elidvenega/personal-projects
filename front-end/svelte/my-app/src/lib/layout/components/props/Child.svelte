@@ -1,13 +1,12 @@
 <script>
   export let heading;
-  export let paragraph;
+  export let text;
   export let name;
-
 </script>
 
 <div>
   <h1>{heading}</h1>
-  <p>{paragraph}</p>
+  <p>{text}</p>
   <p>This is about {name}</p>
 </div>
 

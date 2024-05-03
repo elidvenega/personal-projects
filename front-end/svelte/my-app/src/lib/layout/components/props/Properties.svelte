@@ -10,15 +10,7 @@
 </script>
 
 <section>
-  <Child heading={data.heading} paragraph={data.text} name={data.name} />
-</section>
-
-<section>
-  <Child heading={data.heading} paragraph={data.text} name={data.name} />
-</section>
-
-<section>
-<Child heading={data.heading} paragraph={data.text} name={data.name} />
+  <Child {...data} />
 </section>
 
 <style>
