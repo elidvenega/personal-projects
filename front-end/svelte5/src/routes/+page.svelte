@@ -1,7 +1,13 @@
 <script>
-  import ExampleDerived from "./components/ExampleDerived.svelte";
-  import ExampleState from "./components/ExampleState.svelte";
-  
+  // import ExampleDerived from "./components/ExampleDerived.svelte";
+  // import ExampleState from "./components/ExampleState.svelte";
+  import ExampleProps from "./components/ExampleProps.svelte";
+
+  const info = {
+    name: "Jay",
+    lastName: "Sanchez",
+    hobby: "Paint",
+  };
 </script>
 
 <svelte:head>
@@ -10,7 +16,9 @@
 </svelte:head>
 
 <section>
-  <ExampleState />
+  <!-- <ExampleState /> -->
+  <!-- <ExampleDerived /> -->
+  <ExampleProps {...info} />
 </section>
 
 <style>

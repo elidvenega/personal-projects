@@ -1,0 +1,23 @@
+body {
+  background-color: #10b981;
+  color: #fff;
+  font-family: "Courier New", Courier, monospace;
+}
+
+section {
+  text-align: center;
+  padding: 1rem;
+}
+
+p {
+  font-size: 1.3rem;
+  padding: 5px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  background-color: #60a5fa;
+  color: #fff;
+  margin: 5px;
+}

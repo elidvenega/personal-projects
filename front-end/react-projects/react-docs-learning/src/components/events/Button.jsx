@@ -1,13 +1,24 @@
-
+import { useState } from "react";
+import "./buttonstyle.css";
 
 export default function Button() {
-  const handleConsole = () => {
-    console.log(`Clicked`);
-  }
+  const [btn, setBtn] = useState(0);
+
+  const handleIncrement = () => {
+    setBtn((btn) => btn + 1);
+  };
+  const handleDecrement = () => {
+    setBtn((btn) => btn - 1);
+  };
 
   return (
-   <>
-    <button onClick={handleConsole}>Clicked</button>
-   </>
-  )
+    <>
+      <section>
+      <p>{btn}</p>
+        <button onClick={handleIncrement}>Add</button>
+        <button onClick={handleDecrement}>Subtract</button>
+        
+      </section>
+    </>
+  );
 }

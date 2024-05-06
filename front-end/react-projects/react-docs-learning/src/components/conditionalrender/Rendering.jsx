@@ -18,20 +18,38 @@ import "./style.css";
 //   );
 // }
 
-function PackingItems({ toBePacked, name }) {
-  return <li>{toBePacked ? <del>{name}</del> : name}</li>;
+// function PackingItems({ toBePacked, name }) {
+//   return <li>{toBePacked ? <del>{name}</del> : name}</li>;
+// }
+
+// export default function Rendering() {
+//   return (
+//     <>
+//       <section>
+//         <h1>Tasks that have been done</h1>
+//         <ul>
+//           <PackingItems toBePacked={false} name="Shirts" />
+//           <PackingItems toBePacked={false} name="Pants" />
+//           <PackingItems toBePacked={false} name="Gear" />
+//           <PackingItems toBePacked={true} name="Food" />
+//         </ul>
+//       </section>
+//     </>
+//   );
+// }
+
+function TasksToPack({ toPack, item }) {
+  return <li>{toPack ? <del>{item}</del> : item}</li>;
 }
 
 export default function Rendering() {
   return (
     <>
       <section>
-        <h1>Tasks that have been done</h1>
         <ul>
-          <PackingItems toBePacked={false} name="Shirts" />
-          <PackingItems toBePacked={false} name="Pants" />
-          <PackingItems toBePacked={false} name="Gear" />
-          <PackingItems toBePacked={true} name="Food" />
+          <TasksToPack toPack={false} item={"Dishes"} />
+          <TasksToPack toPack={false} item={"Clothes"} />
+          <TasksToPack toPack={false} item={"Snacks"} />
         </ul>
       </section>
     </>

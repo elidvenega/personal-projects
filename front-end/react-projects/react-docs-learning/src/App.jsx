@@ -1,8 +1,8 @@
 // import PreservingState from "./components/renderingandpreservingstate/rendering";
 // import AllProps from "./components/props/AllProps";
-import Rendering from "./components/conditionalrender/Rendering";
+// import Rendering from "./components/conditionalrender/Rendering";
 // import List from "./components/renderingLists/Lists";
-// import Button from "./components/events/Button";
+import Button from "./components/events/Button";
 // import MovingDot from "./components/updatingobjs/UpdateObj";
 // import ReduceFunc from "./components/reducer/ReduceFunc";
 // import TaskApp from "./components/reducer/TasksApp";
@@ -13,9 +13,9 @@ function App() {
   return (
     <>
       {/* <AllProps /> */}
-      <Rendering />
+      {/* <Rendering /> */}
       {/* <List /> */}
-      {/* <Button /> */}
+      <Button />
       {/* <MovingDot /> */}
       {/* <PreservingState /> */}
       {/* <ReduceFunc /> */}
