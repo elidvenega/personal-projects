@@ -2,12 +2,13 @@
 // import AllProps from "./components/props/AllProps";
 // import Rendering from "./components/conditionalrender/Rendering";
 // import List from "./components/renderingLists/Lists";
-import Button from "./components/events/Button";
+// import Button from "./components/events/Button";
 // import MovingDot from "./components/updatingobjs/UpdateObj";
 // import ReduceFunc from "./components/reducer/ReduceFunc";
 // import TaskApp from "./components/reducer/TasksApp";
 // import ContextFunc from "./components/context/ContextFunc";
 // import TaskApp from "./components/reducerandcontext/TaskApp";
+import Stopwatch from "./components/refexamples/StopWatch";
 
 function App() {
   return (
@@ -15,13 +16,14 @@ function App() {
       {/* <AllProps /> */}
       {/* <Rendering /> */}
       {/* <List /> */}
-      <Button />
+      {/* <Button /> */}
       {/* <MovingDot /> */}
       {/* <PreservingState /> */}
       {/* <ReduceFunc /> */}
       {/* <TaskApp /> */}
       {/* <ContextFunc /> */}
       {/* <TaskApp /> */}
+      <Stopwatch />
     </>
   );
 }
