@@ -8,6 +8,8 @@ function PropsPractice() {
      <PropsData 
      name="Jack"
      language="Spanish"
+     country="US"
+     age={"32"}
      />
     </div>
   )

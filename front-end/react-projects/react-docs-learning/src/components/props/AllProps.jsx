@@ -12,7 +12,7 @@ export default function AllProps() {
     exercise: "walking",
   };
 
-  const allProps2 = {
+  const allPropsTwo = {
     name: "Mike",
     age: 21,
     hobby: "video games",
@@ -26,8 +26,7 @@ export default function AllProps() {
 
       <Wrapper>
         <Props {...allProps} />
-        This is between text
-        <Props {...allProps2} />
+        <Props {...allPropsTwo} />
       </Wrapper>
     </>
   );

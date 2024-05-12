@@ -10,14 +10,17 @@ export default function Button() {
   const handleDecrement = () => {
     setBtn((btn) => btn - 1);
   };
+  const resetButton = () => {
+    setBtn(0);
+  };
 
   return (
     <>
       <section>
-      <p>{btn}</p>
+        <p>{btn}</p>
         <button onClick={handleIncrement}>Add</button>
         <button onClick={handleDecrement}>Subtract</button>
-        
+        <button onClick={resetButton}>Reset</button>
       </section>
     </>
   );
