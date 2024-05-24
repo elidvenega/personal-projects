@@ -8,13 +8,17 @@
   <body>
     <div id="app"></div>
 
-    <button onclick="createAndUpdate()">Create and Update</button>
+    <button onclick="createUpdate()">Update</button>
+    <button onclick="createText()">Create</button>
     <button onclick="remove()">Remove</button>
 
     <script>
-      function createAndUpdate() {
-        createParagraph("Hello, DOM!");
+      function createUpdate() {
         updateParagraph("app", "Updated text!");
+      }
+
+      function createText() {
+        createParagraph("Hello, DOM!");
       }
 
       function remove() {
