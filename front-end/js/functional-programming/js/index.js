@@ -42,7 +42,7 @@ console.log(totalOutput);
 const species = animalList.map((x) => x.price);
 console.log(species);
 
-//  Example of closure
+//  Example of closure gets a value outside of function
 let x = 4;
 
 function multiply(num) {
@@ -50,3 +50,14 @@ function multiply(num) {
 }
 
 console.log(multiply(2));
+
+// A side effect function
+
+let name = "Kevin";
+
+function effectFunc() {
+  name = "Sam";
+  return name;
+}
+
+console.log(effectFunc());
