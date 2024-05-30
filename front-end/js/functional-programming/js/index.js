@@ -61,3 +61,26 @@ function effectFunc() {
 }
 
 console.log(effectFunc());
+
+// A function that calls itself until it doesn't
+// Recursion
+let countDownFrom = (num) => {
+  if (num === 0) return;
+  console.log(num);
+  countDownFrom(num - 1);
+};
+countDownFrom(11);
+
+
+// Higher Order Function
+const copyArrayAndMultiplyBy2 = (array) => {
+   const output = [];
+   for(let i = 0; i < array.length; i++) {
+    output.push(array[i] * 2)
+   }
+   return output;
+}
+
+const myArray = [1,2,3];
+const result = copyArrayAndMultiplyBy2(myArray)
+console.log(result);
