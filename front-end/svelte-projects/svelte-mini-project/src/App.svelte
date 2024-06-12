@@ -1,13 +1,7 @@
 <script>
-  import GridComponent from "./lib/GridComponent.svelte";
+  import CardsComponent from "./lib/CardsComponent.svelte";
 </script>
 
 <main>
-  <GridComponent />
+  <CardsComponent />
 </main>
-
-<style>
-  main {
-    background-color: #ddd;
-  }
-</style>
