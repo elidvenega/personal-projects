@@ -1,12 +1,9 @@
+import Gallery from "./assets/components/image-slide-project/Gallery";
 
-
-function App() {
- 
+export default function App() {
   return (
     <>
-    
+      <Gallery />
     </>
-  )
+  );
 }
-
-export default App
