@@ -2,9 +2,11 @@ import { useState } from 'react';
 import { sculptureList } from './data.js';
 
 export default function Gallery() {
+  // state in React
   const [index, setIndex] = useState(0);
   const [showMore, setShowMore] = useState(false);
-  const hasNext = index < sculptureList.length - 1;
+
+  const hasNext = index < sculptureList.length + 1;
 
   function handleNextClick() {
     if (hasNext) {
