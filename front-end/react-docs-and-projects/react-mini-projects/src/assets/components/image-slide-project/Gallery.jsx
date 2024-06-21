@@ -5,8 +5,8 @@ export default function Gallery() {
   // state in React
   const [index, setIndex] = useState(0);
   const [showMore, setShowMore] = useState(false);
-
-  const hasNext = index < sculptureList.length + 1;
+  
+  const hasNext = index < sculptureList.length - 1;
 
   function handleNextClick() {
     if (hasNext) {
@@ -19,7 +19,8 @@ export default function Gallery() {
   function handleMoreClick() {
     setShowMore(!showMore);
   }
-
+ 
+  // this gets the index of the info in the array
   let sculpture = sculptureList[index];
   return (
     <>
