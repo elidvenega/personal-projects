@@ -15,8 +15,8 @@
 
 <style>
   div {
-    max-width: 42rem;
-    padding: 3rem;
+    max-width: 100%;
+    padding: 2rem;
     background-color: #fff;
     color: black;
     margin-top: 2rem;
