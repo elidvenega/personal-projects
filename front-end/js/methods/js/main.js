@@ -15,4 +15,10 @@ const sum = arr.reduce((total, item) => total + item, 0);
 console.log(sum);
 
 
-// .selector > *
+// map
+
+console.log(arr.map(x => x * 2));
+
+// reduce 
+console.log(arr.reduce((a,b) => a + b, 0), "Reduce");
+
