@@ -6,15 +6,15 @@ const person = {
   pets: ["bird", "dog", "wolf"],
 };
 
-const { firstName, lastName, pets } = person;
+const { firstName, lastName, pets, x=1 } = person;
 //console.log(pets[0]);
-console.log(firstName);
+console.log(x);
 
 output.innerText = pets[0];
 
 // destructuring in functions
-function greet({ name, age }) {
-  console.log(`Hello my name is ${name} and I'm ${age} years old.`);
+function greet({ firstName, lastName }) {
+  console.log(`Hello my name is ${firstName} and I'm ${lastName} years old.`);
 }
 
-greet({ name: "Peter", age: 50 });
+greet(person);
