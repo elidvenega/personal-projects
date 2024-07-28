@@ -1,6 +1,5 @@
 import { useReducer } from 'react';
 import AddTask from './AddTask.jsx';
-import TaskList from './TasksList.jsx';
 
 function tasksReducer(tasks, action) {
   switch (action.type) {

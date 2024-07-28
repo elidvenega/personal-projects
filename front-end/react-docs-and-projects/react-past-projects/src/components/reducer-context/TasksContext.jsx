@@ -8,7 +8,7 @@ const TasksDispatchContext = createContext(null);
 // The wrapper function
 export function TasksProvider({ children }) {
   // The reducer function being used
-  const [tasks, dispatch] = useReducer(
+  const [tasks, dispatch] = useReducer( 
     tasksReducer,
     initialTasks
   );

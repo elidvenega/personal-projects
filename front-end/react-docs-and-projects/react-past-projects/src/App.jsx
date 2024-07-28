@@ -1,4 +1,3 @@
-import Todo from "./components/reducer-context/Todo";
 import "./App.css";
 
 export default function App() {
@@ -13,9 +12,5 @@ export default function App() {
   //   case "/about":
   //     Component = <About />;
   // }
-  return (
-    <>
-     <Todo />
-    </>
-  );
+  return <></>;
 }

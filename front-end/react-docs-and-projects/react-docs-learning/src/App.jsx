@@ -1,10 +1,9 @@
-import RecipeList from "./react-challenges/rendering-lists/RecipeList";
+import TasksApp from "./components/reducer/TasksApp.jsx";
 
 export default function App() {
   return (
     <>
-      <RecipeList />
+      <TasksApp />
     </>
   );
 }
-
