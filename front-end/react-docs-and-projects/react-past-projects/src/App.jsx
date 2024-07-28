@@ -1,5 +1,5 @@
-import "./App.css";
 import Todo from "./components/reducer-context/Todo";
+import "./App.css";
 
 export default function App() {
   // let Component
@@ -15,7 +15,7 @@ export default function App() {
   // }
   return (
     <>
-      <Todo />
+     <Todo />
     </>
   );
 }

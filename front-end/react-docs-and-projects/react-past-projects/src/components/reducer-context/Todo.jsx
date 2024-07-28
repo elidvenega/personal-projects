@@ -13,12 +13,12 @@ export default function TaskApp() {
           <AddTask />
           <TaskList />
         </TasksProvider>
-      </div>
+      </div>  
     </>
   );
 }
 
 // Components order we will study
 // 1. Tasks Provider from TaskContext - [x]
-// 2. Add Task - []
-// 3. TaskList - []
+// 2. Add Task - [x]
+// 3. TaskList - [x]

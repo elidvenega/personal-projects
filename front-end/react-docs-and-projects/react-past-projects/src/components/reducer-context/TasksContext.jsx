@@ -22,6 +22,7 @@ export function TasksProvider({ children }) {
   );
 }
 
+// Custom hooks
 export function useTasks() {
   return useContext(TasksContext);
 }
