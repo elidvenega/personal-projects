@@ -49,8 +49,8 @@ function factorialize(num) {
 console.log(factorialize(5));
 
 
-if(!true) {
-  console.log("hu");
+if(!false) {
+  console.log("This works");
 } else {
-  console.log('Ko');
+  console.log('');
 }
