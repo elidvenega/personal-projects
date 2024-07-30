@@ -47,3 +47,10 @@ function factorialize(num) {
 }
 
 console.log(factorialize(5));
+
+
+if(!true) {
+  console.log("hu");
+} else {
+  console.log('Ko');
+}
