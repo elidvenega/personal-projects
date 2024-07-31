@@ -15,7 +15,7 @@ const sum = arr.reduce((total, item) => total + item, 0);
 console.log(sum);
 
 // map
-
+// Will create a shallow copy and bring new array
 console.log(arr.map((x) => x * 2));
 
 // reduce
@@ -34,3 +34,10 @@ const result = words.filter((word) => word.length > 6);
 
 console.log(result);
 // Expected output: Array ["exuberant", "destruction", "present"]
+
+// fill method also 
+const fillExample = [1, 4, 5, 6, 7];
+console.log(fillExample);
+console.log(fillExample.fill(31,4));
+
+// left off on find()
