@@ -20,8 +20,12 @@ function reducer(state, action) {
   }
 }
 
+const initialState = {
+  count: 0,
+};
+
 export default function UseReducerHook() {
-  const [state, dispatch] = useReducer(reducer, { count: 0 });
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   function increment() {
     dispatch({ type: ACTIONS.INCREMENT });

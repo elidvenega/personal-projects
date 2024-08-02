@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+// function that will render list items
 export default function TaskList({tasks, onChangeTask, onDeleteTask}) {
   return (
     <ul>
@@ -12,12 +13,14 @@ export default function TaskList({tasks, onChangeTask, onDeleteTask}) {
   );
 }
 
+// Here It will create the code where the input will change
 function Task({task, onChange, onDelete}) {
   const [isEditing, setIsEditing] = useState(false);
   let taskContent;
   if (isEditing) {
     taskContent = (
       <>
+      {/* This saves the current changes */}
         <input
           value={task.text}
           onChange={(e) => {
@@ -30,6 +33,7 @@ function Task({task, onChange, onDelete}) {
         <button onClick={() => setIsEditing(false)}>Save</button>
       </>
     );
+    // If this is false the edit will be displayed then when you click edit Save button will appear
   } else {
     taskContent = (
       <>
