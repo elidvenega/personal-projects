@@ -35,9 +35,30 @@ const result = words.filter((word) => word.length > 6);
 console.log(result);
 // Expected output: Array ["exuberant", "destruction", "present"]
 
-// fill method also 
+// fill method also
 const fillExample = [1, 4, 5, 6, 7];
 console.log(fillExample);
-console.log(fillExample.fill(31,4));
+console.log(fillExample.fill(31, 4));
 
 // left off on find()
+
+// flatMap
+
+const officeEmployees = [
+  {
+    employeeOne: "James",
+    title: "Accountant",
+  },
+  {
+    employeeTwo: "Chuck",
+    title: "Engineer",
+  },
+  {
+    employeeThree: "Dave",
+    title: "Executive",
+  },
+];
+
+const jobTitles = officeEmployees.flatMap((job) => job.title);
+
+console.log(jobTitles);

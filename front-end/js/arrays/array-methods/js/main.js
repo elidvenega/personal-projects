@@ -1,3 +1,4 @@
+const output = document.querySelector("#output");
 // Filter Method
 const items = [
   { name: "Bike", price: 100, type: "sports gear" },
@@ -8,24 +9,25 @@ const items = [
   { name: "Computer", price: 1000, type: "electronic" },
   { name: "Keyboard", price: 25, type: "electronic" },
 ];
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 //Filter
-const filteredItems = items.filter((item) => item.name.length > 4);
-
+// const filteredItems = items.filter((item) => item.name.length > 4);
+const filteredItems = items.filter((item) => item.price >= 200);
 console.log(filteredItems);
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 // Map
 
-// const mapItems = items.map((item) => item.name);
+const mapItems = items.map((item) => item.name);
 
-// console.log(mapItems);
+console.log(mapItems);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 //find
 
 const foundItem = items.find((item) => {
-  return item.name === 'Bike'
+  return item.name === "Bike";
 });
 
 // console.log(foundItem);
@@ -34,7 +36,7 @@ const foundItem = items.find((item) => {
 
 //forEach
 items.forEach((item) => {
-console.log(`${item.name} ${item.price}`);
+  console.log(`${item.name} ${item.price}`);
 });
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
