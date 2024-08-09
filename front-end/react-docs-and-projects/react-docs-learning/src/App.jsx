@@ -1,11 +1,9 @@
-// import TasksApp from "./components/reducer/TasksApp.jsx";
-import ReduceFunc from "./components/reducer/ReduceFunc.jsx";
+import ContextPractice from "./components/context/practice-context/ContextPractice";
 
 export default function App() {
   return (
     <>
-      {/* <TasksApp /> */}
-      <ReduceFunc />
+      <ContextPractice />
     </>
   );
 }
