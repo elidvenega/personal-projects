@@ -1,0 +1,11 @@
+.container {
+    margin: auto;
+    font-size: 1.3rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(32, 57, 139);
+    color: #fff;
+    width: 50%;
+    margin-top: 1rem;
+    padding: 2.3rem;
+    border-radius: 5px;
+}

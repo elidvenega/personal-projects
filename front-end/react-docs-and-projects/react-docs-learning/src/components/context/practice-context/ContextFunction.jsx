@@ -13,7 +13,7 @@ function Section({ level, children }) {
 
 function Heading({ children }) {
   const level = useContext(PracticeContext);
-  switch (level) {
+  switch (level) { 
     case 1:
       return <h1>{children}</h1>;
     case 2:

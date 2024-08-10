@@ -1,9 +1,10 @@
-import ContextFunction from "./components/context/practice-context/ContextFunction";
+import SecondPracticeContext from "./components/context/secondpractice-context/SecondPracticeContext";
+
 
 export default function App() {
   return (
     <>
-      <ContextFunction />
+     <SecondPracticeContext />
     </>
   );
 }

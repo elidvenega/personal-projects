@@ -1,32 +1,45 @@
 import Props from "./Props";
 
+const firstPersonData = {
+  name: "Jack",
+  age: 21,
+  hobby: "guitar",
+  exercise: "walking",
+};
+
+const secondPersonData = {
+  name: "Mike",
+  age: 23,
+  hobby: "video games",
+  exercise: "running",
+};
+
+const thirdPersonData = {
+  name: "David",
+  age: 34,
+  hobby: "programming",
+  exercise: "swimming",
+};
+
+const fourthPersonData = {
+  name: "Matt",
+  age: 29,
+  hobby: "hunting",
+  exercise: "hiking",
+};
+
 function Wrapper({ children }) {
   return <>{children}</>;
 }
 
 export default function AllProps() {
-  const allProps = {
-    name: "Jack",
-    age: 21,
-    hobby: "guitar",
-    exercise: "walking",
-  };
-
-  const allPropsTwo = {
-    name: "Mike",
-    age: 21,
-    hobby: "video games",
-    exercise: "running",
-  };
   return (
     <>
-      {/* <Props name="Jack" age="34" hobby="to play Guitar" exercise="Walking" />
-      <Props name="Jose" age="21" hobby="Anime" exercise="Running" />
-      <Props name="David" age="25" hobby="Soccer" exercise="Jumpoing Rope" /> */}
-
       <Wrapper>
-        <Props {...allProps} />
-        <Props {...allPropsTwo} />
+        <Props {...firstPersonData} />
+        <Props {...secondPersonData} />
+        <Props {...thirdPersonData} />
+        <Props {...fourthPersonData} />
       </Wrapper>
     </>
   );
