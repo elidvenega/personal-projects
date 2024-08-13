@@ -1,4 +1,5 @@
 import "./App.css";
+import AnimeApi from "./components/animeapi/AnimeApi.jsx";
 
 export default function App() {
   // let Component
@@ -12,5 +13,9 @@ export default function App() {
   //   case "/about":
   //     Component = <About />;
   // }
-  return <></>;
+  return (
+    <>
+      <AnimeApi />
+    </>
+  );
 }
