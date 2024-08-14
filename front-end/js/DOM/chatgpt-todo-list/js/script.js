@@ -47,3 +47,4 @@ newTaskInput.addEventListener("keypress", function (e) {
     addTask();
   }
 });
+
