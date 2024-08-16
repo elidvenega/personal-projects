@@ -62,3 +62,24 @@ const officeEmployees = [
 const jobTitles = officeEmployees.flatMap((job) => job.title);
 
 console.log(jobTitles);
+
+/* Splice and SLice methods example */
+
+const animals = [
+  "wolfs",
+  "hawks",
+  "eagles",
+  "donkey",
+  "dogs",
+  "monkeys",
+  "birds",
+];
+
+// splice
+// console.log(animals.splice(1, 2), "Deleted");
+// console.log(animals);
+
+// slice
+console.log(animals.slice(1, 5), "using slice");
+
+console.log(animals);
