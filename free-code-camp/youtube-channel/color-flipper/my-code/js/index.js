@@ -1,3 +1,5 @@
+"use strict";
+
 // Selects classes
 // const color = document.querySelector(".color");
 // const btn = document.querySelector(".btn");
@@ -20,21 +22,30 @@
 
 //   btn.addEventListener("click", changeColor);
 
-const color = document.querySelector(".color");
-const button = document.querySelector(".btn");
+// Colors ["#64748b", "#dc2626", "#f97316", "#b45309"];
 
-const colors =  ["#64748b", "#dc2626", "#f97316", "#b45309"];
+function colorChanger() {
+  const textColor = document.querySelector(".color");
+  const button = document.querySelector(".btn");
 
+  const colors = [
+    "#64748b",
+    "#dc2626",
+    "#f97316",
+    "#b45309",
+    "#7e22ce",
+    "#86198f",
+  ];
 
-const randomColor = () => {
-  return Math.floor(Math.random() * colors.length);
-};
+  const chanceColor = () => Math.floor(Math.random() * colors.length);
 
-const getColor = () => {
-  const newColor = randomColor();
-  document.body.style.backgroundColor = colors[newColor];
-  color.style.color = colors[newColor];
-  color.textContent = colors[newColor];
-};
+  const getColor = () => {
+    const randomColor = chanceColor();
+    document.body.style.backgroundColor = colors[randomColor];
+    textColor.style.color = colors[randomColor];
+    textColor.innerText = colors[randomColor];
+  };
+  button.addEventListener("click", getColor);
+}
 
-button.addEventListener("click", getColor);
+colorChanger();

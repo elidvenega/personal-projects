@@ -8,7 +8,8 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: #94a3b8;
+  /* background: #94a3b8; */
+  background-color: #fbbf24;
 }
 
 .nav {
@@ -60,17 +61,19 @@ h1 {
 }
 
 .btn {
-  background-color: transparent;
-  border: #0f172a 2px solid;
+  /* background-color: transparent;
+  border: #0f172a 2px solid; */
+  background-color: #0f172a;
   border-radius: 5px;
+  border: none;
   margin-top: 1rem;
   padding: 0.7rem;
-  color: #0f172a;
+  color: #fff;
 }
 
 .btn:hover {
-  background-color: #0f172a;
-  color: #fff;
+  background-color: #fff;
+  color: #0f172a;
 }
 
 @media (min-width: 900px) {

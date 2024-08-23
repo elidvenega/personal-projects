@@ -1,8 +1,12 @@
+// the input element
 const newTask = document.querySelector(".add-task");
+// the button element to add to the dom
 const addTaskButton = document.querySelector(".add-button");
+// the ul
 const tasks = document.querySelector(".task-list");
 
 function addTask() {
+  // creating a variable for trim that elimanates white space
   const taskText = newTask.value.trim();
   if (taskText === "") {
     alert("Please enter a task.");

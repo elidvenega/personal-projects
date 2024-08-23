@@ -10,19 +10,13 @@ console.log(str.split(""));
 
 const arr = [1, 2, 3, 4, 5, 60];
 
-const sum = arr.reduce((total, item) => total + item, 0);
+const sum = arr.reduce((total, currentValue) => total + currentValue, 0);
 
 console.log(sum);
 
 // map
 // Will create a shallow copy and bring new array
 console.log(arr.map((x) => x * 2));
-
-// reduce
-console.log(
-  arr.reduce((a, b) => a + b, 0),
-  "Reduce"
-);
 
 // at method
 console.log(arr.at(1));
@@ -38,7 +32,7 @@ console.log(result);
 // fill method also
 const fillExample = [1, 4, 5, 6, 7];
 console.log(fillExample);
-console.log(fillExample.fill(31, 4));
+console.log(fillExample.fill(31, 4), "fill");
 
 // left off on find()
 
@@ -80,6 +74,20 @@ const animals = [
 // console.log(animals);
 
 // slice
-console.log(animals.slice(1, 5), "using slice");
+console.log(animals.slice(1, 2), "using slice");
 
 console.log(animals);
+
+// findIndex() returns the index that resolves the solution
+const array1 = [5, 12, 8, 130, 44];
+
+const isLargeNumber = (element) => element === 12;
+
+console.log(array1.findIndex(isLargeNumber));
+// Expected output: 3
+
+// looks in reverse
+const found = array1.findLast((element) => element > 45);
+console.log(found);
+
+
