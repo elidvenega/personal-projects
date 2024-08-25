@@ -2,28 +2,40 @@
 //create a function and use trim method
 // use event listener
 
-const addTask = document.querySelector(".add-task");
+const taskText = document.querySelector(".add-task");
 const taskButton = document.querySelector(".add-button");
 const taskList = document.querySelector(".task-list");
 
 function addTask() {
-  const submitTask = addTask.trim("");
+  const newTask = taskText.value.trim();
 
-  if (submitTask === "") {
-    alert("Please enter a todo");
+  if (newTask === "") {
+    alert("Enter a todo");
     return;
   }
 
   const li = document.createElement("li");
 
   const span = document.createElement("span");
-  span.textContent = submitTask;
+  span.innerText = newTask;
+
   li.append(span);
 
+  const button = document.createElement("button");
+  button.innerText = "Delete";
+  button.onclick = () => {
+    taskList.removeChild(li);
+  };
+
+  li.append(button);
+
+  taskText.value = "";
+  taskList.append(li);
 }
 
+taskButton.addEventListener("click", addTask);
 // Optional: Add task on Enter key press
-newTask.addEventListener("keypress", (e) => {
+taskText.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     addTask();
   }

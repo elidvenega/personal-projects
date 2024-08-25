@@ -50,8 +50,10 @@
 
 // colorChanger();
 
-const textColor = document.querySelector(".color");
-const button = document.querySelector(".btn");
+// textcolor textColor colortext colorText
+
+const colorText = document.querySelector(".color");
+const colorButton = document.querySelector(".btn");
 
 const colors = [
   "#64748b",
@@ -68,10 +70,10 @@ const colors = [
 const chanceColor = () => Math.floor(Math.random() * colors.length);
 
 const getColor = () => {
-  let randomColor = chanceColor();
+  const randomColor = chanceColor();
   document.body.style.backgroundColor = colors[randomColor];
-  textColor.style.color = colors[randomColor];
-  textColor.innerText = colors[randomColor];
+  colorText.style.color = colors[randomColor];
+  colorText.textContent = colors[randomColor];
 };
 
-button.addEventListener("click", getColor);
+colorButton.addEventListener("click", getColor);

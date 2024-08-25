@@ -1,11 +1,20 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container {
-  background-color: rgb(24, 168, 72);
+  background-color: rgb(31, 180, 81);
   color: #fff;
-  height: 40vh;
+  height: 100%;
   margin: auto;
+  margin-top: 2rem;
   padding: 1rem;
   text-align: center;
   width: 35rem;
+ 
+ 
 }
 
 h1 {

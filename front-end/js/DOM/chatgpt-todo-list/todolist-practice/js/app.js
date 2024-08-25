@@ -33,3 +33,10 @@ function addTask() {
 }
 
 addTaskButton.addEventListener("click", addTask);
+
+// Optional: Add task on Enter key press
+newTask.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    addTask();
+  }
+});
