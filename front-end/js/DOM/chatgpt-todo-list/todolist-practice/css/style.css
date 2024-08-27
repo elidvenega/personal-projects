@@ -10,13 +10,19 @@ body {
   height: 100%;
   margin: auto;
   margin-top: 2rem;
-  padding: 1rem;
+  padding: 3rem;
   text-align: center;
-  width: 35rem;
- 
- 
+  width: 20rem;
 }
 
 h1 {
   font-size: 2.3rem;
 }
+
+input {
+  width: 14rem;
+}
+ul {
+  list-style: none;
+}
+

@@ -10,30 +10,31 @@ function addTask() {
   const newTask = taskText.value.trim();
 
   if (newTask === "") {
-    alert("Enter a todo");
+    alert("Add a todo");
     return;
   }
 
-  const li = document.createElement("li");
+  const taskItem = document.createElement("li");
 
-  const span = document.createElement("span");
-  span.innerText = newTask;
+  const taskSpan = document.createElement("span");
+  taskSpan.innerText = newTask;
 
-  li.append(span);
-
-  const button = document.createElement("button");
-  button.innerText = "Delete";
-  button.onclick = () => {
-    taskList.removeChild(li);
+  const deleteButton = document.createElement("button");
+  deleteButton.innerText = "Delete";
+  deleteButton.onclick = () => {
+    taskList.removeChild(taskItem);
   };
 
-  li.append(button);
+  taskItem.append(taskSpan);
+  taskItem.append(deleteButton);
 
   taskText.value = "";
-  taskList.append(li);
+
+  taskList.append(taskItem);
 }
 
 taskButton.addEventListener("click", addTask);
+
 // Optional: Add task on Enter key press
 taskText.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
