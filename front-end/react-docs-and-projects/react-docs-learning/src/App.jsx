@@ -1,10 +1,11 @@
-import SecondPracticeContext from "./components/context/secondpractice-context/SecondPracticeContext";
+import List from "./components/renderingLists/Lists";
+
 
 
 export default function App() {
   return (
     <>
-     <SecondPracticeContext />
+    <List />
     </>
   );
 }

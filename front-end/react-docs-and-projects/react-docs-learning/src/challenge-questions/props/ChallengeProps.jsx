@@ -28,6 +28,7 @@ export default function ChallengeProps() {
           </li>
         </ul>
       </section>
+      
       <section className="profile">
         <h2>Katsuko Saruhashi</h2>
         <img
