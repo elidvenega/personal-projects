@@ -38,9 +38,7 @@ import "./data.css";
 
 export default function List() {
   const chemist = people.filter((chemist) => chemist.profession === "chemist");
-  const everyoneElse = people.filter(
-    (everyoneElse) => everyoneElse.profession !== "chemist"
-  );
+  const everyoneElse = people.filter((everyoneElse) => everyoneElse.profession !== "chemist");
 
   const onlyChemist = chemist.map((person) => (
     <li key={person.id}>
@@ -63,6 +61,7 @@ export default function List() {
     <>
       <h2>Chemists</h2>
       <ul>{onlyChemist}</ul>
+      <br />
       <h2>Everyone Else</h2>
       <ul>{otherProfessions}</ul>
     </>

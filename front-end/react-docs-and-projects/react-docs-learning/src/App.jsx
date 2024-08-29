@@ -1,11 +1,9 @@
-import List from "./components/renderingLists/Lists";
-
-
+import RecipeList from "./challenge-questions/rendering-lists/RecipeList";
 
 export default function App() {
   return (
     <>
-    <List />
+      <RecipeList />
     </>
   );
 }
