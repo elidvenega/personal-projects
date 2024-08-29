@@ -38,34 +38,37 @@
     <button type="button" class="reset">Reset</button>
     <script>
       const app = document.querySelector(".app");
-      const resetButton = document.querySelector(".reset");
-
-      app.innerHTML = `
-    <button>-</button>
-    <span>0</span>
-    <button>+</button>
-    `;
-
-      const [decreaseBtn, increaseBtn] = app.querySelectorAll("button");
-      const span = app.querySelector("span");
+      const reset = document.querySelector(".reset");
       let count = 0;
 
-      const decrease = () => {
-        count--;
-        span.innerText = count;
-      };
+      app.innerHTML = `
+     <button>+</button>
+     <span>${count}</span>
+     <button>-</button>
+     `;
+
+      const [btnIncrease, btnDecrease] = app.querySelectorAll("button");
+      const span = app.querySelector("span");
+      
+
       const increase = () => {
         count++;
         span.innerText = count;
       };
 
-      const reset = () => {
+      const decrease = () => {
+        count--;
+        span.innerText = count;
+      };
+
+      const resetButton = () => {
         count = 0;
         span.innerText = count;
       };
-      decreaseBtn.addEventListener("click", decrease);
-      increaseBtn.addEventListener("click", increase);
-      resetButton.addEventListener("click", reset);
+
+      btnIncrease.addEventListener("click", increase);
+      btnDecrease.addEventListener("click", decrease);
+      reset.addEventListener("click", resetButton);
     </script>
   </body>
 </html>

@@ -9,23 +9,23 @@ const taskList = document.querySelector(".task-list");
 function addTask() {
   const newTask = taskText.value.trim();
 
-  if (newTask === "") {
-    alert("Add a todo");
+  if(newTask === "") {
+    alert("Enter a todo")
     return;
   }
 
   const taskItem = document.createElement("li");
 
-  const taskSpan = document.createElement("span");
-  taskSpan.innerText = newTask;
+  const span = document.createElement("span");
+  span.innerText = newTask;
 
   const deleteButton = document.createElement("button");
   deleteButton.innerText = "Delete";
   deleteButton.onclick = () => {
-    taskList.removeChild(taskItem);
-  };
+    taskList.removeChild(taskItem)
+  }
 
-  taskItem.append(taskSpan);
+  taskItem.append(span);
   taskItem.append(deleteButton);
 
   taskText.value = "";
