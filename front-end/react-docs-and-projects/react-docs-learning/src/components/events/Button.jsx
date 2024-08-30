@@ -8,9 +8,9 @@ export default function Button() {
 
   const handleDecrement = () => setBtn((btn) => btn - 1);
 
-  const resetButton = () => setBtn(0);
+  const handleReset = () => setBtn(0);
 
-  const alertButton = () => setBtn(alert("Hello"));
+  const handleAlert = () => setBtn(alert("Hello"));
 
   return (
     <>
@@ -18,8 +18,8 @@ export default function Button() {
         <p>{btn}</p>
         <button onClick={handleIncrement}>Add</button>
         <button onClick={handleDecrement}>Subtract</button>
-        <button onClick={resetButton}>Reset</button>
-        <button onClick={alertButton}>Message</button>
+        <button onClick={handleReset}>Reset</button>
+        <button onClick={handleAlert}>Message</button>
       </section>
     </>
   );
