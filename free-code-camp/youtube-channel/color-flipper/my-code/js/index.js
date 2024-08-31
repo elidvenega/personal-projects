@@ -70,10 +70,10 @@ const colors = [
 const chanceColor = () => Math.floor(Math.random() * colors.length);
 
 const getColor = () => {
-  const randomColor = chanceColor();
-  document.body.style.backgroundColor = colors[randomColor];
-  colorText.style.color = colors[randomColor];
-  colorText.textContent = colors[randomColor];
+  const newColor = chanceColor();
+  document.body.style.backgroundColor = colors[newColor];
+  colorText.style.color = colors[newColor];
+  colorText.innerText = colors[newColor];
 };
 
 colorButton.addEventListener("click", getColor);

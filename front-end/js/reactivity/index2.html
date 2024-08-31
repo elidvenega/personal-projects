@@ -37,38 +37,41 @@
     <div class="app"></div>
     <button type="button" class="reset">Reset</button>
     <script>
-      const app = document.querySelector(".app");
-      const reset = document.querySelector(".reset");
-      let count = 0;
+      function app() {
+        const app = document.querySelector(".app");
+        const reset = document.querySelector(".reset");
+        let count = 0;
 
-      app.innerHTML = `
+        app.innerHTML = `
      <button>+</button>
      <span>${count}</span>
      <button>-</button>
      `;
 
-      const [btnIncrease, btnDecrease] = app.querySelectorAll("button");
-      const span = app.querySelector("span");
-      
+        const [btnIncrease, btnDecrease] = app.querySelectorAll("button");
+        const span = app.querySelector("span");
 
-      const increase = () => {
-        count++;
-        span.innerText = count;
-      };
+        const increase = () => {
+          count++;
+          span.innerText = count;
+        };
 
-      const decrease = () => {
-        count--;
-        span.innerText = count;
-      };
+        const decrease = () => {
+          count--;
+          span.innerText = count;
+        };
 
-      const resetButton = () => {
-        count = 0;
-        span.innerText = count;
-      };
+        const resetButton = () => {
+          count = 0;
+          span.innerText = count;
+        };
 
-      btnIncrease.addEventListener("click", increase);
-      btnDecrease.addEventListener("click", decrease);
-      reset.addEventListener("click", resetButton);
+        btnIncrease.addEventListener("click", increase);
+        btnDecrease.addEventListener("click", decrease);
+        reset.addEventListener("click", resetButton);
+      }
+
+      app();
     </script>
   </body>
 </html>
