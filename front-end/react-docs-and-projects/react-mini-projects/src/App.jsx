@@ -1,10 +1,11 @@
-import Input from "./assets/components/input-project/Input";
+import Counter from "./assets/projects/counter/Counter";
 import "./App.css";
 
 export default function App() {
   return (
     <>
-      <Input />
+     <Counter />
+     <Counter />
     </>
   );
 }

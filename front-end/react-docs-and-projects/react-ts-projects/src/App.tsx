@@ -1,9 +1,9 @@
-import TodoList from "./components/TodoList";
+import Counter from "./projects/Counter";
 
 export default function App() {
   return (
     <>
-      <TodoList />
+     <Counter />
     </>
   );
 }
