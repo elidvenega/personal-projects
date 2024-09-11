@@ -1,11 +1,10 @@
-import Counter from "./assets/projects/counter/Counter";
 import "./App.css";
+import MapThroughList from "./assets/projects/map-through-list/MapThroughList";
 
 export default function App() {
   return (
     <>
-     <Counter />
-     <Counter />
+      <MapThroughList />
     </>
   );
 }

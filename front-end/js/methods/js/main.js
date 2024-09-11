@@ -74,9 +74,8 @@ const animals = [
 // console.log(animals);
 
 // slice
-console.log(animals.slice(1, 2), "using slice");
-
-console.log(animals);
+const resultSlice = animals.slice(1, 3);
+console.log(resultSlice, "using slice");
 
 // findIndex() returns the index that resolves the solution
 const array1 = [5, 12, 8, 130, 44];
@@ -89,5 +88,3 @@ console.log(array1.findIndex(isLargeNumber));
 // looks in reverse
 const found = array1.findLast((element) => element > 45);
 console.log(found);
-
-
