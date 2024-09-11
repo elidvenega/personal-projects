@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  --text-color: black;
+  --background: white;
+}
+
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background: var(--background);
+  color: var(--text-color);
+}
+
+body:has(option[value="dark"]:checked) {
+  --background: black;
+  --text-color: white;
+}
+
+.container {
+  text-align: center;
+  margin: auto;
+  margin-top: 3rem;
+  padding: 2rem;
+  width: 30rem;
+}

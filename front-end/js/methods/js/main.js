@@ -19,7 +19,7 @@ console.log(sum);
 console.log(arr.map((x) => x * 2));
 
 // at method
-console.log(arr.at(1));
+console.log(arr.at(1), "at()");
 
 // filter method
 const words = ["spray", "elite", "exuberant", "destruction", "present"];
@@ -32,7 +32,7 @@ console.log(result);
 // fill method also
 const fillExample = [1, 4, 5, 6, 7];
 console.log(fillExample);
-console.log(fillExample.fill(31, 4), "fill");
+console.log(fillExample.fill(31, 4), "fill()");
 
 // left off on find()
 
@@ -82,7 +82,7 @@ const array1 = [5, 12, 8, 130, 44];
 
 const isLargeNumber = (element) => element === 12;
 
-console.log(array1.findIndex(isLargeNumber));
+console.log(array1.findIndex(isLargeNumber),"findIndex()");
 // Expected output: 3
 
 // looks in reverse
