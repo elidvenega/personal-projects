@@ -16,30 +16,18 @@ export default function MapThroughList() {
     setTodo(updatedTodos);
   };
   return (
-    
-      <div className="container">
-        <h1>Todo List</h1>
-        <ul>
-          {todo.map((todos) => (
-            <li key={todos.id}>
-              {todos.task}
-              <button type="button" onClick={() => handleDelete(todos.id)}>
-                Delete
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
-    
+    <div className="container">
+      <h1>Todo List</h1>
+      <ul>
+        {todo.map((todos) => (
+          <li key={todos.id}>
+            {todos.task}
+            <button type="button" onClick={() => handleDelete(todos.id)}>
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
-}
-
-{
-  /* <button
-onClick={() =>
-  setTodo(todo.filter((item) => item.id !== todos.id))
-}
->
-Delete
-</button> */
 }

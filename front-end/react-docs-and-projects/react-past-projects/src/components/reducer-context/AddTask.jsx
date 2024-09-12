@@ -10,6 +10,16 @@ export default function AddTask() {
         placeholder="Add task"
         value={text}
         onChange={(e) => setText(e.target.value)}
+        onKeyDown={(e) => {
+          if(e.key === "Enter") {
+            e.preventDefault()
+            dispatch({
+              type: "added",
+              id: nextId++,
+              text: text,
+            });
+          }
+        }}
       />
       <button
         onClick={() => {

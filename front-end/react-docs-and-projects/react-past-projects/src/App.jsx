@@ -1,5 +1,5 @@
 import "./App.css";
-import AnimeApi from "./components/animeapi/AnimeApi.jsx";
+import TaskApp from "./components/reducer-context/TaskApp";
 
 export default function App() {
   // let Component
@@ -15,7 +15,7 @@ export default function App() {
   // }
   return (
     <>
-      <AnimeApi />
+    <TaskApp />
     </>
   );
 }
