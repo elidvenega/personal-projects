@@ -7,24 +7,3 @@ const todoList = [
   { id: 3, task: "Guitar Practice" },
 ];
 
-export default function Example() {
-  const [todo, setTodo] = useState(todoList);
-
-   const handleDelete = (id) => {
-    setTodo(todo.filter((item) => item.id !== id))
-   }
-
-  return (
-    <div>
-      <ul>
-        {todo.map((todos) => (
-          <li key={todos.id}>
-            {todos.task}
-            <button type="button" onClick={() => handleDelete(todos.id)}>Delete</button>
-            </li>
-          
-        ))}
-      </ul>
-    </div>
-  );
-}

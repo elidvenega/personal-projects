@@ -1,10 +1,11 @@
+
 import "./App.css";
-import MapThroughList from "./assets/projects/map-through-list/MapThroughList";
+import Example from "./assets/projects/map-through-list/Example";
 
 export default function App() {
   return (
     <>
-      <MapThroughList />
+    <Example />
     </>
   );
 }
