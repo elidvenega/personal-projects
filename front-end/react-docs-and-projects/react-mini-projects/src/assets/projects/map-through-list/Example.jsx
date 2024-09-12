@@ -1,31 +1,44 @@
 import { useState } from "react";
 
-const todoList = [
-  { id: 0, task: "Work" },
-  { id: 1, task: "Eat" },
-  { id: 2, task: "Walk 30 mins" },
-  { id: 3, task: "Guitar Practice" },
-];
+// const todoList = [
+//   { id: 0, task: "Work" },
+//   { id: 1, task: "Eat" },
+//   { id: 2, task: "Walk 30 mins" },
+//   { id: 3, task: "Guitar Practice" },
+// ];
+
+const todoList = ["Eat", "Work Out", "Walk", "Make bread"];
 
 export default function Example() {
-  const [todo, setTodo] = useState(todoList);
+  const [todos, setTodos] = useState(todoList);
 
   // const handleDelete = (id) => {
   //   const newList = todo.filter((t) => t.id !== id);
   //   setTodo(newList);
   // };
 
+  const handleDelete = (index) => {
+    const newList = todos.filter((_, i) => i !== index);
+    setTodos(newList);
+  }
+
   return (
     <div>
       <ul>
-        {
-          todo.map((todos) => (
-            <li key={todos.id}>
-              {todos.task}
-              <button onClick={() => setTodo(todo.filter((a) => a.id !== todos.id ))}>Delete</button>
-            </li>
-          ))
-        }
+        {todos.map((todo, index) => (
+          <li key={index}>
+            {todo}
+            {/* <button
+              type="button"
+              onClick={() =>
+                setTodos(todos.filter((taskList) => taskList.id !== todo.id))
+              }
+            >
+              Delete
+            </button> */}
+            <button onClick={ () => handleDelete(index)}>Delete</button>
+          </li>
+        ))}
       </ul>
     </div>
   );
