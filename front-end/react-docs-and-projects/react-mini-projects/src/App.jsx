@@ -1,11 +1,10 @@
-
 import "./App.css";
-import Example from "./assets/projects/map-through-list/Example";
+import TodoList from "./assets/projects/todolist/TodoList";
 
 export default function App() {
   return (
     <>
-    <Example />
+     <TodoList />
     </>
   );
 }

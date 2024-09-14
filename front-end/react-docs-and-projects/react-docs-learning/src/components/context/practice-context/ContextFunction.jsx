@@ -4,18 +4,18 @@ import { PracticeContext } from "./PracticeContext";
 function Section({ level, children }) {
   return (
     <section>
-    <PracticeContext.Provider value={level}>
+      <PracticeContext.Provider value={level}>
         {children}
-    </PracticeContext.Provider>
+      </PracticeContext.Provider>
     </section>
   );
 }
 
 function Heading({ children }) {
   const level = useContext(PracticeContext);
-  switch (level) { 
+  switch (level) {
     case 1:
-      return <h1>{children}</h1>;
+      return <p>{children}</p>;
     case 2:
       return <h2>{children}</h2>;
     case 3:
@@ -33,7 +33,19 @@ export default function ContextFunction() {
   return (
     <>
       <Section level={1}>
-        <Heading>Hello</Heading>
+        <Heading>Hello It Works</Heading>
+        <Heading>Hello It Works</Heading>
+        <Heading>Hello It Works</Heading>
+        <Section level={2}>
+          <Heading>Hello</Heading>
+          <Heading>Hello</Heading>
+          <Heading>Hello</Heading>
+          <Section level={3}>
+            <Heading>Hello</Heading>
+            <Heading>Hello</Heading>
+            <Heading>Hello</Heading>
+          </Section>
+        </Section>
       </Section>
     </>
   );

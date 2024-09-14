@@ -23,10 +23,12 @@ export function TasksProvider({ children }) {
 }
 
 // Custom hooks
+// eslint-disable-next-line react-refresh/only-export-components
 export function useTasks() {
   return useContext(TasksContext);
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useTasksDispatch() {
   return useContext(TasksDispatchContext);
 }

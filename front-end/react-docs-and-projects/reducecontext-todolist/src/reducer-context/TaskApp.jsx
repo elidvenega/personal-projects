@@ -19,6 +19,6 @@ export default function TaskApp() {
 }
 
 // Components order we will study
-// 1. Tasks Provider from TaskContext - [x]
-// 2. Add Task - [x]
-// 3. TaskList - [x]
+// 1. Tasks Provider from TaskContext - []
+// 2. Add Task - []
+// 3. TaskList - []
