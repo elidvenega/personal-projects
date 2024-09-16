@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
   </head>
-  <body> 
+  <body>
     <div class="container">
       <h1>Todo List</h1>
       <input type="text" class="add-task" placeholder="Add Todo" />
@@ -15,6 +15,41 @@
     </div>
 
     <!-- <script src="./js/app.js"></script> -->
-     <script src="./js/todolist.js"></script>
+    <!-- <script src="./js/todolist.js"></script> -->
+
+    <script>
+      const newTask = document.querySelector(".add-task");
+      const addButton = document.querySelector(".add-button");
+      const newList = document.querySelector(".task-list");
+
+      function todos() {
+        const addTask = newTask.value.trim();
+
+        if (addTask === "") {
+          alert("Enter a Todo");
+          return;
+        }
+
+        const li = document.createElement("li");
+
+        const span = document.createElement("span");
+        span.innerText = addTask;
+
+        li.append(span);
+
+        const button = document.createElement("button");
+        button.textContent = "Delete";
+        button.onclick = () => {
+          newList.removeChild(li);
+        };
+
+        li.append(button);
+
+        newTask.value = "";
+        newList.append(li);
+      }
+
+      addButton.addEventListener("click", todos);
+    </script>
   </body>
 </html>

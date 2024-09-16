@@ -33,11 +33,18 @@ function addTask() {
   taskList.append(taskItem);
 }
 
+function keyDown(e) {
+  if(e.key == "Enter") {
+    addTask()
+  }
+}
+
 taskButton.addEventListener("click", addTask);
+taskText.addEventListener("keypress", keyDown);
 
 // Optional: Add task on Enter key press
-taskText.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") {
-    addTask();
-  }
-});
+// taskText.addEventListener("keypress", (e) => {
+//   if (e.key === "Enter") {
+//     addTask();
+//   }
+// });

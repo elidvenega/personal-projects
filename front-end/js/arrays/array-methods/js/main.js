@@ -40,3 +40,11 @@ items.forEach((item) => {
 });
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+const animals = ["Wolves", "Birds", "Lions", "Tigers", "Dogs"];
+
+const animalList = animals.map((animal) => animal)
+console.log(animalList);
+ 
+output.textContent = animalList.join(" ");
