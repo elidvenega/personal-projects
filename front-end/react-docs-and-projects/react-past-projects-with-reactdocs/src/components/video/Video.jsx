@@ -17,6 +17,7 @@ export default function Video() {
             padding: "1rem",
           }}
           url="https://www.youtube.com/embed/2g6R1ODqSio"
+          loop=
         />
       </div>
     </>

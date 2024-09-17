@@ -1,5 +1,5 @@
 import "./App.css";
-import TaskApp from "./components/reducer-context/TaskApp";
+import Video from "./components/video/Video";
 
 export default function App() {
   // let Component
@@ -15,7 +15,7 @@ export default function App() {
   // }
   return (
     <>
-    <TaskApp />
+      <Video />
     </>
   );
 }
