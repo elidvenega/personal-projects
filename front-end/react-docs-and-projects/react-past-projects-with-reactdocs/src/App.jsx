@@ -1,5 +1,6 @@
+//import Accordion from "./components/accordion/Accordion";
 import "./App.css";
-import Video from "./components/video/Video";
+import AccordionPractice from "./components/accordion/practice/AccordionPractice";
 
 export default function App() {
   // let Component
@@ -15,7 +16,8 @@ export default function App() {
   // }
   return (
     <>
-      <Video />
+      <AccordionPractice />
+      {/* <Accordion /> */}
     </>
   );
 }

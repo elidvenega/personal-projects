@@ -1,10 +1,10 @@
 import "./App.css";
-import TodoList from "./assets/projects/todolist/TodoList";
+import Accordion from "./assets/projects/accordion/Accordion";
 
 export default function App() {
   return (
     <>
-     <TodoList />
+      <Accordion />
     </>
   );
 }
