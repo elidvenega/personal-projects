@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
-import { useTasks, useTasksDispatch } from './TasksContext.jsx';
+import { useState } from "react";
+import { useTasks, useTasksDispatch } from "./TaskContext.jsx";
 
 export default function TaskList() {
+  // Using the custom variable to display list
+  // Here we are using task which comes from Task component
   const tasks = useTasks();
   return (
     <ul>
@@ -24,27 +26,24 @@ function Task({ task }) {
       <>
         <input
           value={task.text}
-          onChange={e => {
+          onChange={(e) => {
             dispatch({
-              type: 'changed',
+              type: "changed",
               task: {
                 ...task,
-                text: e.target.value
-              }
+                text: e.target.value,
+              },
             });
-          }} />
-        <button onClick={() => setIsEditing(false)}>
-          Save
-        </button>
+          }}
+        />
+        <button onClick={() => setIsEditing(false)}>Save</button>
       </>
     );
   } else {
     taskContent = (
       <>
         {task.text}
-        <button onClick={() => setIsEditing(true)}>
-          Edit
-        </button>
+        <button onClick={() => setIsEditing(true)}>Edit</button>
       </>
     );
   }
@@ -53,23 +52,25 @@ function Task({ task }) {
       <input
         type="checkbox"
         checked={task.done}
-        onChange={e => {
+        onChange={(e) => {
           dispatch({
-            type: 'changed',
+            type: "changed",
             task: {
               ...task,
               done: e.target.checked
-            }
+            },
           });
         }}
       />
       {taskContent}
-      <button onClick={() => {
-        dispatch({
-          type: 'deleted',
-          id: task.id
-        });
-      }}>
+      <button
+        onClick={() => {
+          dispatch({
+            type: "deleted",
+            id: task.id,
+          });
+        }}
+      >
         Delete
       </button>
     </label>
