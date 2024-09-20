@@ -1,10 +1,11 @@
+/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
 import { createContext, useContext, useReducer } from "react";
 
 const todoList = [
-  { id: 0, todo: "Go to work", done: false },
-  { id: 1, todo: "Read 15 mins", done: false },
-  { id: 2, todo: "Exercise 30 mins", done: false },
+  { id: 0, text: "Go to work", done: false },
+  { id: 1, text: "Read 15 mins", done: false },
+  { id: 2, text: "Exercise 30 mins", done: false },
 ];
 
 const TaskProvider = createContext(null);
@@ -13,21 +14,21 @@ const TaskDispatch = createContext(null);
 // customHooks
 
 export const useTasks = () => {
-  useContext(TaskProvider);
+  return useContext(TaskProvider);
 };
 
 export const useTasksDispatch = () => {
-  useContext(TaskDispatch);
+  return useContext(TaskDispatch);
 };
 
-const reducerFunc = (tasks, action) => {
+function reducerFunc(tasks, action) {
   switch (action.type) {
     case "added": {
       return [
         ...tasks,
         {
           id: action.id,
-          text: action.todo,
+          text: action.text,
           done: false,
         },
       ];
@@ -51,7 +52,7 @@ const reducerFunc = (tasks, action) => {
       throw Error("Unkonwn action" + action.type);
     }
   }
-};
+}
 
 export default function TaskContext({ children }) {
   const [tasks, dispatch] = useReducer(reducerFunc, todoList);

@@ -1,6 +1,6 @@
 import AddTask from "./AddTask";
-import TaskContext from "./TaskContext";
-import TaskList from "./TaskList";
+import TaskContext from "./TaskContext.jsx";
+import TaskList from "./TaskList.jsx";
 
 export default function TaskApp() {
   return (
