@@ -21,7 +21,7 @@ export const useTasksDispatch = () => {
   return useContext(TaskDispatch);
 };
 
-function reducerFunc(tasks, action) {
+const reducerFunc = (tasks, action) => {
   switch (action.type) {
     case "added": {
       return [
@@ -52,7 +52,7 @@ function reducerFunc(tasks, action) {
       throw Error("Unkonwn action" + action.type);
     }
   }
-}
+};
 
 export default function TaskContext({ children }) {
   const [tasks, dispatch] = useReducer(reducerFunc, todoList);
