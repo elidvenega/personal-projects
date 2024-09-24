@@ -6,6 +6,8 @@ const todoList = [
   { id: 0, todo: "Go for a walk", done: false },
   { id: 1, todo: "Play Guitar", done: false },
   { id: 2, todo: "Code an hour", done: false },
+  { id: 3, todo: "Read 15 mins", done: false },
+  { id: 4, todo: "Go get groceries", done: false },
 ];
 
 const TaskContext = createContext(null);
