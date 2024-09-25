@@ -1,27 +1,21 @@
-/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useReducer } from "react";
 
 const todoList = [
   { id: 0, todo: "Walk 15 mins", done: false },
-  { id: 1, todo: "Read audiobook", done: false },
-  { id: 2, todo: "Watch Documentary", done: false },
-  { id: 4, todo: "Prepare Lunch", done: false },
+  { id: 1, todo: "Guitar 20 mins", done: false },
+  { id: 2, todo: "Cook lunch", done: false },
+  { id: 3, todo: "Propare Dinner", done: false },
 ];
 
 const TasksContext = createContext(null);
-const TasksContextDispatch = createContext(null);
+const DispatchContext = createContext(null);
 
-export function useTasks() {
-  return useContext(TasksContext);
-}
+export const useTasks = () => useContext(TasksContext);
+export const useDispatch = () => useContext(DispatchContext);
 
-export function useTasksDispatch() {
-  return useContext(TasksContextDispatch);
-}
-
-function reducerFunc(tasks, action) {
+function ReducerFunc(tasks, action) {
   switch (action.type) {
     case "added": {
       return [
@@ -33,13 +27,14 @@ function reducerFunc(tasks, action) {
         },
       ];
     }
+
     case "changed": {
       return tasks.map((t) => {
         if (t.id === action.task.id) {
           return action.task;
         } else {
           return t;
-        } 
+        }
       });
     }
 
@@ -48,18 +43,19 @@ function reducerFunc(tasks, action) {
     }
 
     default: {
-      throw Error("Wrond action" + action.type);
+      throw Error("Wrong action" + action.type);
     }
   }
 }
 
-export default function TaskContextPovider({ children }) {
-  const [tasks, dispatch] = useReducer(reducerFunc, todoList);
+export default function TaskContextProvider({ children }) {
+  const [tasks, dispatch] = useReducer(ReducerFunc, todoList);
+
   return (
     <TasksContext.Provider value={tasks}>
-      <TasksContextDispatch.Provider value={dispatch}>
+      <DispatchContext.Provider value={dispatch}>
         {children}
-      </TasksContextDispatch.Provider>
+      </DispatchContext.Provider>
     </TasksContext.Provider>
   );
 }

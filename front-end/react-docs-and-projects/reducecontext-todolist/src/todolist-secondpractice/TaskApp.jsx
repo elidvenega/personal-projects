@@ -1,13 +1,13 @@
 import AddTask from "./AddTask";
-import TaskContextPovider from "./TaskContextPovider";
+import TaskContextProvider from "./TaskContextProvider";
 import TaskList from "./TaskList";
 
 export default function TaskApp() {
   return (
-    <TaskContextPovider>
-      <h1>Todo List</h1>
+    <TaskContextProvider>
+        <h1>Todo List</h1>
       <AddTask />
       <TaskList />
-    </TaskContextPovider>
+    </TaskContextProvider>
   );
 }
