@@ -1,28 +1,26 @@
-// const output = document.querySelector(".output");
-// let arr = ["Wolfs", "Vampires", "Dogs", "Rabbits"];
-// let emptyArr = [];
+const output = document.querySelector(".output");
+let arr = ["Wolfs", "Vampires", "Dogs", "Rabbits"];
+let emptyArr = [];
 
-// for (let i = 0; i < arr.length; i++) {
-//    emptyArr.push(arr[i]);
-// output.innerText = emptyArr.push(arr[i]);
-// console.log(arr[i]);
-//}
+for (let i = 0; i < arr.length; i++) {
+  output.innerText = emptyArr.push(arr[i]);
+}
 
-//document.body.innerText = emptyArr;
+document.body.innerText = emptyArr;
 
 // const output = document.querySelector('.output').innerHTML = arr;
 //  output.innerText = emptyArr;
 
 // document.body.innerHTML = arr;
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-const secondOutput = document.querySelector(".output");
-let emptyNumList = [];
+// const secondOutput = document.querySelector(".output");
+// let emptyNumList = [];
 
-for (let i = 1; i < 10; i++) {
-  emptyNumList.push([i]);
-}
+// for (let i = 1; i < 10; i++) {
+//   emptyNumList.push([i]);
+// }
 
-secondOutput.textContent = emptyNumList;
+// secondOutput.textContent = emptyNumList;
 
 //  document.body.innerText = emptyNumList;
 // document.body.innerHTML = emptyNumList;
