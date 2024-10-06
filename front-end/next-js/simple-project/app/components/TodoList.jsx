@@ -2,42 +2,48 @@
 
 import { useState } from "react";
 
+const todos = [
+  "Exercise 30 mins",
+  "Read 20 mins",
+  "Guitar Scales Practice",
+  "Cook",
+];
 export default function TodoList() {
-  const [list, setList] = useState([]);
-  const [text, setText] = useState("");
+  const [todoList, setTodoList] = useState(todos);
+  const [inputValue, setInputValue] = useState("");
 
-  const handleInput = (e) => setText(e.target.value);
+  const handleInput = (e) => setInputValue(e.target.value);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setList([...list, text]);
-    setText("");
+  const handleSubmit = () => {
+    if (inputValue.trim() !== "") {
+      setTodoList([...todoList, inputValue]);
+      setInputValue("");
+    }
   };
-
   const handleDelete = (index) => {
-    const newList = [...list];
+    const newList = [...todoList];
     newList.splice(index, 1);
-    setList(newList)
+    setTodoList(newList);
   };
-
   return (
     <>
-      <h1>Todo List</h1>
       <div className="container">
-        <form>
+        <h1>Todo List</h1>
+        <form action="">
           <input
             type="text"
-            value={text}
-            placeholder="Add Todo"
+            placeholder="Todo List"
+            value={inputValue}
             onChange={handleInput}
           />
-          <button onClick={handleSubmit}>Add</button>
+          <button type="button" onClick={handleSubmit}>
+            Add
+          </button>
         </form>
-
         <ul>
-          {list.map((text, index) => (
+          {todoList.map((list, index) => (
             <li key={index}>
-              {text}
+              {list}
               <button onClick={() => handleDelete(index)}>Delete</button>
             </li>
           ))}
