@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const todos = [
   "Exercise 30 mins",
@@ -16,15 +16,34 @@ export default function TodoList() {
 
   const handleSubmit = () => {
     if (inputValue.trim() !== "") {
-      setTodoList([...todoList, inputValue]);
+      const updatedList = [...todoList, inputValue];
+      setTodoList(updatedList);
       setInputValue("");
+      localStorage.setItem("todos", JSON.stringify(updatedList));
     }
   };
   const handleDelete = (index) => {
     const newList = [...todoList];
     newList.splice(index, 1);
     setTodoList(newList);
+    localStorage.setItem("todos", JSON.stringify(newList));
   };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSubmit();
+    }
+  };
+
+  useEffect(() => {
+    // When the component mounts, check if there are todos in localStorage
+    const savedTodos = JSON.parse(localStorage.getItem("todos"));
+    if (savedTodos) {
+      setTodoList(savedTodos);
+    }
+  }, []);
+
   return (
     <>
       <div className="container">
@@ -35,6 +54,7 @@ export default function TodoList() {
             placeholder="Todo List"
             value={inputValue}
             onChange={handleInput}
+            onKeyDown={handleKeyDown}
           />
           <button type="button" onClick={handleSubmit}>
             Add
