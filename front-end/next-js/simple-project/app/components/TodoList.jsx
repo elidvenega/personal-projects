@@ -2,26 +2,27 @@
 
 import { useState, useEffect } from "react";
 
-const todos = [
-  "Exercise 30 mins",
-  "Read 20 mins",
-  "Guitar Scales Practice",
-  "Cook",
+const todaysList = [
+  "Work Out 30 mins",
+  "Grocery Shopping",
+  "Go to eat with friends",
 ];
+
 export default function TodoList() {
-  const [todoList, setTodoList] = useState(todos);
+  const [todoList, setTodoList] = useState(todaysList);
   const [inputValue, setInputValue] = useState("");
 
   const handleInput = (e) => setInputValue(e.target.value);
 
   const handleSubmit = () => {
     if (inputValue.trim() !== "") {
-      const updatedList = [...todoList, inputValue];
-      setTodoList(updatedList);
+      const submitTodos = [...todoList, inputValue];
+      setTodoList(submitTodos);
       setInputValue("");
-      localStorage.setItem("todos", JSON.stringify(updatedList));
+      localStorage.setItem("todos", JSON.stringify(submitTodos));
     }
   };
+
   const handleDelete = (index) => {
     const newList = [...todoList];
     newList.splice(index, 1);
@@ -35,15 +36,12 @@ export default function TodoList() {
       handleSubmit();
     }
   };
-
   useEffect(() => {
-    // When the component mounts, check if there are todos in localStorage
     const savedTodos = JSON.parse(localStorage.getItem("todos"));
     if (savedTodos) {
-      setTodoList(savedTodos);
+      savedTodos;
     }
   }, []);
-
   return (
     <>
       <div className="container">
@@ -51,24 +49,27 @@ export default function TodoList() {
         <form action="">
           <input
             type="text"
-            placeholder="Todo List"
+            placeholder="Add Todo"
             value={inputValue}
             onChange={handleInput}
             onKeyDown={handleKeyDown}
           />
-          <button type="button" onClick={handleSubmit}>
+          <button type="button" className="btn" onClick={handleSubmit}>
             Add
           </button>
         </form>
-        <ul>
-          {todoList.map((list, index) => (
-            <li key={index}>
-              {list}
-              <button onClick={() => handleDelete(index)}>Delete</button>
-            </li>
-          ))}
-        </ul>
       </div>
+
+      <ul>
+        {todoList.map((task, index) => (
+          <li key={index}>
+            {task}
+            <button className="del-btn" onClick={() => handleDelete(index)}>
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
     </>
   );
 }
