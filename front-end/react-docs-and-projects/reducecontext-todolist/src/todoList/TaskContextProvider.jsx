@@ -12,7 +12,8 @@ const TasksProvider = createContext(null);
 const DispatchProvider = createContext(null);
 
 export const useTasks = () => useContext(TasksProvider);
-export const useDispatch = () => useContext(DispatchProvider);
+
+export const useTasksDispatch = () => useContext(DispatchProvider);
 
 function reducedFunc(tasks, action) {
   switch (action.type) {
@@ -47,7 +48,7 @@ function reducedFunc(tasks, action) {
 }
 
 export default function TaskContextProvider({ children }) {
-  const [todos, disptach] = useReducer(todoList, reducedFunc);
+  const [todos, disptach] = useReducer(reducedFunc, todoList);
   return (
     <TasksProvider.Provider value={todos}>
       <DispatchProvider.Provider value={disptach}>

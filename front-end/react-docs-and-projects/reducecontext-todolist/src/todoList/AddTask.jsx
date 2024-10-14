@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { useDispatch } from "./TaskContextProvider";
+import { useTasksDispatch } from "./TaskContextProvider";
 
 let nextId = 3;
 export default function AddTask() {
   const [task, setTask] = useState("");
-  const addTodo = useDispatch();
+  const addTodo = useTasksDispatch();
 
   const handleInput = (e) => setTask(e.target.value);
   const handleSubmit = () => {
@@ -33,7 +33,7 @@ export default function AddTask() {
         onChange={handleInput}
         onKeyDown={handleKeyDown}
       />
-      <button onClick={handleSubmit}></button>
+      <button onClick={handleSubmit}>Add</button>
     </>
   );
 }
