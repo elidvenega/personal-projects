@@ -1,9 +1,9 @@
-import TaskApp from "./todoList/TaskApp";
+import TodoList from "./secondpractice/TodoList";
 
 export default function App() {
   return (
     <>
-      <TaskApp />
+      <TodoList />
     </>
   );
 }
