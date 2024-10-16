@@ -1,12 +1,13 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
-import { createContext, useContext, useReducer } from "react";
+
+import { useContext, createContext, useReducer } from "react";
 
 const todoList = [
-  { id: 0, todo: "Eat Healthy Snack", completed: false },
-  { id: 1, todo: "Work Out 30 mins", completed: false },
-  { id: 2, todo: "Read 20 mins", completed: false },
-  { id: 3, todo: "Practice Guitar", completed: false },
+  { id: 0, todo: "Eat 15 mins", done: false },
+  { id: 1, todo: "Go Biking", done: false },
+  { id: 2, todo: "Eat Healthy", done: false },
+  { id: 4, todo: "Walk Outdoors", done: false },
 ];
 
 const TasksContext = createContext(null);
@@ -23,10 +24,11 @@ function reducerFunc(tasks, action) {
         {
           id: action.id,
           todo: action.todo,
-          completed: false,
+          done: false,
         },
       ];
     }
+
     case "changed": {
       return tasks.map((t) => {
         if (t.id === action.task.id) {
@@ -42,13 +44,14 @@ function reducerFunc(tasks, action) {
     }
 
     default: {
-      throw Error("Unknown Action" + action.type);
+      throw Error("Unknown action" + action.type);
     }
   }
 }
 
 export default function ContextFunction({ children }) {
   const [tasks, dispatch] = useReducer(reducerFunc, todoList);
+
   return (
     <TasksContext.Provider value={tasks}>
       <TasksDispatch.Provider value={dispatch}>

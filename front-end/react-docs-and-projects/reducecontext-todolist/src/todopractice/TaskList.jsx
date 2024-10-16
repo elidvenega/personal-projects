@@ -1,37 +1,22 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { useTasks, useTasksDispatch } from "./TaskContext.jsx";
-
-export default function TaskList() {
-  // Using the custom variable to display list
-  // Here we are using task which comes from Task component
-  const tasks = useTasks();
-  return (
-    <ul>
-      {tasks.map((task) => (
-        <li key={task.id}>
-          <Task task={task} />
-        </li>
-      ))}
-    </ul>
-  );
-}
+import { useDispatch, useTasks } from "./ContextFunction";
 
 function Task({ task }) {
   const [isEditing, setIsEditing] = useState(false);
-  const dispatch = useTasksDispatch();
+  const dispatch = useDispatch();
   let taskContent;
   if (isEditing) {
     taskContent = (
       <>
         <input
-          value={task.text}
+          value={task.todo}
           onChange={(e) => {
             dispatch({
               type: "changed",
               task: {
                 ...task,
-                text: e.target.value,
+                todo: e.target.value,
               },
             });
           }}
@@ -42,7 +27,7 @@ function Task({ task }) {
   } else {
     taskContent = (
       <>
-        {task.text}
+        {task.todo}
         <button onClick={() => setIsEditing(true)}>Edit</button>
       </>
     );
@@ -51,7 +36,7 @@ function Task({ task }) {
     <label>
       <input
         type="checkbox"
-        checked={task.done}
+        value={task.done}
         onChange={(e) => {
           dispatch({
             type: "changed",
@@ -74,5 +59,18 @@ function Task({ task }) {
         Delete
       </button>
     </label>
+  );
+}
+
+export default function TaskList() {
+  const tasks = useTasks();
+  return (
+    <ul>
+      {tasks.map((task) => (
+        <li key={task.id}>
+          <Task task={task} />
+        </li>
+      ))}
+    </ul>
   );
 }
