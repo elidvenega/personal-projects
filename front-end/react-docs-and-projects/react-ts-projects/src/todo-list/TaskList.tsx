@@ -1,78 +1,45 @@
+import { useTasks, useTasksDispatch } from "./TaskContext";
 
-import { useState } from "react";
-import { useTasks, useTasksDispatch } from "./TaskContext.js";
+interface Task {
+  id: number;
+  text: string;
+  done: boolean;
+}
 
-export default function TaskList() {
-  // Using the custom variable to display list
-  // Here we are using task which comes from Task component
+const TaskList: React.FC = () => {
   const tasks = useTasks();
+  const dispatch = useTasksDispatch();
+
+  if (!tasks || !dispatch) {
+    return <div>No tasks available</div>;
+  }
+
+  const handleToggleTask = (task: Task) => {
+    dispatch({
+      type: "changed",
+      task: { ...task, done: !task.done },
+    });
+  };
+
+  const handleDeleteTask = (taskId: number) => {
+    dispatch({ type: "delete", id: taskId });
+  };
+
   return (
     <ul>
       {tasks.map((task) => (
         <li key={task.id}>
-          <Task task={task} />
+          <input
+            type="checkbox"
+            checked={task.done}
+            onChange={() => handleToggleTask(task)}
+          />
+          {task.text}
+          <button onClick={() => handleDeleteTask(task.id)}>Delete</button>
         </li>
       ))}
     </ul>
   );
-}
+};
 
-function Task({ task }) {
-  const [isEditing, setIsEditing] = useState(false);
-  const dispatch = useTasksDispatch();
-  let taskContent;
-  if (isEditing) {
-    taskContent = (
-      <>
-        <input
-          value={task.text}
-          onChange={(e) => {
-            dispatch({
-              type: "changed",
-              task: {
-                ...task,
-                text: e.target.value,
-              },
-            });
-          }}
-        />
-        <button onClick={() => setIsEditing(false)}>Save</button>
-      </>
-    );
-  } else {
-    taskContent = (
-      <>
-        {task.text}
-        <button onClick={() => setIsEditing(true)}>Edit</button>
-      </>
-    );
-  }
-  return (
-    <label>
-      <input
-        type="checkbox"
-        checked={task.done}
-        onChange={(e) => {
-          dispatch({
-            type: "changed",
-            task: {
-              ...task,
-              done: e.target.checked,
-            },
-          });
-        }}
-      />
-      {taskContent}
-      <button
-        onClick={() => {
-          dispatch({
-            type: "delete",
-            id: task.id,
-          });
-        }}
-      >
-        Delete
-      </button>
-    </label>
-  );
-}
+export default TaskList;

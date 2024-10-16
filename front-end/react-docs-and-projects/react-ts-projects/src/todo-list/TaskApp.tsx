@@ -1,8 +1,8 @@
-import AddTask from "./AddTask.js";
-import TaskContext from "./TaskContext.js";
-import TaskList from "./TaskList.js";
+import AddTask from "./AddTask";
+import TaskContext from "./TaskContext";
+import TaskList from "./TaskList";
 
-export default function TaskApp() {
+const TaskApp: React.FC = () => {
   return (
     <TaskContext>
       <h1>Todo List</h1>
@@ -10,4 +10,6 @@ export default function TaskApp() {
       <TaskList />
     </TaskContext>
   );
-}
+};
+
+export default TaskApp;

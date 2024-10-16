@@ -1,17 +1,29 @@
+import { createContext, useContext, useReducer, ReactNode } from "react";
 
-import { createContext, useContext, useReducer } from "react";
+// Define types for the task and action
+interface Task {
+  id: number;
+  text: string;
+  done: boolean;
+}
 
-const todoList = [
+interface TaskAction {
+  type: "added" | "changed" | "delete";
+  id?: number;
+  text?: string;
+  task?: Task;
+}
+
+const todoList: Task[] = [
   { id: 0, text: "Go to work", done: false },
   { id: 1, text: "Read 15 mins", done: false },
   { id: 2, text: "Exercise 30 mins", done: false },
 ];
 
-const TaskProvider = createContext(null);
-const TaskDispatch = createContext(null);
+const TaskProvider = createContext<Task[] | null>(null);
+const TaskDispatch = createContext<React.Dispatch<TaskAction> | null>(null);
 
-// customHooks
-
+// Custom hooks
 export const useTasks = () => {
   return useContext(TaskProvider);
 };
@@ -20,27 +32,24 @@ export const useTasksDispatch = () => {
   return useContext(TaskDispatch);
 };
 
-const reducerFunc = (tasks, action) => {
+// Reducer function with types
+const reducerFunc = (tasks: Task[], action: TaskAction): Task[] => {
   switch (action.type) {
     case "added": {
       return [
         ...tasks,
         {
-          id: action.id,
-          text: action.text,
+          id: action.id!,
+          text: action.text!,
           done: false,
         },
       ];
     }
 
     case "changed": {
-      return tasks.map((t) => {
-        if (t.id === action.task.id) {
-          return action.task;
-        } else {
-          return t;
-        }
-      });
+      return tasks.map((t) =>
+        t.id === action.task?.id ? action.task : t
+      );
     }
 
     case "delete": {
@@ -48,16 +57,23 @@ const reducerFunc = (tasks, action) => {
     }
 
     default: {
-      throw Error("Unkonwn action" + action.type);
+      throw new Error("Unknown action: " + action.type);
     }
   }
 };
 
-export default function TaskContext({ children }) {
+// Updated TaskContext component with proper typing for children
+interface TaskContextProps {
+  children: ReactNode;
+}
+
+export default function TaskContext({ children }: TaskContextProps) {
   const [tasks, dispatch] = useReducer(reducerFunc, todoList);
   return (
     <TaskProvider.Provider value={tasks}>
-      <TaskDispatch.Provider value={dispatch}>{children}</TaskDispatch.Provider>
+      <TaskDispatch.Provider value={dispatch}>
+        {children}
+      </TaskDispatch.Provider>
     </TaskProvider.Provider>
   );
 }
