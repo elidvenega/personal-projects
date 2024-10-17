@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer, ReactNode } from "react";
+import { createContext, useReducer, ReactNode } from "react";
 
 // Define types for the task and action
 interface Task {
@@ -20,17 +20,11 @@ const todoList: Task[] = [
   { id: 2, text: "Exercise 30 mins", done: false },
 ];
 
-const TaskProvider = createContext<Task[] | null>(null);
-const TaskDispatch = createContext<React.Dispatch<TaskAction> | null>(null);
+export const TaskProvider = createContext<Task[] | null>(null);
+export const TaskDispatch = createContext<React.Dispatch<TaskAction> | null>(null);
 
-// Custom hooks
-export const useTasks = () => {
-  return useContext(TaskProvider);
-};
 
-export const useTasksDispatch = () => {
-  return useContext(TaskDispatch);
-};
+
 
 // Reducer function with types
 const reducerFunc = (tasks: Task[], action: TaskAction): Task[] => {

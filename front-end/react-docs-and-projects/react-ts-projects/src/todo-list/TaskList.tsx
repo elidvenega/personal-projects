@@ -1,4 +1,5 @@
-import { useTasks, useTasksDispatch } from "./TaskContext";
+import { useTasks, useTasksDispatch } from "./taskHooks";
+import { useState } from "react";
 
 interface Task {
   id: number;
@@ -9,6 +10,10 @@ interface Task {
 const TaskList: React.FC = () => {
   const tasks = useTasks();
   const dispatch = useTasksDispatch();
+
+  // State to track the task being edited and the new text
+  const [editingTaskId, setEditingTaskId] = useState<number | null>(null);
+  const [newText, setNewText] = useState<string>("");
 
   if (!tasks || !dispatch) {
     return <div>No tasks available</div>;
@@ -25,6 +30,23 @@ const TaskList: React.FC = () => {
     dispatch({ type: "delete", id: taskId });
   };
 
+  const handleEditTask = (task: Task) => {
+    setEditingTaskId(task.id);  // Set the task to be edited
+    setNewText(task.text);      // Set the current text in the input
+  };
+
+  const handleSaveTask = (taskId: number) => {
+    dispatch({
+      type: "changed",
+      task: { id: taskId, text: newText, done: false },  // Update with the new text
+    });
+    setEditingTaskId(null);  // Exit edit mode
+  };
+
+  const handleCancelEdit = () => {
+    setEditingTaskId(null);  // Cancel edit mode
+  };
+
   return (
     <ul>
       {tasks.map((task) => (
@@ -34,7 +56,24 @@ const TaskList: React.FC = () => {
             checked={task.done}
             onChange={() => handleToggleTask(task)}
           />
-          {task.text}
+          {editingTaskId === task.id ? (
+            <>
+              {/* Show input field if task is in edit mode */}
+              <input
+                type="text"
+                value={newText}
+                onChange={(e) => setNewText(e.target.value)}
+              />
+              <button onClick={() => handleSaveTask(task.id)}>Save</button>
+              <button onClick={handleCancelEdit}>Cancel</button>
+            </>
+          ) : (
+            <>
+              {/* Show task text if not in edit mode */}
+              {task.text}
+              <button onClick={() => handleEditTask(task)}>Edit</button>
+            </>
+          )}
           <button onClick={() => handleDeleteTask(task.id)}>Delete</button>
         </li>
       ))}
