@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "./ContextFunction";
 
-let nextId = 5;
+let nextId = 4;
 export default function AddTask() {
   const [inputValue, setInputValue] = useState("");
   const addTask = useDispatch();
@@ -11,8 +11,8 @@ export default function AddTask() {
       setInputValue("");
       addTask({
         type: "added",
+        todo: inputValue,
         id: nextId++,
-        task: inputValue,
       });
     }
   };

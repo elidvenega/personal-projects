@@ -10,13 +10,14 @@ function Task({ task }) {
     taskContent = (
       <>
         <input
-          value={task.task}
+          type="text"
+          value={task.todo}
           onChange={(e) => {
             dispatch({
               type: "changed",
               task: {
                 ...task,
-                task: e.target.value,
+                todo: e.target.value,
               },
             });
           }}
@@ -27,7 +28,7 @@ function Task({ task }) {
   } else {
     taskContent = (
       <>
-        {task.task}
+        {task.todo}
         <button onClick={() => setIsEditing(true)}>Edit</button>
       </>
     );
@@ -37,25 +38,25 @@ function Task({ task }) {
       <label>
         <input
           type="checkbox"
-          value={task.done}
+          value={task.completed}
           onChange={(e) => {
             dispatch({
               type: "changed",
               task: {
                 ...task,
-                done: e.target.checked,
+                completed: e.target.checked,
               },
             });
           }}
         />
         {taskContent}
         <button
-          onClick={() => {
+          onClick={() =>
             dispatch({
               type: "delete",
               id: task.id,
-            });
-          }}
+            })
+          }
         >
           Delete
         </button>
