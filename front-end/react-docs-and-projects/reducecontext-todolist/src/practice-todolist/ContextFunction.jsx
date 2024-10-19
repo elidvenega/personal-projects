@@ -1,13 +1,13 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
 
-import { useContext, createContext, useReducer } from "react";
+import { createContext, useContext, useReducer } from "react";
 
 const todoList = [
-  { id: 0, todo: "Eat 15 mins", done: false },
-  { id: 1, todo: "Go Biking", done: false },
-  { id: 2, todo: "Eat Healthy", done: false },
-  { id: 4, todo: "Walk Outdoors", done: false },
+  { id: 0, task: "Walk 15 mins", done: false },
+  { id: 1, task: "Read 20 mins", done: false },
+  { id: 2, task: "Cook Lunch", done: false },
+  { id: 3, task: "Watch Documentary", done: false },
 ];
 
 const TasksContext = createContext(null);
@@ -16,14 +16,14 @@ const TasksDispatch = createContext(null);
 export const useTasks = () => useContext(TasksContext);
 export const useDispatch = () => useContext(TasksDispatch);
 
-function reducerFunc(tasks, action) {
+function reduceFunc(tasks, action) {
   switch (action.type) {
     case "added": {
       return [
         ...tasks,
         {
           id: action.id,
-          todo: action.todo,
+          task: action.task,
           done: false,
         },
       ];
@@ -44,14 +44,13 @@ function reducerFunc(tasks, action) {
     }
 
     default: {
-      throw Error("Unknown action" + action.type);
+      throw Error;
     }
   }
 }
 
 export default function ContextFunction({ children }) {
-  const [tasks, dispatch] = useReducer(reducerFunc, todoList);
-
+  const [tasks, dispatch] = useReducer(reduceFunc, todoList);
   return (
     <TasksContext.Provider value={tasks}>
       <TasksDispatch.Provider value={dispatch}>

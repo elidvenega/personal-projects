@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { useDispatch, useTasks } from "./ContextFunction";
+import { useTasks, useDispatch } from "./ContextFunction";
 
 function Task({ task }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -10,13 +10,13 @@ function Task({ task }) {
     taskContent = (
       <>
         <input
-          value={task.todo}
+          value={task.task}
           onChange={(e) => {
             dispatch({
               type: "changed",
               task: {
                 ...task,
-                todo: e.target.value,
+                task: e.target.value,
               },
             });
           }}
@@ -27,38 +27,40 @@ function Task({ task }) {
   } else {
     taskContent = (
       <>
-        {task.todo}
+        {task.task}
         <button onClick={() => setIsEditing(true)}>Edit</button>
       </>
     );
   }
   return (
-    <label>
-      <input
-        type="checkbox"
-        value={task.done}
-        onChange={(e) => {
-          dispatch({
-            type: "changed",
-            task: {
-              ...task,
-              done: e.target.checked,
-            },
-          });
-        }}
-      />
-      {taskContent}
-      <button
-        onClick={() => {
-          dispatch({
-            type: "delete",
-            id: task.id,
-          });
-        }}
-      >
-        Delete
-      </button>
-    </label>
+    <>
+      <label>
+        <input
+          type="checkbox"
+          value={task.done}
+          onChange={(e) => {
+            dispatch({
+              type: "changed",
+              task: {
+                ...task,
+                done: e.target.checked,
+              },
+            });
+          }}
+        />
+        {taskContent}
+        <button
+          onClick={() => {
+            dispatch({
+              type: "delete",
+              id: task.id,
+            });
+          }}
+        >
+          Delete
+        </button>
+      </label>
+    </>
   );
 }
 
