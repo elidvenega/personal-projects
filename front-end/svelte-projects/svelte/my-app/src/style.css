@@ -6,9 +6,20 @@
   padding: 0;
 }
 
-body {
+/* body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     background-color: black;
     color: #ddd;
+} */
+
+body {
+  background-color: hsl(233, 47%, 7%);
+  font-family: "Titillium Web", sans-serif;
+  display: flex;
+  justify-content: center;
+  line-height: 1.4;
+  min-height: 100dvh;
+  min-height: 100vh;
+  max-width: 100%;
 }
