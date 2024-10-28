@@ -6,11 +6,15 @@ export default function Button() {
 
   const handleIncrement = () => setBtn((btn) => btn + 1);
 
-  const handleDecrement = () => setBtn((btn) => btn - 1);
+  const handleDecrement = () => {
+    setBtn((btn) => Math.max(btn - 1, 0));
+  };
 
   const handleReset = () => setBtn(0);
 
-  const handleAlert = () => setBtn(alert("Hello"));
+  const handleAlert = () => setBtn(alert(btn));
+
+  const handleMultiplyByTwo = () => setBtn((btn) => btn * 2);
 
   return (
     <>
@@ -20,6 +24,7 @@ export default function Button() {
         <button onClick={handleDecrement}>Subtract</button>
         <button onClick={handleReset}>Reset</button>
         <button onClick={handleAlert}>Message</button>
+        <button onClick={handleMultiplyByTwo}>Multiply By Two</button>
       </section>
     </>
   );
