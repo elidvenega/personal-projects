@@ -6,8 +6,24 @@ export default function Button() {
 
   const handleIncrement = () => setBtn((btn) => btn + 1);
 
+  // AJ Way preferred
+  // const handleDecrement = () => setBtn((btn) => Math.max(btn - 1, 0));
+
+  // Chat GPT
   // const handleDecrement = () => {
-  //   setBtn((btn) => Math.max(btn - 1, 0));
+  //   setBtn((btn) => (btn > 0 ? btn - 1 : 0));
+  // };
+
+  // Example I was doing first
+  // const handleDecrement = () => {
+  //   setBtn((btn) => {
+  //     if (btn >= 1) {
+  //       return btn - 1;
+  //     }
+  //     setBtn(btn);
+  //     console.log("rerendering");
+
+  //   });
   // };
 
   const handleDecrement = () => {
