@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useTasksDispatch } from "./taskHooks";
 
+
 let nextId = 3;
 
 interface TaskAction {
@@ -38,7 +39,7 @@ const AddTask: React.FC = () => {
         value={task}
         onChange={handleInputChange} // Updated function
       />
-      <button type="button" onClick={handleAddTask}>
+      <button type="button" className="btn" onClick={handleAddTask}>
         Add
       </button>
     </>

@@ -31,20 +31,20 @@ const TaskList: React.FC = () => {
   };
 
   const handleEditTask = (task: Task) => {
-    setEditingTaskId(task.id);  // Set the task to be edited
-    setNewText(task.text);      // Set the current text in the input
+    setEditingTaskId(task.id); // Set the task to be edited
+    setNewText(task.text); // Set the current text in the input
   };
 
   const handleSaveTask = (taskId: number) => {
     dispatch({
       type: "changed",
-      task: { id: taskId, text: newText, done: false },  // Update with the new text
+      task: { id: taskId, text: newText, done: false }, // Update with the new text
     });
-    setEditingTaskId(null);  // Exit edit mode
+    setEditingTaskId(null); // Exit edit mode
   };
 
   const handleCancelEdit = () => {
-    setEditingTaskId(null);  // Cancel edit mode
+    setEditingTaskId(null); // Cancel edit mode
   };
 
   return (
@@ -64,17 +64,25 @@ const TaskList: React.FC = () => {
                 value={newText}
                 onChange={(e) => setNewText(e.target.value)}
               />
-              <button onClick={() => handleSaveTask(task.id)}>Save</button>
-              <button onClick={handleCancelEdit}>Cancel</button>
+              <button className="btn" onClick={() => handleSaveTask(task.id)}>
+                Save
+              </button>
+              <button className="btn" onClick={handleCancelEdit}>
+                Cancel
+              </button>
             </>
           ) : (
             <>
               {/* Show task text if not in edit mode */}
               {task.text}
-              <button onClick={() => handleEditTask(task)}>Edit</button>
+              <button className="btn" onClick={() => handleEditTask(task)}>
+                Edit
+              </button>
             </>
           )}
-          <button onClick={() => handleDeleteTask(task.id)}>Delete</button>
+          <button className="del-btn" onClick={() => handleDeleteTask(task.id)}>
+            Delete
+          </button>
         </li>
       ))}
     </ul>
