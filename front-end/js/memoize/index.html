@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function memoize(fn) {
+        const cache = new Map();
+        return function (...args) {
+          const key = JSON.stringify(args);
+          if (cache.has(key)) {
+            return cache.get(key);
+          }
+          const result = fn(...args);
+          cache.set(key, result);
+          return result;
+        };
+      }
+
+      // Example usage:
+      function slowFunction(num) {
+        console.log("Computing...");
+        return num * 2;
+      }
+
+      const memoizedSlowFunction = memoize(slowFunction);
+
+      console.log(memoizedSlowFunction(5)); // "Computing..." and returns 10
+      console.log(memoizedSlowFunction(5)); // Returns 10 from cache, no "Computing..."
+      console.log(memoizedSlowFunction(8))
+    </script>
+  </body>
+</html>
