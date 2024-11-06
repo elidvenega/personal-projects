@@ -27,12 +27,14 @@ console.log(breakfast);
 //console.log('hello');
 
 const exampleObj = {
-  name: "Jack",
+  firstName: "Jack",
   lastName: "Harry",
   occupation: "Mechanic",
 };
 
-output.textContent = `${exampleObj.name} ${exampleObj.lastName} is a ${exampleObj.occupation}`;
+const { firstName, lastName, occupation } = exampleObj;
+
+output.textContent = `${firstName} ${lastName} is a ${occupation}`;
 //output.textContent = Object.output(exampleObj)
 
 // Example Chat GPT code how to display array object data to the dom
