@@ -1,11 +1,10 @@
-import TodoList from "./assets/projects/todolist/TodoList";
+import Card from "./assets/projects/card-project/Card";
 import "./App.css";
-
 
 export default function App() {
   return (
     <>
-      <TodoList />
+      <Card />
     </>
   );
 }
