@@ -6,7 +6,7 @@ export default function Button() {
 
   const handleIncrement = () => setBtn((btn) => btn + 1);
 
-  // AJ Way preferred
+  // The way AJ preferred
   // const handleDecrement = () => setBtn((btn) => Math.max(btn - 1, 0));
 
   // Chat GPT
@@ -15,25 +15,23 @@ export default function Button() {
   // };
 
   // Example I was doing first
-  // const handleDecrement = () => {
-  //   setBtn((btn) => {
-  //     if (btn >= 1) {
-  //       return btn - 1;
-  //     }
-  //     setBtn(btn);
-  //     console.log("rerendering");
-
-  //   });
-  // };
-
   const handleDecrement = () => {
     setBtn((btn) => {
       if (btn >= 1) {
         return btn - 1;
       }
-      return 0;
+      setBtn(btn);
     });
   };
+
+  // const handleDecrement = () => {
+  //   setBtn((btn) => {
+  //     if (btn >= 1) {
+  //       return btn - 1;
+  //     }
+  //     return 0;
+  //   });
+  // };
 
   const handleReset = () => setBtn(0);
 

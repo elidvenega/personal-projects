@@ -55,7 +55,7 @@ const officeEmployees = [
 
 const jobTitles = officeEmployees.flatMap((job) => job.title);
 
-console.log(jobTitles);
+console.log(jobTitles, "flatMap");
 
 /* Splice and SLice methods example */
 
@@ -82,9 +82,15 @@ const array1 = [5, 12, 8, 130, 44];
 
 const isLargeNumber = (element) => element === 12;
 
-console.log(array1.findIndex(isLargeNumber),"findIndex()");
-// Expected output: 3
+console.log(array1.findIndex(isLargeNumber), "findIndex()");
 
 // looks in reverse
 const found = array1.findLast((element) => element > 45);
 console.log(found);
+
+//sort()
+
+const sortArr = ["Wolves", "Dogs", "Cats", "Bees"];
+
+console.log(sortArr.sort(), "sort()");
+console.log(sortArr.toSorted(), "toSorted()");
