@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Counter App</title>
     <style>
+      :root {
+        --btn-color: #0d9488;
+        --btn-light-color: #2dd4bf;
+      }
       body {
         text-align: center;
         font-family: Arial, sans-serif;
@@ -14,6 +18,7 @@
         flex-direction: column;
         justify-content: center;
         height: 100vh;
+        max-width: 100%;
       }
 
       h1 {
@@ -29,7 +34,7 @@
       }
 
       button {
-        background-color: rgb(17, 17, 87);
+        background-color: var(--btn-color);
         color: #fff;
         border: none;
         border-radius: 5px;
@@ -40,12 +45,13 @@
       }
 
       button:disabled {
-        background-color: #ccc;
+        --btn-color: #71717a;
+        background-color: var(--btn-color);
         cursor: not-allowed;
       }
 
       button:hover:enabled {
-        background-color: rgb(28, 28, 138);
+        background-color: var(--btn-light-color);
       }
 
       span {
