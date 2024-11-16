@@ -14,9 +14,6 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
         height: 100vh;
         max-width: 100%;
       }
@@ -60,25 +57,47 @@
         display: inline-block;
         text-align: center;
       }
+
+      .reset {
+        text-align: center;
+      }
+
+      .decrease {
+        --btn-color: #dc2626;
+        background-color: var(--btn-color);
+      }
+
+      .decrease:hover:enabled {
+        --btn-light-color: #ef4444;
+        background-color: var(--btn-light-color);
+      }
     </style>
   </head>
   <body>
     <h1>Counter App</h1>
     <div class="app">
-      <button type="button" aria-label="Decrease">-</button>
+      <button type="button" class="decrease" aria-label="Decrease">-</button>
       <span aria-live="polite" aria-atomic="true">0</span>
       <button type="button" aria-label="Increase">+</button>
     </div>
-    <button type="button" class="reset">Reset</button>
+    <div class="other-btns">
+      <button type="button" class="reset">Reset</button>
+      <button type="button" class="times-two-button">x2</button>
+    </div>
 
     <script>
       function app() {
         const appContainer = document.querySelector(".app");
-        const resetButton = document.querySelector(".reset");
+        const otherBtns = document.querySelector(".other-btns");
+        // const resetButton = document.querySelector(".reset");
+        // const timesTwo = document.querySelector(".times-two-button");
+
         let count = 0;
 
         const [btnDecrease, btnIncrease] =
           appContainer.querySelectorAll("button");
+        const [resetButton, multiplyByTwo] =
+          otherBtns.querySelectorAll("button");
         const counterDisplay = appContainer.querySelector("span");
 
         const updateDisplay = () => {
@@ -101,9 +120,14 @@
           updateDisplay();
         };
 
+        const multiply = () => {
+          count *= 2;
+          updateDisplay();
+        };
         btnIncrease.addEventListener("click", increase);
         btnDecrease.addEventListener("click", decrease);
         resetButton.addEventListener("click", reset);
+        multiplyByTwo.addEventListener("click", multiply);
 
         // Initial display update to ensure correct initial state
         updateDisplay();
