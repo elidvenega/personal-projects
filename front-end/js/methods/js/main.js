@@ -94,3 +94,9 @@ const sortArr = ["Wolves", "Dogs", "Cats", "Bees"];
 
 console.log(sortArr.sort(), "sort()");
 console.log(sortArr.toSorted(), "toSorted()");
+
+// at()
+
+const arrLocation = [1, 2, 4, 5, 6];
+
+console.log(arrLocation.at(1), 'at()');
