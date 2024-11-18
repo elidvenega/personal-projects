@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Component Example</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Web Components</h1>
+      <!-- Use the custom element -->
+      <user-card
+        name="Pikachu"
+        avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGg117hTNrhTBDkX0CTSHEnp7LRdOsrl76CQ&s"
+      ></user-card>
+      <user-card
+        name="Pikachu"
+        avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGg117hTNrhTBDkX0CTSHEnp7LRdOsrl76CQ&s"
+      ></user-card>
+      <user-card
+        name="Pikachu"
+        avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGg117hTNrhTBDkX0CTSHEnp7LRdOsrl76CQ&s"
+      ></user-card>
+    </div>
+    <script>
+      // Define the custom element
+      class UserCard extends HTMLElement {
+        constructor() {
+          super();
+
+          // Attach a shadow DOM
+          const shadow = this.attachShadow({ mode: "open" });
+
+          // Create the template
+          const template = document.createElement("template");
+          template.innerHTML = `
+          <style>
+            .card {
+              font-family: Arial, sans-serif;
+              border: 1px solid #ccc;
+              border-radius: 8px;
+              padding: 16px;
+              max-width: 250px;
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+              display: flex;
+              align-items: center;
+              gap: 16px;
+            }
+            img {
+              border-radius: 50%;
+              width: 50px;
+              height: 50px;
+            }
+          </style>
+          <div class="card">
+            <img />
+            <div class="info">
+              <h3></h3>
+              <p><slot></slot></p>
+            </div>
+          </div>
+        `;
+
+          // Append template content to shadow DOM
+          shadow.appendChild(template.content.cloneNode(true));
+        }
+
+        connectedCallback() {
+          // Populate the element with attributes
+          const img = this.shadowRoot.querySelector("img");
+          const h3 = this.shadowRoot.querySelector("h3");
+          img.src = this.getAttribute("avatar") || "";
+          img.alt = `${this.getAttribute("name")} Avatar`;
+          h3.textContent = this.getAttribute("name") || "Unknown";
+        }
+      }
+
+      // Register the custom element
+      customElements.define("user-card", UserCard);
+    </script>
+  </body>
+</html>
