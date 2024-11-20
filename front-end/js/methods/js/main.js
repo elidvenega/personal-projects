@@ -99,4 +99,14 @@ console.log(sortArr.toSorted(), "toSorted()");
 
 const arrLocation = [1, 2, 4, 5, 6];
 
-console.log(arrLocation.at(1), 'at()');
+console.log(arrLocation.at(1), "at()");
+console.log(arrLocation.at(2), "at()");
+// This will return undefined
+console.log(arrLocation.at(6), "at()");
+
+// concat()
+const concatArr = [1, 2, 3, 4];
+const concatArr2 = [4, 5, 6, 7];
+
+const sumArr = concatArr.concat(concatArr2);
+console.log(sumArr);
