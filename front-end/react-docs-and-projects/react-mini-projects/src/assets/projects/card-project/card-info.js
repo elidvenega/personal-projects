@@ -3,7 +3,7 @@ export const frameworks = [
     framework: `React`,
     creator: `Jordan Walke`,
     info: ` It lets you put components together, but it doesn't prescribe how to do routing and data fetching`,
-    img: `https://static-00.iconduck.com/assets.00/react-icon-512x512-u6e60ayf.png`,
+    img: `https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png`,
     alt: `Is horrible`,
   },
   {
