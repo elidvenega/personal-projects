@@ -1,10 +1,11 @@
-import Card from "./assets/projects/card-project/Card";
+import CardFrameworks from "./assets/projects/card-project/CardFrameworks";
 import "./App.css";
+
 
 export default function App() {
   return (
     <>
-      <Card />
+    <CardFrameworks />
     </>
   );
 }
