@@ -1,0 +1,43 @@
+h1 {
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  gap: 1.2rem;
+}
+
+.frameworks {
+  max-width: 100%;
+  padding: 2rem;
+  background-color: #fff;
+  color: black;
+  border-radius: 2%;
+}
+
+.frameworks-header {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 2.3rem;
+  padding: 10px;
+}
+
+img {
+  height: 30vh;
+  padding: 20px;
+}
+
+@media (max-width: 650px) {
+  .container {
+    flex-direction: column;
+  }
+}

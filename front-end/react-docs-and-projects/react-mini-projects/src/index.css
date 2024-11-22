@@ -7,12 +7,9 @@
 }
 
 body {
-  background-color: #ddd;
+  background-color: #000;
   font-family: Arial, Helvetica, sans-serif;
   max-width: 100%;
   min-height: 100vh;
 }
 
-body {
-  background-color: black;
-}

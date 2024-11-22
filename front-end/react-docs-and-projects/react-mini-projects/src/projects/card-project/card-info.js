@@ -1,23 +1,30 @@
+import ReactImg from "../../assets/react.png";
+import SvelteImg from "../../assets/svelte.png";
+import VueImg from "../../assets/vue.png";
+
 export const frameworks = [
   {
     framework: `React`,
     creator: `Jordan Walke`,
     info: ` It lets you put components together, but it doesn't prescribe how to do routing and data fetching`,
-    img: `https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png`,
+    img: ReactImg,
     alt: `Is horrible`,
+    headingColor: `#61dafb`,
   },
   {
     framework: `Svelte`,
     creator: `Rich Harris`,
     info: `Svelte converts your app into ideal JavaScript at build time, rather than interpreting your application code at run time`,
-    img: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRLXF8VSI5tMlBTfy-9UDvnO6OGMOvgGFz5g&s`,
+    img: SvelteImg,
     alt: `svelte`,
+    headingColor: `#ea580c`,
   },
   {
     framework: `Vue`,
     creator: `Evan You`,
     info: `Simplicity and learning curve: Vue. js is easy to learn and use, with only HTML, CSS, and JavaScript basics required. `,
-    img: `https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1184px-Vue.js_Logo_2.svg.png`,
+    img: VueImg,
     alt: `vue`,
+    headingColor: `#42b883`,
   },
 ];
