@@ -13,5 +13,6 @@ class Person {
 
 const person1 = new Person("Alice", 23);
 const person2 = new Person("Bob", 20);
+const person3 = new Person("Mike", 29)
 
 console.log(person2);
