@@ -1,11 +1,12 @@
-import CardFrameworks from "./projects/card-project/CardFrameworks";
+
 
 import "./App.css";
+import Accordion from "./projects/accordion/Accordion";
 
 export default function App() {
   return (
     <>
-      <CardFrameworks />
+      <Accordion />
     </>
   );
 }
