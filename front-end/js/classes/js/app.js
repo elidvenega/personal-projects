@@ -1,3 +1,5 @@
+"use strict";
+
 // ES6 Class
 class Elf {
   constructor(player, name, weapon) {
@@ -15,5 +17,5 @@ console.log(playerOne.attack());
 
 const player = document.querySelector(".output");
 
-player.innerHTML = playerOne.attack();
+player.textContent = playerOne.attack();
 // player.setText = playerOne.attack();
