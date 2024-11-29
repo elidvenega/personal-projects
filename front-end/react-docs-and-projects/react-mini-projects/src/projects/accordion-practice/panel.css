@@ -1,0 +1,44 @@
+:root {
+  --button-color: #164e63;
+  --button-color-hover: #0e7490;
+  --image-size: 14rem;
+  --panel-container-width: 50rem;
+  --padding: 10px;
+  --white-color: #fff;
+}
+
+.panel-container {
+  width: var(--panel-container-width);
+  margin: auto;
+  padding: var(--padding);
+  margin-top: 1rem;
+  border: 2px solid #333;
+  text-align: center;
+}
+
+h1 {
+  padding: var(--padding);
+}
+
+.images {
+  width: var(--image-size);
+  height: var(--image-size);
+  object-fit: cover;
+}
+
+p {
+  padding: calc(var(--padding) + 25px);
+}
+
+.panel-button {
+  border: none;
+  border-radius: calc(var(--padding) - 8px);
+  font-size: 1rem;
+  padding: var(--padding);
+  background-color: var(--button-color);
+  color: var(--white-color);
+}
+
+.panel-button:hover {
+  background-color: var(--button-color-hover);
+}
