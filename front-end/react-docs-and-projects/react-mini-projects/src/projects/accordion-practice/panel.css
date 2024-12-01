@@ -2,13 +2,13 @@
   --button-color: #164e63;
   --button-color-hover: #0e7490;
   --image-size: 14rem;
-  --panel-container-width: 50rem;
+  --panel-container-width: 90%;
   --padding: 10px;
   --white-color: #fff;
 }
 
 .panel-container {
-  width: var(--panel-container-width);
+  max-width: var(--panel-container-width);
   margin: auto;
   padding: var(--padding);
   margin-top: 1rem;
@@ -41,4 +41,11 @@ p {
 
 .panel-button:hover {
   background-color: var(--button-color-hover);
+}
+
+@media (min-width: 750px) {
+  .panel-container {
+    --panel-container-width: 68%;
+    max-width: var(--panel-container-width);
+  }
 }
