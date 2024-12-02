@@ -1,9 +1,9 @@
-import TaskApp from "./todos/TaskApp";
+import Todo from "./todo";
 
 export default function App() {
   return (
     <>
-      <TaskApp />
+    <Todo />
     </>
   );
 }
