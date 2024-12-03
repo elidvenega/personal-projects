@@ -1,11 +1,14 @@
 //import Counter from "./projects/Counter";
-import CardComponent from "./card-project/CardComponent";
+
+import Practice from "./chatgpt-ts/Practice";
+
 // import { TaskApp } from "./todo-list/TaskApp";
 
 export default function App() {
   return (
     <>
-     <CardComponent />
+      {/* <TaskApp /> */}
+      <Practice title="Hello" count={2} />
     </>
   );
 }
