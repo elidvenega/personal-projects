@@ -1,6 +1,19 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { useTasks, useDispatch } from "./TaskContextFunc";
+import { useTasks, useDispatch } from "./TaskContextProvider";
+
+export default function TaskLIst() {
+  const tasks = useTasks();
+  return (
+    <ul>
+      {tasks.map((task) => (
+        <li key={task.id}>
+          <Task task={task} />
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 function Task({ task }) {
   const [edit, setEdit] = useState(false);
@@ -11,29 +24,33 @@ function Task({ task }) {
       <>
         <input
           type="text"
-          value={task.todo}
+          value={task.task}
           onChange={(e) => {
             dispatch({
               type: "changed",
               task: {
                 ...task,
-                todo: e.target.value,
+                task: e.target.value,
               },
             });
           }}
         />
-        <button onClick={() => setEdit(false)}>Save</button>
+        <button type="button" onClick={() => setEdit(false)}>
+          Save
+        </button>
       </>
     );
   } else {
     taskContent = (
       <>
-        {task.todo}
-        <button onClick={() => setEdit(true)}>Edit</button>
+        {task.task}
+
+        <button type="button" onClick={() => setEdit(true)}>
+          Edit
+        </button>
       </>
     );
   }
-
   return (
     <>
       <label>
@@ -52,29 +69,15 @@ function Task({ task }) {
         />
         {taskContent}
         <button
-          onClick={() => {
+          type="button"
+          onClick={() =>
             dispatch({
               type: "delete",
               id: task.id,
-            });
-          }}
-        >
-          Delete
-        </button>
+            })
+          }
+        >Delete</button>
       </label>
     </>
-  );
-}
-
-export default function TaskLIst() {
-  const tasks = useTasks();
-  return (
-    <ul>
-      {tasks.map((task) => (
-        <li key={task.id}>
-          <Task task={task} />
-        </li>
-      ))}
-    </ul>
   );
 }

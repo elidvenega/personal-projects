@@ -1,29 +1,36 @@
 import { useState } from "react";
-import { useDispatch } from "./TaskContextFunc";
+import { useDispatch } from "./TaskContextProvider";
 
 let nextId = 3;
 export default function AddTask() {
-  const [input, setInput] = useState("");
-  const handleInput = (e) => setInput(e.target.value);
-  const addTask = useDispatch();
+  const [newTasks, setNewTasks] = useState("");
+  const addTodo = useDispatch();
+
+  const handleNewTask = (e) => setNewTasks(e.target.value);
   const handleSubmit = () => {
-    if (input.trim() !== "") {
-      setInput("");
-      addTask({
+    if (newTasks.trim() !== "") {
+      setNewTasks("");
+      addTodo({
         type: "added",
-        todo: input,
+        task: newTasks,
         id: nextId++,
       });
     }
   };
-
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSubmit();
+    }
+  };
   return (
     <>
       <input
         type="text"
         placeholder="Add Todo"
-        value={input}
-        onChange={handleInput}
+        value={newTasks}
+        onChange={handleNewTask}
+        onKeyDown={handleKeyDown}
       />
       <button type="button" onClick={handleSubmit}>
         Add
