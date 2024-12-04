@@ -1,13 +1,13 @@
-interface MyComponentProps {
+interface PracticeComponent {
   title: string;
-  count?: number; // Optional prop
+  children: string;
 }
 
-export default function Practice({ title, count }: MyComponentProps) {
+export default function Practice({ title, children }: PracticeComponent) {
   return (
     <>
       <h1>{title}</h1>
-      {count && <p>Count: {count}</p>}
+      <p>{children}</p>
     </>
   );
 }
