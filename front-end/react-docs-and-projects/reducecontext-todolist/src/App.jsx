@@ -1,4 +1,4 @@
-import TaskApp from "./practice-todos/todos/TaskApp";
+import TaskApp from "./practice-todos/todos-practice/TaskApp";
 
 export default function App() {
   return (
