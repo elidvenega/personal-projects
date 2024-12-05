@@ -6,8 +6,8 @@ export default function CardFrameworks() {
     <>
       <h1>Front End Frameworks</h1>
       <div className="container">
-        {frameworks.map((card, i) => (
-          <div className="frameworks" key={i}>
+        {frameworks.map((card) => (
+          <div className="frameworks" key={card.id}>
             <h2
               className="frameworks-header"
               style={{ color: `${card.headingColor}` }}

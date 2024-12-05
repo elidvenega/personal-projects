@@ -23,7 +23,6 @@ function Task({ task }) {
     taskContent = (
       <>
         <input
-          type="text"
           value={task.todo}
           onChange={(e) => {
             dispatch({
@@ -50,7 +49,6 @@ function Task({ task }) {
       </>
     );
   }
-
   return (
     <>
       <label>

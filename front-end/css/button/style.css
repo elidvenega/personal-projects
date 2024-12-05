@@ -1,9 +1,18 @@
+:root {
+  --backgroind-image: url("./images/wolf.jpg");
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+body {
+  background: var(--backgroind-image) no-repeat center center/cover;
+  max-width: 100%;
+  min-height: 100vh;
+}
 /* CSS */
 /* .center {
   display: flex;
@@ -74,10 +83,11 @@
 button {
   background-color: #3eb2fd;
   border: none;
+  border-radius: 2%;
   color: white;
-  padding: 0.3em 1em;
+  font-size: 1rem;
+  padding: 1em 1em;
 }
-
 
 .btn-2 {
   padding: 0.7rem;

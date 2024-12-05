@@ -3,15 +3,16 @@ import { useDispatch } from "./ContextProvider";
 
 let nextId = 3;
 export default function AddTask() {
-  const [todo, setTodo] = useState("");
+  const [todos, setTodos] = useState("");
   const newTask = useDispatch();
-  const handleInput = (e) => setTodo(e.target.value);
+
+  const handleInput = (e) => setTodos(e.target.value);
   const handleSubmit = () => {
-    if (todo.trim() !== "") {
-      setTodo("");
+    if (todos.trim() !== "") {
+      setTodos("");
       newTask({
         type: "added",
-        todo: todo,
+        todo: todos,
         id: nextId++,
       });
     }
@@ -23,13 +24,12 @@ export default function AddTask() {
       handleSubmit();
     }
   };
-
   return (
     <>
       <input
         type="text"
         placeholder="Add Todo"
-        value={todo}
+        value={todos}
         onChange={handleInput}
         onKeyDown={handleKeyDown}
       />

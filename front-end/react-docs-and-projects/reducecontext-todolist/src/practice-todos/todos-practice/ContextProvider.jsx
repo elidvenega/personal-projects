@@ -3,9 +3,9 @@
 import { createContext, useContext, useReducer } from "react";
 
 const todos = [
-  { id: 0, todo: "Walk 15 mins", done: true },
-  { id: 1, todo: "Read Book", done: false },
-  { id: 2, todo: "Cook Dinner", done: false },
+  { id: 0, todo: "Walk", done: true },
+  { id: 1, todo: "Make BreaKfast", done: true },
+  { id: 2, todo: "Watch Anime", done: true },
 ];
 
 const TasksProvider = createContext(null);
@@ -25,7 +25,6 @@ function reducer(tasks, action) {
           done: false,
         },
       ];
-
     case "changed": {
       return tasks.map((t) => {
         if (t.id === action.task.id) {
@@ -35,13 +34,12 @@ function reducer(tasks, action) {
         }
       });
     }
-
     case "delete": {
       return tasks.filter((t) => t.id !== action.id);
     }
 
     default: {
-      throw Error("Unknown Action" + action.type);
+      throw Error("Unknown action" + action.type);
     }
   }
 }
