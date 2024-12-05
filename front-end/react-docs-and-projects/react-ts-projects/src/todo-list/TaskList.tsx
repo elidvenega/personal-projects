@@ -1,5 +1,4 @@
-import { useTasks, useTasksDispatch } from "./taskHooks";
-import { useState } from "react";
+import React, { useState } from "react";
 
 interface Task {
   id: number;
@@ -7,45 +6,36 @@ interface Task {
   done: boolean;
 }
 
-const TaskList: React.FC = () => {
-  const tasks = useTasks();
-  const dispatch = useTasksDispatch();
+interface TaskListProps {
+  tasks: Task[];
+  dispatch: React.Dispatch<{
+    type: "changed" | "delete";
+    id?: number;
+    task?: Task;
+  }>;
+}
 
-  // State to track the task being edited and the new text
+const TaskList: React.FC<TaskListProps> = ({ tasks, dispatch }) => {
   const [editingTaskId, setEditingTaskId] = useState<number | null>(null);
-  const [newText, setNewText] = useState<string>("");
+  const [newText, setNewText] = useState("");
 
-  if (!tasks || !dispatch) {
-    return <div>No tasks available</div>;
-  }
+  const handleToggleTask = (task: Task) =>
+    dispatch({ type: "changed", task: { ...task, done: !task.done } });
 
-  const handleToggleTask = (task: Task) => {
-    dispatch({
-      type: "changed",
-      task: { ...task, done: !task.done },
-    });
-  };
-
-  const handleDeleteTask = (taskId: number) => {
+  const handleDeleteTask = (taskId: number) =>
     dispatch({ type: "delete", id: taskId });
-  };
 
   const handleEditTask = (task: Task) => {
-    setEditingTaskId(task.id); // Set the task to be edited
-    setNewText(task.text); // Set the current text in the input
+    setEditingTaskId(task.id);
+    setNewText(task.text);
   };
 
   const handleSaveTask = (taskId: number) => {
-    dispatch({
-      type: "changed",
-      task: { id: taskId, text: newText, done: false }, // Update with the new text
-    });
-    setEditingTaskId(null); // Exit edit mode
+    dispatch({ type: "changed", task: { id: taskId, text: newText, done: false } });
+    setEditingTaskId(null);
   };
 
-  const handleCancelEdit = () => {
-    setEditingTaskId(null); // Cancel edit mode
-  };
+  const handleCancelEdit = () => setEditingTaskId(null);
 
   return (
     <ul>
@@ -58,7 +48,6 @@ const TaskList: React.FC = () => {
           />
           {editingTaskId === task.id ? (
             <>
-              {/* Show input field if task is in edit mode */}
               <input
                 type="text"
                 value={newText}
@@ -73,7 +62,6 @@ const TaskList: React.FC = () => {
             </>
           ) : (
             <>
-              {/* Show task text if not in edit mode */}
               {task.text}
               <button className="btn" onClick={() => handleEditTask(task)}>
                 Edit

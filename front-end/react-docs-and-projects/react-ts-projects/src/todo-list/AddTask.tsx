@@ -1,34 +1,21 @@
-import { useState } from "react";
-import { useTasksDispatch } from "./taskHooks";
+import React, { useState } from "react";
 
+interface AddTaskProps {
+  dispatch: React.Dispatch<{
+    type: "added";
+    id: number;
+    text: string;
+  }>;
+}
 
 let nextId = 3;
 
-interface TaskAction {
-  type: "added";
-  id: number;
-  text: string;
-}
-
-const AddTask: React.FC = () => {
-  const [task, setTask] = useState<string>(""); // Add type annotation for state
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setTask(e.target.value);
-  };
-  const addTask = useTasksDispatch();
-
-  if (!addTask) {
-    return <div>Error: Unable to add task</div>;
-  }
+const AddTask: React.FC<AddTaskProps> = ({ dispatch }) => {
+  const [task, setTask] = useState("");
 
   const handleAddTask = () => {
+    dispatch({ type: "added", id: nextId++, text: task });
     setTask("");
-    addTask({
-      type: "added",
-      id: nextId++,
-      text: task,
-    } as TaskAction); // Type assertion for the action
   };
 
   return (
@@ -37,9 +24,9 @@ const AddTask: React.FC = () => {
         type="text"
         placeholder="Add Task"
         value={task}
-        onChange={handleInputChange} // Updated function
+        onChange={(e) => setTask(e.target.value)}
       />
-      <button type="button" className="btn" onClick={handleAddTask}>
+      <button className="btn" onClick={handleAddTask}>
         Add
       </button>
     </>
