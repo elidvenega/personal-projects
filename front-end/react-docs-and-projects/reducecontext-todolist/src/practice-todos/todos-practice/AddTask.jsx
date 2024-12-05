@@ -17,7 +17,6 @@ export default function AddTask() {
       });
     }
   };
-
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
@@ -29,7 +28,6 @@ export default function AddTask() {
       <input
         type="text"
         placeholder="Add Todo"
-        value={todos}
         onChange={handleInput}
         onKeyDown={handleKeyDown}
       />

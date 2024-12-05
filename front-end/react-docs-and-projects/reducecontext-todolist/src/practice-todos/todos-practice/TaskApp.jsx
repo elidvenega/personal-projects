@@ -1,6 +1,6 @@
-import ContextProvider from "./ContextProvider";
-import AddTask from "./AddTask";
-import TaskList from "./TaskList";
+import ContextProvider from './ContextProvider';
+import AddTask from './AddTask';
+import TaskList from './TaskList';
 
 export default function TaskApp() {
   return (
@@ -9,5 +9,5 @@ export default function TaskApp() {
       <AddTask />
       <TaskList />
     </ContextProvider>
-  );
+  )
 }
