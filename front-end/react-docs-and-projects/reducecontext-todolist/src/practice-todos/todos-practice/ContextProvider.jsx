@@ -1,11 +1,11 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable react-refresh/only-export-components */
+/* eslint-disable react/prop-types */
 import { createContext, useContext, useReducer } from "react";
 
 const todos = [
   { id: 0, todo: "Walk 15 mins", done: true },
-  { id: 1, todo: "60 push ups", done: true },
-  { id: 2, todo: "Cook dinner", done: false },
+  { id: 1, todo: "Play Guiatr 1hr", done: true },
+  { id: 2, todo: "Cook Dinner", done: false },
 ];
 
 const TasksProvider = createContext(null);
@@ -26,7 +26,6 @@ function reducer(tasks, action) {
         },
       ];
     }
-
     case "changed": {
       return tasks.map((t) => {
         if (t.id === action.task.id) {
@@ -42,7 +41,7 @@ function reducer(tasks, action) {
     }
 
     default: {
-      throw Error("Unknown Action" + action.type);
+      throw Error + "Unknown Action";
     }
   }
 }

@@ -16,10 +16,10 @@ export default function TaskList() {
 }
 
 function Task({ task }) {
-  const [isEditing, setIsEditing] = useState(false);
+  const [edit, setEdit] = useState(false);
   const dispatch = useDispatch();
   let taskContent;
-  if (isEditing) {
+  if (edit) {
     taskContent = (
       <>
         <input
@@ -35,7 +35,7 @@ function Task({ task }) {
             });
           }}
         />
-        <button type="button" onClick={() => setIsEditing(false)}>
+        <button type="button" onClick={() => setEdit(false)}>
           Save
         </button>
       </>
@@ -44,7 +44,7 @@ function Task({ task }) {
     taskContent = (
       <>
         {task.todo}
-        <button type="button" onClick={() => setIsEditing(true)}>
+        <button type="button" onClick={() => setEdit(true)}>
           Edit
         </button>
       </>
@@ -75,9 +75,7 @@ function Task({ task }) {
               id: task.id,
             });
           }}
-        >
-          Delete
-        </button>
+        >Delete</button>
       </label>
     </>
   );
