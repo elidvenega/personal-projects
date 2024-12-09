@@ -1,9 +1,11 @@
+// import RandomQuote from "./projects/random-quotes-server/RandomQuote";
+import IfPractice from "./projects/ifstatement/IfPractice";
 
-import Accordion from "./projects/accordion-practice/Accordion"
 export default function App() {
   return (
     <>
-    <Accordion />
+      {/* <RandomQuote /> */}
+      <IfPractice />
     </>
   );
 }
