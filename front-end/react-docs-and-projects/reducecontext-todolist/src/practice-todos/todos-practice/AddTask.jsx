@@ -33,9 +33,7 @@ export default function AddTask() {
         onChange={handleInput}
         onKeyDown={handleKeyDown}
       />
-      <button type="button" onClick={handleSubmit}>
-        Add
-      </button>
+      <button onClick={handleSubmit}>Add</button>
     </>
   );
 }

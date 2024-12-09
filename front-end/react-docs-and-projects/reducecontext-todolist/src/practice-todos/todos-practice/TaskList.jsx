@@ -19,6 +19,7 @@ function Task({ task }) {
   const [edit, setEdit] = useState(false);
   const dispatch = useDispatch();
   let taskContent;
+
   if (edit) {
     taskContent = (
       <>
@@ -50,6 +51,7 @@ function Task({ task }) {
       </>
     );
   }
+
   return (
     <>
       <label>
@@ -75,7 +77,9 @@ function Task({ task }) {
               id: task.id,
             });
           }}
-        >Delete</button>
+        >
+          Delete
+        </button>
       </label>
     </>
   );

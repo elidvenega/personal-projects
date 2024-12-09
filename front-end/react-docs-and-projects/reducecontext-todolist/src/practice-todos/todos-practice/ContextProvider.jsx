@@ -1,10 +1,10 @@
-/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useReducer } from "react";
 
 const todos = [
   { id: 0, todo: "Walk 15 mins", done: true },
-  { id: 1, todo: "Play Guiatr 1hr", done: true },
+  { id: 1, todo: "Read 15 mins", done: true },
   { id: 2, todo: "Cook Dinner", done: false },
 ];
 
@@ -16,7 +16,7 @@ export const useDispatch = () => useContext(DispatchProvider);
 
 function reducer(tasks, action) {
   switch (action.type) {
-    case "added": {
+    case "added":
       return [
         ...tasks,
         {
@@ -25,7 +25,6 @@ function reducer(tasks, action) {
           done: false,
         },
       ];
-    }
     case "changed": {
       return tasks.map((t) => {
         if (t.id === action.task.id) {
@@ -35,19 +34,19 @@ function reducer(tasks, action) {
         }
       });
     }
-
     case "delete": {
       return tasks.filter((t) => t.id !== action.id);
     }
 
     default: {
-      throw Error + "Unknown Action";
+      throw Error("Unknown Action" + action.type);
     }
   }
 }
 
 export default function ContextProvider({ children }) {
   const [tasks, dispatch] = useReducer(reducer, todos);
+
   return (
     <TasksProvider.Provider value={tasks}>
       <DispatchProvider.Provider value={dispatch}>
