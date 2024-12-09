@@ -1,11 +1,11 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
-const RandomQuote = () => {
+export default function RandomQuote() {
   const [quote, setQuote] = useState(null);
 
   const fetchQuote = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/quote");
+      const response = await fetch("http://localhost:3000/random-quote");
       const data = await response.json();
       setQuote(data);
     } catch (error) {
@@ -33,6 +33,4 @@ const RandomQuote = () => {
       )}
     </div>
   );
-};
-
-export default RandomQuote;
+}

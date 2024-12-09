@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 
 const app = express();
+
 const PORT = 3000;
 
 app.use(cors());
@@ -27,11 +28,16 @@ const quotes = [
     text: "Success is not the key to happiness. Happiness is the key to success.",
     author: "Albert Schweitzer",
   },
+  {
+    id: 5,
+    text: "I certainly got much more stronger than before. But for some reason, I feel like something within me get lost everytime I get stronger.",
+    author: "Solo Leveling",
+  },
 ];
 
-app.get("/quotes", (req, res) => {
-  const randomIndex = Math.floor(Math.random() * quotes.length);
-  res.json(quotes[randomIndex]);
+app.get("/random-quote", (req, res) => {
+  const randomQuote = Math.floor(Math.random() * quotes.length);
+  res.json(quotes[randomQuote]);
 });
 
 app.listen(PORT, () => {
