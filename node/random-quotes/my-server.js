@@ -10,28 +10,29 @@ app.use(cors());
 const quotes = [
   {
     id: 1,
-    text: "The only limit to our realization of tomorrow is our doubts of today.",
-    author: "Franklin D. Roosevelt",
+    text: `The only limit to our realization of tomorrow is our doubts of today.`,
+    author: `Franklin D. Roosevelt`,
   },
   {
     id: 2,
-    text: "In the middle of every difficulty lies opportunity.",
-    author: "Albert Einstein",
+    text: `In the middle of every difficulty lies opportunity.`,
+    author: `Albert Einstein`,
   },
   {
     id: 3,
-    text: "What you get by achieving your goals is not as important as what you become by achieving your goals.",
-    author: "Zig Ziglar",
+    text: `What you get by achieving your goals is not as important as what you become by achieving your goals.`,
+    author: `Zig Ziglar`,
   },
   {
     id: 4,
-    text: "Success is not the key to happiness. Happiness is the key to success.",
-    author: "Albert Schweitzer",
+    text: `Success is not the key to happiness. Happiness is the key to success.`,
+    author: `Albert Schweitzer`,
   },
   {
     id: 5,
-    text: "I certainly got much more stronger than before. But for some reason, I feel like something within me get lost everytime I get stronger.",
-    author: "Solo Leveling",
+    text: `I certainly got much more stronger than before. But for some reason,
+     I feel like something within me get lost everytime I get stronger.`,
+    author: `Solo Leveling`,
   },
 ];
 
@@ -41,5 +42,7 @@ app.get("/random-quote", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+
