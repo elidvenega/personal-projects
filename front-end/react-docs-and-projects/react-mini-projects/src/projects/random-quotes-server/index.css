@@ -1,0 +1,41 @@
+:root {
+  --background-color: #030712;
+  --button-color: #facc15;
+  --hover-button-color: #fde047;
+  --white: #fff;
+  --container-padding: 5rem;
+  --one-rem: 1rem;
+  --two-rem: 2rem;
+  --three-rem: 3rem;
+  --four-rem: 4rem;
+}
+
+.container {
+  background-color: var(--background-color);
+  color: var(--white);
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  padding: var(--container-padding);
+}
+
+h1 {
+  font-size: var(--three-rem);
+}
+
+p {
+  font-size: calc(var(--one-rem) + 0.3rem);
+  padding: calc(var(--one-rem) - 0.5rem);
+}
+
+.button {
+  background-color: var(--button-color);
+  border: none;
+  border-radius: 2px;
+  color: var(--background-color);
+  font-size: var(--one-rem);
+  padding: 10px;
+}
+
+.button:hover {
+  background-color: var(--hover-button-color);
+}

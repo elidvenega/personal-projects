@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
+import "./index.css";
 
 export default function RandomQuote() {
   const [quote, setQuote] = useState(null);
 
   const fetchQuote = async () => {
     try {
-      const response = await fetch("http://localhost:3000/random-quote");
+      const response = await fetch("http://localhost:3000/random");
       const data = await response.json();
       setQuote(data);
     } catch (error) {
@@ -18,7 +19,7 @@ export default function RandomQuote() {
   }, []);
 
   return (
-    <div style={{ textAlign: "center", marginTop: "2rem" }}>
+    <div className="container">
       <h1>Random Quote</h1>
       {quote ? (
         <div>
@@ -26,7 +27,7 @@ export default function RandomQuote() {
           <p>
             <strong>- {quote.author}</strong>
           </p>
-          <button onClick={fetchQuote}>Get Another Quote</button>
+          <button className="button" onClick={fetchQuote}>Get Another Quote</button>
         </div>
       ) : (
         <p>Loading...</p>
