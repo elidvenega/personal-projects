@@ -1,10 +1,16 @@
-<script>
-// @ts-nocheck
+<script lang="ts">
+  interface Props {
+    framework: string;
+    info: string;
+    creator: string;
+    img: string;
+    alt: string;
+  }
 
-  let { framework, info, creator, img, alt } = $props();
+  let { framework, info, creator, img, alt }: Props = $props();
 </script>
 
-<div>
+<div class="card-container">
   <h1>{framework}</h1>
   <img src={img} {alt} />
   <h2>Creator: {creator}</h2>
@@ -12,20 +18,29 @@
 </div>
 
 <style>
-  div {
-    max-width: 100%;
-    padding: 2rem;
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 12px;
     background-color: #fff;
     color: black;
-    margin-top: 2rem;
     border-radius: 2%;
   }
   h1 {
+    font-size: 3rem;
+    font-weight: 900;
+  }
+  h2 {
     font-size: 2.3rem;
+    padding: 1rem;
   }
 
   img {
-    max-width: 12rem;
-    height: 40vh;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
   }
 </style>
