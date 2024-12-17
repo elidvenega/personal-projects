@@ -1,18 +1,16 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useReducer } from "react";
 
 const todos = [
   { id: 0, todo: "Walk 15 mins", done: true },
-  { id: 1, todo: "Read 15 mins", done: true },
-  { id: 2, todo: "Cook Dinner", done: false },
+  { id: 1, todo: "Clean Stove", done: false },
+  { id: 2, todo: "Read 15 mins", done: false },
 ];
 
-const TasksProvider = createContext(null);
-const DispatchProvider = createContext(null);
+const TasksContext = createContext(null);
+const DispatchContext = createContext(null);
 
-export const useTasks = () => useContext(TasksProvider);
-export const useDispatch = () => useContext(DispatchProvider);
+export const useTasks = () => useContext(TasksContext);
+export const useDispatch = () => useContext(DispatchContext);
 
 function reducer(tasks, action) {
   switch (action.type) {
@@ -25,6 +23,7 @@ function reducer(tasks, action) {
           done: false,
         },
       ];
+
     case "changed": {
       return tasks.map((t) => {
         if (t.id === action.task.id) {
@@ -34,6 +33,7 @@ function reducer(tasks, action) {
         }
       });
     }
+
     case "delete": {
       return tasks.filter((t) => t.id !== action.id);
     }
@@ -46,12 +46,11 @@ function reducer(tasks, action) {
 
 export default function ContextProvider({ children }) {
   const [tasks, dispatch] = useReducer(reducer, todos);
-
   return (
-    <TasksProvider.Provider value={tasks}>
-      <DispatchProvider.Provider value={dispatch}>
+    <TasksContext.Provider value={tasks}>
+      <DispatchContext.Provider value={dispatch}>
         {children}
-      </DispatchProvider.Provider>
-    </TasksProvider.Provider>
+      </DispatchContext.Provider>
+    </TasksContext.Provider>
   );
 }

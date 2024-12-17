@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { useTasks, useDispatch } from "./ContextProvider";
 
@@ -19,7 +18,6 @@ function Task({ task }) {
   const [edit, setEdit] = useState(false);
   const dispatch = useDispatch();
   let taskContent;
-
   if (edit) {
     taskContent = (
       <>
@@ -36,22 +34,17 @@ function Task({ task }) {
             });
           }}
         />
-        <button type="button" onClick={() => setEdit(false)}>
-          Save
-        </button>
+        <button onClick={() => setEdit(false)}>Save</button>
       </>
     );
   } else {
     taskContent = (
       <>
         {task.todo}
-        <button type="button" onClick={() => setEdit(true)}>
-          Edit
-        </button>
+        <button onClick={() => setEdit(true)}>Edit</button>
       </>
     );
   }
-
   return (
     <>
       <label>
@@ -70,7 +63,6 @@ function Task({ task }) {
         />
         {taskContent}
         <button
-          type="button"
           onClick={() => {
             dispatch({
               type: "delete",
