@@ -6,7 +6,7 @@ export default function RandomQuote() {
 
   const handleFetchQuote = async () => {
     try {
-      const response = await fetch("http://localhost:3000/random");
+      const response = await fetch("http://localhost:3000/random-quote");
       const data = await response.json();
       setQuote(data);
     } catch (error) {

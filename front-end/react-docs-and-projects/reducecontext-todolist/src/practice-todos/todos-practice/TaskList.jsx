@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { useTasks, useDispatch } from "./ContextProvider";
 
@@ -19,8 +18,12 @@ function Task({ task }) {
   const [isEditing, setEditing] = useState(false);
   const disptach = useDispatch();
   let taskContent;
+<<<<<<< HEAD
 
   if (isEditing) {
+=======
+  if (edit) {
+>>>>>>> 863b1ba125ea4e2838eb0e082127c3f1b2fbe26c
     taskContent = (
       <>
         <input
@@ -36,18 +39,26 @@ function Task({ task }) {
             });
           }}
         />
+<<<<<<< HEAD
         <button type="button" onClick={() => setEditing(false)}>
           Save
         </button>
+=======
+        <button onClick={() => setEdit(false)}>Save</button>
+>>>>>>> 863b1ba125ea4e2838eb0e082127c3f1b2fbe26c
       </>
     );
   } else {
     taskContent = (
       <>
         {task.todo}
+<<<<<<< HEAD
         <button type="button" onClick={() => setEditing(true)}>
           Edit
         </button>
+=======
+        <button onClick={() => setEdit(true)}>Edit</button>
+>>>>>>> 863b1ba125ea4e2838eb0e082127c3f1b2fbe26c
       </>
     );
   }
@@ -69,7 +80,6 @@ function Task({ task }) {
         />
         {taskContent}
         <button
-          type="button"
           onClick={() => {
             disptach({
               type: "delete",

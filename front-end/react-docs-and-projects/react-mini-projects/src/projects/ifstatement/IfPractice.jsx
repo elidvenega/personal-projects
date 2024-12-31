@@ -22,12 +22,12 @@ const buttonStyles = {
 };
 
 export default function IfPractice() {
-  const [show, setShow] = useState(false);
-  const handleShow = () => setShow(true);
-  const handleReset = () => setShow(false);
-  let showContent;
+  const [showContent, setShowContent] = useState(false);
+  const handleShow = () => setShowContent(true);
+  const handleReset = () => setShowContent(false);
+  let content;
   if (show) {
-    showContent = (
+    content = (
       <>
         <h1>Pumpkin Pie</h1>
         <img
@@ -45,7 +45,7 @@ export default function IfPractice() {
       </>
     );
   } else {
-    showContent = (
+    content = (
       <>
         <h2 style={{ fontSize: "3rem" }}>Hello</h2>
         <p>Click to show Content</p>
