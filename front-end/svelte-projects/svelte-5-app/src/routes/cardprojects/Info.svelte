@@ -1,6 +1,13 @@
-<script>
-  // @ts-nocheck
-  let { framework, info, creator, img, alt } = $props();
+<script lang="ts">
+  interface Props {
+    framework: string;
+    info: string;
+    creator: string;
+    img: string;
+    alt: string;
+  }
+
+  let { framework, info, creator, img, alt }: Props = $props();
 </script>
 
 <div class="card-container">

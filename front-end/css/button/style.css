@@ -1,5 +1,5 @@
 :root {
-  --backgroind-image: url("./images/wolf.jpg");
+  --background-image: url("./images/wolf.jpg");
 }
 
 * {
@@ -9,7 +9,7 @@
 }
 
 body {
-  background: var(--backgroind-image) no-repeat center center/cover;
+  background: var(--background-image) no-repeat center center/cover;
   max-width: 100%;
   min-height: 100vh;
 }

@@ -4,8 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node ./my-server.js",
-    "dev": "nodemon ./my-server.js"
+    "start": "node ./practice-server.js",
+    "dev": "nodemon ./practice-server.js"
   },
   "keywords": [],
   "author": "",

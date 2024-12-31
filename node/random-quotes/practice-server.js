@@ -2,11 +2,11 @@ import express from "express";
 import cors from "cors";
 
 const app = express();
-
 const PORT = 3000;
 
 app.use(cors());
 
+// quotes
 const quotes = [
   {
     id: 1,
@@ -31,20 +31,17 @@ const quotes = [
   {
     id: 5,
     text: `I certainly got much more stronger than before. But for some reason,
-     I feel like something within me get lost everytime I get stronger.`,
+       I feel like something within me get lost everytime I get stronger.`,
     author: `Solo Leveling`,
   },
 ];
 
-app.get("/random-quote", (req, res) => {
+app.get("/random", (req, res) => {
   const randomQuote = Math.floor(Math.random() * quotes.length);
+
   res.json(quotes[randomQuote]);
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server will be running on http://localhost:${PORT}`);
 });
-
-
-
-

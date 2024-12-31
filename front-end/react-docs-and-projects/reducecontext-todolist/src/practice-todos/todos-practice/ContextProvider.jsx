@@ -4,7 +4,7 @@ import { createContext, useContext, useReducer } from "react";
 
 const todos = [
   { id: 0, todo: "Walk 15 mins", done: true },
-  { id: 1, todo: "Read 15 mins", done: true },
+  { id: 1, todo: "Read 15 mins", done: false },
   { id: 2, todo: "Cook Dinner", done: false },
 ];
 
@@ -34,6 +34,7 @@ function reducer(tasks, action) {
         }
       });
     }
+
     case "delete": {
       return tasks.filter((t) => t.id !== action.id);
     }
@@ -46,7 +47,6 @@ function reducer(tasks, action) {
 
 export default function ContextProvider({ children }) {
   const [tasks, dispatch] = useReducer(reducer, todos);
-
   return (
     <TasksProvider.Provider value={tasks}>
       <DispatchProvider.Provider value={dispatch}>

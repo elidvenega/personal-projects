@@ -16,18 +16,18 @@ export default function TaskList() {
 }
 
 function Task({ task }) {
-  const [edit, setEdit] = useState(false);
-  const dispatch = useDispatch();
+  const [isEditing, setEditing] = useState(false);
+  const disptach = useDispatch();
   let taskContent;
 
-  if (edit) {
+  if (isEditing) {
     taskContent = (
       <>
         <input
           type="text"
           value={task.todo}
           onChange={(e) => {
-            dispatch({
+            disptach({
               type: "changed",
               task: {
                 ...task,
@@ -36,7 +36,7 @@ function Task({ task }) {
             });
           }}
         />
-        <button type="button" onClick={() => setEdit(false)}>
+        <button type="button" onClick={() => setEditing(false)}>
           Save
         </button>
       </>
@@ -45,13 +45,12 @@ function Task({ task }) {
     taskContent = (
       <>
         {task.todo}
-        <button type="button" onClick={() => setEdit(true)}>
+        <button type="button" onClick={() => setEditing(true)}>
           Edit
         </button>
       </>
     );
   }
-
   return (
     <>
       <label>
@@ -59,7 +58,7 @@ function Task({ task }) {
           type="checkbox"
           checked={task.done}
           onChange={(e) => {
-            dispatch({
+            disptach({
               type: "changed",
               task: {
                 ...task,
@@ -72,7 +71,7 @@ function Task({ task }) {
         <button
           type="button"
           onClick={() => {
-            dispatch({
+            disptach({
               type: "delete",
               id: task.id,
             });
