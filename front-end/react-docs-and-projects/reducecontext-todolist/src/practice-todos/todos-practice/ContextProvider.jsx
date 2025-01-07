@@ -2,8 +2,13 @@ import { createContext, useContext, useReducer } from "react";
 
 const todos = [
   { id: 0, todo: "Walk 15 mins", done: true },
+<<<<<<< HEAD
+  { id: 1, todo: "Read 15 mins", done: false },
+  { id: 2, todo: "Cook Dinner", done: false },
+=======
   { id: 1, todo: "Clean Stove", done: false },
   { id: 2, todo: "Read 15 mins", done: false },
+>>>>>>> 863b1ba125ea4e2838eb0e082127c3f1b2fbe26c
 ];
 
 const TasksContext = createContext(null);

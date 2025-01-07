@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<script>
-  // @ts-nocheck
-  let { framework, info, creator, img, alt } = $props();
-=======
 <script lang="ts">
   interface Props {
     framework: string;
@@ -13,7 +8,6 @@
   }
 
   let { framework, info, creator, img, alt }: Props = $props();
->>>>>>> 863b1ba125ea4e2838eb0e082127c3f1b2fbe26c
 </script>
 
 <div class="card-container">
@@ -25,33 +19,19 @@
 
 <style>
   .card-container {
-<<<<<<< HEAD
     max-width: 100%;
     padding: 2rem;
-=======
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 12px;
->>>>>>> 863b1ba125ea4e2838eb0e082127c3f1b2fbe26c
     background-color: #fff;
     color: black;
+    margin-top: 2rem;
     border-radius: 2%;
   }
   h1 {
-    font-size: 3rem;
-    font-weight: 900;
-  }
-  h2 {
     font-size: 2.3rem;
-    padding: 1rem;
   }
 
   img {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
+    max-width: 12rem;
+    height: 40vh;
   }
 </style>

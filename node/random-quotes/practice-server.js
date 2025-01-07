@@ -6,6 +6,7 @@ const PORT = 3000;
 
 app.use(cors());
 
+// quotes
 const quotes = [
   {
     id: 1,
@@ -30,25 +31,17 @@ const quotes = [
   {
     id: 5,
     text: `I certainly got much more stronger than before. But for some reason,
-     I feel like something within me get lost everytime I get stronger.`,
+       I feel like something within me get lost everytime I get stronger.`,
     author: `Solo Leveling`,
   },
 ];
 
-
-
-app.get("/random-quote", (req, res) => {
+app.get("/random", (req, res) => {
   const randomQuote = Math.floor(Math.random() * quotes.length);
+
   res.json(quotes[randomQuote]);
 });
 
 app.listen(PORT, () => {
-  console.log(`Your server is in http://localhost:${PORT}`);
+  console.log(`Server will be running on http://localhost:${PORT}`);
 });
-<<<<<<< HEAD
-=======
-
-
-
-
->>>>>>> b39d82d1a1f5ea083b32536b7d4ecffe56de6769
