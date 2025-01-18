@@ -1,4 +1,3 @@
-/* eslint-disable no-dupe-keys */
 import { useState } from "react";
 
 const sectionStyles = {
@@ -16,17 +15,16 @@ const buttonStyles = {
   borderRadius: "5px",
   color: "#fff",
   padding: "8px",
-  margin: "auto",
   textAlign: "center",
   margin: "5px",
 };
 
 export default function IfPractice() {
   const [showContent, setShowContent] = useState(false);
-  const handleShow = () => setShowContent(true);
+  const handleShowContent = () => setShowContent(true);
   const handleReset = () => setShowContent(false);
   let content;
-  if (show) {
+  if (showContent) {
     content = (
       <>
         <h1>Pumpkin Pie</h1>
@@ -55,8 +53,8 @@ export default function IfPractice() {
 
   return (
     <>
-      <section style={sectionStyles}>{showContent}</section>
-      <button style={buttonStyles} type="button" onClick={handleShow}>
+      <section style={sectionStyles}>{content}</section>
+      <button style={buttonStyles} type="button" onClick={handleShowContent}>
         Show
       </button>
       <button style={buttonStyles} type="button" onClick={handleReset}>
