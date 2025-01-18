@@ -36,10 +36,12 @@
     <h1>Counter</h1>
     <div class="app"></div>
     <button type="button" class="reset">Reset</button>
+    <button type="button" class="times-two">2x</button>
     <script>
       function app() {
         const app = document.querySelector(".app");
         const reset = document.querySelector(".reset");
+        const timesTwo = document.querySelector(".times-two");
         let count = 0;
 
         app.innerHTML = `
@@ -68,9 +70,15 @@
           span.innerText = count;
         };
 
+        const timesTwoButton = () => {
+          count *= 2;
+          span.innerText = count;
+        };
+
         btnIncrease.addEventListener("click", increase);
         btnDecrease.addEventListener("click", decrease);
         reset.addEventListener("click", resetButton);
+        timesTwo.addEventListener("click", timesTwoButton);
       }
 
       app();

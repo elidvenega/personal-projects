@@ -1,13 +1,12 @@
-import React from "react";
-
 function TeaCups({ cups }) {
-  return <h1>You will have this many cups of tea: {cups}</h1>;
+  return <h1>How many cups of tea will you have: {cups}</h1>;
 }
 
 export default function LocalMutation() {
-  let cupsArr = [];
-  for (let i = 0; i <= 8; i++) {
-    cupsArr.push(<TeaCups key={i} cups={i} />);
+  let teaCups = [];
+  for (let i = 0; i < 10; i++) {
+    teaCups.push(<TeaCups key={i} cups={i} />);
   }
-  return cupsArr;
+
+  return teaCups;
 }

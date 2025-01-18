@@ -2,7 +2,6 @@ import express from "express";
 import cors from "cors";
 
 const app = express();
-
 const PORT = 3000;
 
 // app.use(cors());
@@ -36,15 +35,20 @@ const quotes = [
   },
 ];
 
+
+
 app.get("/random-quote", (req, res) => {
   const randomQuote = Math.floor(Math.random() * quotes.length);
   res.json(quotes[randomQuote]);
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Your server is in http://localhost:${PORT}`);
 });
+<<<<<<< HEAD
+=======
 
 
 
 
+>>>>>>> b39d82d1a1f5ea083b32536b7d4ecffe56de6769
