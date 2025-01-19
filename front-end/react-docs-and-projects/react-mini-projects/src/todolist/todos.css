@@ -1,0 +1,21 @@
+.container {
+    background-color: aqua;
+    color: #fff;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   gap: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    padding: 1rem;
+    
+}
+
+ul li {
+    list-style: none;
+    padding: 5px;
+    margin: 12px;
+}
