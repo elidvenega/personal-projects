@@ -1,55 +1,57 @@
 import { useState } from "react";
+import "./todos.css";
 
-const todoList = [
-  "Walk 20 mins",
-  "Eat Dinner",
-  "Read Book",
-  "Create Schedule for meeting",
-];
+const todaysTasks = ["Walk 20 mins", "Read 15 mins", "Get Groceries"];
 
 export default function TodoPractice() {
-  const [todos, setTodos] = useState(todoList);
+  const [todos, setTodos] = useState(todaysTasks);
   const [input, setInput] = useState("");
 
   const handleInput = (e) => setInput(e.target.value);
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     if (input.trim() !== "") {
+      // const newArr = setTodos([...todos, input]);
+      e.preventDefault();
       setTodos([...todos, input]);
       setInput("");
     }
   };
 
   const handleDelete = (index) => {
-    const newList = [...todos];
-    newList.splice(index, 1);
-    setTodos(newList);
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSubmit();
+    }
+  };
   return (
     <>
-      <h1>Todo List</h1>
-      <form action="">
-        <input
-          type="text"
-          value={input}
-          placeholder="Add Todo"
-          onChange={handleInput}
-        />
-        <button type="button" onClick={handleSubmit}>
-          Add
-        </button>
-      </form>
-      <ul>
-        {todos.map((todo, i) => (
-          <li key={i}>
-            {todo}
-            <button type="button" onClick={() => handleDelete(i)}>
-              Delete
-            </button>
-          </li>
-        ))}
-      </ul>
+      <div className="container">
+        <form action="">
+          <h1>Todo List</h1>
+          <input
+            type="text"
+            placeholder="Add Todo"
+            value={input}
+            onChange={handleInput}
+            onKeyDown={handleKeyDown}
+          />
+          <button onClick={handleSubmit}>Add</button>
+        </form>
+        <ul>
+          {todos.map((todo, i) => (
+            <li key={i}>
+              {todo}
+              <button onClick={() => handleDelete(i)}>Delete</button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
 }
