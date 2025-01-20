@@ -21,7 +21,7 @@ export default function TodoPractice() {
   const handleDelete = (index) => {
     const newTodos = [...todos];
     newTodos.splice(index, 1);
-    setTodos(newArr);
+    setTodos(newTodos);
   };
 
   const handleKeyDown = (e) => {
