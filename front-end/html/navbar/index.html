@@ -4,10 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: black;
+        color: #fff;
+        padding: 24px;
+      }
+
+      span {
+        font-size: 1.3rem;
+      }
+
+      ul {
+        display: flex;
+        gap: 10px;
+        justify-content: end;
+      }
+      li {
+        list-style: none;
+        color: #fff;
+      }
+
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+    </style>
   </head>
   <body>
     <header>
       <nav>
+        <span>NAVBAR</span>
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
