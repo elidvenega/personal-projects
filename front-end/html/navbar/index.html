@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>NabVar Practice</title>
     <style>
       * {
         box-sizing: border-box;
@@ -11,46 +11,65 @@
         padding: 0;
       }
 
-      nav {
+      body {
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .navbar {
+        background-color: #8c7ae6;
+        color: #fff;
+        padding: 1rem;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        background-color: black;
-        color: #fff;
-        padding: 24px;
+        align-items: center;
       }
 
-      span {
+      .navbar__logo {
         font-size: 1.3rem;
       }
 
-      ul {
+      .navbar__ul {
         display: flex;
+        justify-content: flex-end;
         gap: 10px;
-        justify-content: end;
       }
+
       li {
         list-style: none;
-        color: #fff;
       }
 
       a {
         text-decoration: none;
         color: #fff;
       }
+
+      .welcome-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #0097e6;
+        height: 100vh;
+      }
+
+      .welcome-container__h1 {
+      }
     </style>
   </head>
   <body>
     <header>
-      <nav>
-        <span>NAVBAR</span>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Reviews</a></li>
+      <nav class="navbar">
+        <span class="navbar__logo">LOGO</span>
+        <ul class="navbar__ul">
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">COMMENTS</a></li>
+          <li><a href="#">CONTACT</a></li>
         </ul>
       </nav>
     </header>
+    <div class="welcome-container">
+      <h1 class="welcome-container__h1">Hello</h1>
+    </div>
   </body>
 </html>
