@@ -1,7 +1,9 @@
-*,*::before,*::after {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -11,9 +13,11 @@ body {
 }
 
 h1 {
+  font-size: 3rem;
   text-align: center;
-  margin-top: 1rem;
+  padding: 1.3rem;
 }
+
 a {
   text-decoration: none;
   color: #f2bb13;
@@ -44,7 +48,8 @@ a:hover {
   border-radius: 50%;
   padding: 1rem;
   background-color: #f4f4f4;
-  width: 100px;
+  height: 8rem;
+  width: 7rem;
 }
 @media (max-width: 560px) {
   .container {
