@@ -1,11 +1,9 @@
-// import CatFacts from "./projects/api/CatFacts";
-import PracticeList from "./todolist/PracticeList";
+import AnimeQuote from "./projects/api/AnimeQuote";
 
 export default function App() {
   return (
     <>
-      {/* <CatFacts /> */}
-      <PracticeList />
+      <AnimeQuote />
     </>
   );
 }
