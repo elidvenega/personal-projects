@@ -9,49 +9,23 @@
 //     });
 // });
 
+// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// getting the input element
+// const searchItem = document.querySelector(".searchInput");
+// // getting list and li
+// const itemList = document.querySelectorAll(".itemList li");
 
+// /* 
+// A function to get the value and filter through and use CSS to display it
+//  */
+// function searchOutput() {
+//   const filter = searchItem.value.toLowerCase();
+//   //loops through list to display result
+//   return itemList.forEach((item) => {
+//     item = item.textContent.toLocaleLowerCase().includes(filter)
+     
+//   });
+// }
 
-
-
-
-
-const searchItem = document.querySelector("#searchInput");
-const itemList = document.querySelectorAll("#itemList li");
-
-function searchOutput() {
-    const filter = searchItem.value.toLowerCase();
-    return itemList.forEach(item => {
-         item.style.display = item.textContent.toLocaleLowerCase().includes(filter) ? "block" : "none";
-    })
-
-}
-
-
-searchItem.addEventListener("keyup", searchOutput)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// searchItem.addEventListener("keyup", searchOutput);
