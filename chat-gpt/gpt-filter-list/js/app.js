@@ -22,7 +22,8 @@ const itemList = document.querySelectorAll("#itemList li");
 function searchOutput() {
     const filter = searchItem.value.toLowerCase();
     return itemList.forEach(item => {
-         item.style.display = item.textContent.toLocaleLowerCase().includes(filter) ? "block" : "none";
+        //  item.style.display = item.textContent.toLocaleLowerCase().includes(filter) ? "block" : "none";
+        item = item.textContent.toLocaleLowerCase().includes(filter)
     })
 
 }
