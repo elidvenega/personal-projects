@@ -1,6 +1,23 @@
 import { useState } from "react";
 import "./itemlist.css";
 
+const fruits = [
+  "Apple",
+  "Banana",
+  "Cherry",
+  "Grapes",
+  "Orange",
+  "Strawberry",
+  "Pineapple",
+];
+
+// const todoList = [
+//   { id: 0, task: "Work" },
+//   { id: 1, task: "Eat" },
+//   { id: 2, task: "Walk 30 mins" },
+//   { id: 3, task: "Guitar Practice" },
+// ];
+
 export default function ItemList() {
   const [items, setItems] = useState("");
   return (
@@ -14,51 +31,61 @@ export default function ItemList() {
         onKeyUp={(e) => setItems(e.target.value)}
       />
       <ul className="itemList">
-        <li>Apple</li>
-        <li>Banana</li>
-        <li>Cherry</li>
-        <li>Grapes</li>
-        <li>Orange</li>
-        <li>Strawberry</li>
-        <li>Pineapple</li>
+        {fruits.map((fruit, i) => (
+          <li key={i}>{fruit}</li>
+        ))}
       </ul>
     </div>
   );
 }
 
+// export default function ItemList() {
+//   const [input, setInput] = useState("");
+//   const [fruitList, setFruits] = useState(todoList);
 
-// import React, { useState } from 'react';
-
-// function FilterableList({ initialData }) {
-//   const [data, setData] = useState(initialData);
-//   const [filteredData, setFilteredData] = useState(initialData);
-//   const [filterValue, setFilterValue] = useState('');
-
-//   const handleFilterChange = (event) => {
-//     const newValue = event.target.value;
-//     setFilterValue(newValue);
-
-//     const newFilteredData = data.filter(item =>
-//       item.toLowerCase().includes(newValue.toLowerCase())
-//     );
-//     setFilteredData(newFilteredData);
-//   };
-
+//   // const handleDelete = (index) => {
+//   //   const newList = [...fruitList];
+//   //   newList.splice(index, 1);
+//   //   setFruits(newList);
+//   // };
 //   return (
-//     <div>
-//       <input
-//         type="text"
-//         placeholder="Filter items..."
-//         value={filterValue}
-//         onChange={handleFilterChange}
-//       />
+//     <>
+//       <h1>Todo List</h1>
+//       <form>
+//         <input
+//           type="text"
+//           placeholder="Add Todo"
+//           value={input}
+//           onChange={(e) => setInput(e.target.value)}
+//         />
+//         <button
+//           type="button"
+//           onClick={() => {
+//             setInput("");
+//             setFruits([...fruits, input]);
+//           }}
+//         >
+//           Add
+//         </button>
+//       </form>
+
 //       <ul>
-//         {filteredData.map((item, index) => (
-//           <li key={index}>{item}</li>
+//         {fruitList.map((item) => (
+//           <li key={item.id}>
+//             {item.task}
+//             <button
+//               onClick={() => {
+//                 const filter = fruitList.filter(
+//                   (fruit) => fruit.id !== item.id
+//                 );
+//                 setFruits(filter);
+//               }}
+//             >
+//               Delete
+//             </button>
+//           </li>
 //         ))}
 //       </ul>
-//     </div>
+//     </>
 //   );
 // }
-
-// export default FilterableList;
