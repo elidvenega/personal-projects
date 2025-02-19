@@ -1,9 +1,9 @@
-import AnimeQuote from "./projects/api/AnimeQuote";
+import ItemList from "./projects/gpt-filter-list/ItemList";
 
 export default function App() {
   return (
     <>
-      <AnimeQuote />
+      <ItemList />
     </>
   );
 }
