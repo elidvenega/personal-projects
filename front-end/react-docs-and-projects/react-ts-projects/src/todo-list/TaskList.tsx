@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 interface Task {
   id: number;
@@ -15,7 +15,7 @@ interface TaskListProps {
   }>;
 }
 
-const TaskList: React.FC<TaskListProps> = ({ tasks, dispatch }) => {
+function TaskList({ tasks, dispatch }: TaskListProps) {
   const [editingTaskId, setEditingTaskId] = useState<number | null>(null);
   const [newText, setNewText] = useState("");
 
@@ -31,7 +31,10 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, dispatch }) => {
   };
 
   const handleSaveTask = (taskId: number) => {
-    dispatch({ type: "changed", task: { id: taskId, text: newText, done: false } });
+    dispatch({
+      type: "changed",
+      task: { id: taskId, text: newText, done: false },
+    });
     setEditingTaskId(null);
   };
 
@@ -75,6 +78,6 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, dispatch }) => {
       ))}
     </ul>
   );
-};
+}
 
 export default TaskList;

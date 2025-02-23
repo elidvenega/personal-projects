@@ -1,5 +1,5 @@
 import { Key } from "react";
-import { frameworks } from "./data.js";
+import { frameworks } from "./data.ts";
 import "./card.css";
 
 export default function CardComponent() {
