@@ -15,7 +15,7 @@ export default function ItemList() {
       <input
         type="text"
         className="searchInput"
-        value={items}
+        value={itemSearch}
         placeholder="Search items..."
         onChange={(e) => setItemSearch(e.target.value)}
       />

@@ -1,9 +1,9 @@
-import PracticeFilter from "./projects/gpt-filter-list/PracticeFilter";
+import ItemList from "./projects/gpt-filter-list/ItemList";
 
 export default function App() {
   return (
     <>
-      <PracticeFilter />
+     <ItemList />
     </>
   );
 }
