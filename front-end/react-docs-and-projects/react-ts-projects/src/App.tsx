@@ -1,11 +1,10 @@
-import { TaskApp } from "./todo-list/TaskApp";
-// import Counter from "./projects/Counter";
+
+import Todo from "./todosimplelist/Todo";
 
 export default function App() {
   return (
     <>
-      <TaskApp />
-      {/* <Counter /> */}
+     <Todo />
     </>
   );
 }

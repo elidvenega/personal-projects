@@ -1,9 +1,9 @@
-import PracticeFilter from "./projects/gpt-filter-list/PracticeFilter";
+import EmojiApi from "./projects/random-quotes-api-server/EmojiAPI"
 
 export default function App() {
   return (
     <>
-      <PracticeFilter />
+     <EmojiApi />
     </>
   );
 }
