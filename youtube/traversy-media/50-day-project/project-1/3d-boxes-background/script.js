@@ -1,7 +1,7 @@
-// box container #boxes and .boxes .big
-const boxesContainer = document.getElementById("boxes");
+// box container has #boxes and .boxes .big
+const boxesContainer = document.querySelector(".boxes");
 // getting button it has #btn and .magic
-const btn = document.getElementById("btn");
+const btn = document.querySelector(".magic");
 
 // look up toggle
 btn.addEventListener("click", () => boxesContainer.classList.toggle("big"));
@@ -20,3 +20,14 @@ function createBoxes() {
 }
 
 createBoxes();
+
+// let toggle = false;
+
+// function toggleFunc() {
+//    toggle = !toggle;
+//    console.log('The value is', toggle);
+
+// }
+
+toggleFunc();
+toggleFunc();
