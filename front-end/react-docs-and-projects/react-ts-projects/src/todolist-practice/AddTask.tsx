@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-interface AddTasksProps {
+interface AddTaskProps {
   dispatch: React.Dispatch<{
     type: "added";
     id: number;
@@ -10,12 +10,12 @@ interface AddTasksProps {
 
 let nextId = 3;
 
-export default function AddTask({ dispatch }: AddTasksProps) {
+export default function AddTask({ dispatch }: AddTaskProps) {
   const [task, setTask] = useState("");
 
-  const handleAddTask = () => {
+  const handleSubmit = () => {
     dispatch({ type: "added", id: nextId++, text: task });
-    setTask("");
+    setTask("")
   };
 
   return (
@@ -26,7 +26,9 @@ export default function AddTask({ dispatch }: AddTasksProps) {
         value={task}
         onChange={(e) => setTask(e.target.value)}
       />
-      <button onClick={handleAddTask}>Add</button>
+      <button type="button" onClick={handleSubmit}>
+        Add
+      </button>
     </>
   );
 }
