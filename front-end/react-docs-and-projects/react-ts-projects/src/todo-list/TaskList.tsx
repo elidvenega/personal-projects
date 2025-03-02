@@ -66,14 +66,19 @@ function TaskList({ tasks, dispatch }: TaskListProps) {
           ) : (
             <>
               {task.text}
-              <button className="btn" onClick={() => handleEditTask(task)}>
-                Edit
-              </button>
+              <span className="btn-container">
+                <button className="btn" onClick={() => handleEditTask(task)}>
+                  Edit
+                </button>
+                <button
+                  className="del-btn"
+                  onClick={() => handleDeleteTask(task.id)}
+                >
+                  Delete
+                </button>
+              </span>
             </>
           )}
-          <button className="del-btn" onClick={() => handleDeleteTask(task.id)}>
-            Delete
-          </button>
         </li>
       ))}
     </ul>

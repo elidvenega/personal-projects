@@ -1,10 +1,12 @@
+// import TaskApp from "./todolist-practice/TaskApp";
 
-import Todo from "./todosimplelist/Todo";
+import TaskApp from "./todo-list/TaskApp";
 
 export default function App() {
   return (
     <>
-     <Todo />
+      {/* <TaskApp /> */}
+      <TaskApp />
     </>
   );
 }
