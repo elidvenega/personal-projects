@@ -23,23 +23,23 @@ const todoList: Task[] = [
 
 function reducer(tasks: Task[], action: TaskAction): Task[] {
        switch(action.type) {
-        
+
        }
 }
 
 
-function reducer(tasks: Task[], action: TaskAction): Task[] {
-    switch (action.type) {
-      case "added":
-        return [...tasks, { id: action.id!, text: action.text!, done: false }];
-      case "changed":
-        return tasks.map((t) => (t.id === action.task?.id ? action.task : t));
-      case "delete":
-        return tasks.filter((t) => t.id !== action.id);
-      default:
-        throw new Error("Unknown action: " + action.type);
-    }
-  }
+// function reducer(tasks: Task[], action: TaskAction): Task[] {
+//     switch (action.type) {
+//       case "added":
+//         return [...tasks, { id: action.id!, text: action.text!, done: false }];
+//       case "changed":
+//         return tasks.map((t) => (t.id === action.task?.id ? action.task : t));
+//       case "delete":
+//         return tasks.filter((t) => t.id !== action.id);
+//       default:
+//         throw new Error("Unknown action: " + action.type);
+//     }
+//   }
 
 
 export default function TaskApp() {
