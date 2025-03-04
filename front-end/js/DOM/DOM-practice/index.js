@@ -1,6 +1,7 @@
-const myInterest = ["hiking", "music", "movies", "beer", "concerts"];
+"use strict";
+const myInterest = ["Hiking", "Music", "Movies", "Beer", "Concerts"];
 
-const domPractice = () => {
+function domPractice() {
   const container = document.querySelector(".container");
 
   const paragraph = `This is direct DOM manipulation and learning how to wortk with it.`;
@@ -10,8 +11,8 @@ const domPractice = () => {
   return (container.innerHTML = `
 <h1 class="font">Hello DOM</h1>
 <p>${paragraph}</p>
- <p>My interests are  ${myInterest.join(" ")} </p>
+ <p>My interests are  ${myInterest.join("-")} </p>
 `);
-};
+}
 
 domPractice();
