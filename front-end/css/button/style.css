@@ -77,13 +77,13 @@ body {
 
 .center {
   text-align: center;
-  padding: 2rem;
+  padding: 3rem;
 }
 
 button {
   background-color: #3eb2fd;
   border: none;
-  border-radius: 2%;
+  border-radius: 2.5%;
   color: white;
   font-size: 1rem;
   padding: 1em 1em;

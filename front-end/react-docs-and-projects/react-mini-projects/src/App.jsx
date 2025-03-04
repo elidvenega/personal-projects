@@ -1,9 +1,15 @@
-import EmojiApi from "./projects/random-quotes-api-server/EmojiAPI"
+// import EmojiApi from "./projects/random-quotes-api-server/EmojiAPI"
+// import PracticeList from "./todolist/PracticeList";
+// import Gallery from "./projects/image-slide-project/Gallery";
+
+import Quote from "./projects/myproject-randomquotes/Quote";
 
 export default function App() {
   return (
     <>
-     <EmojiApi />
+      {/* <PracticeList /> */}
+      {/* <Gallery /> */}
+      <Quote />
     </>
   );
 }
