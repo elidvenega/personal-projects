@@ -1,7 +1,7 @@
 const boxContainer = document.querySelector(".boxes");
 const button = document.querySelector(".magic");
 
-button.addEventListener("click", () => boxContainer.classList.toggle);
+button.addEventListener("click", () => boxContainer.classList.toggle("big"));
 
 function createBoxes() {
   for (let i = 0; i < 4; i++) {
@@ -11,9 +11,15 @@ function createBoxes() {
       // works on the boxes dimensions
       box.style.backgroundPosition = `${-j * 125}px ${-i * 125}px`;
       // this appends to the container
-      boxesContainer.appendChild(box);
+      boxContainer.appendChild(box);
     }
   }
 }
 
 createBoxes();
+
+const x  = 1;
+const y = 2;
+console.log(x + y);
+
+
