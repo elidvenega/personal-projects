@@ -2,14 +2,17 @@
 // import PracticeList from "./todolist/PracticeList";
 // import Gallery from "./projects/image-slide-project/Gallery";
 
-import Quote from "./projects/myproject-randomquotes/Quote";
+import Example from "./Example";
+
+// import Quote from "./projects/myproject-randomquotes/Quote";
 
 export default function App() {
   return (
     <>
       {/* <PracticeList /> */}
       {/* <Gallery /> */}
-      <Quote />
+      {/* <Quote /> */}
+      <Example />
     </>
   );
 }
