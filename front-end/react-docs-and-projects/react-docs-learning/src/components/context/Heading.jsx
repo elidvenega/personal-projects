@@ -7,7 +7,12 @@ export default function Heading({ children }) {
     case 0:
       throw Error("Heading must be inside a Section!");
     case 1:
-      return <h1>{children}</h1>;
+      return (
+        <>
+          <h1> {children}</h1>
+          <p>This is level One </p>
+        </>
+      );
     case 2:
       return <h2>{children}</h2>;
     case 3:
