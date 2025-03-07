@@ -17,10 +17,11 @@ export default function Button() {
   // Example I was doing first
   const handleDecrement = () => {
     setBtn((btn) => {
-      if (btn >= 1) {
+      if (btn > 0) {
         return btn - 1;
       }
-      setBtn(btn);
+      // setBtn(btn);
+      return 0
     });
   };
 
