@@ -2,48 +2,37 @@ import { useState } from "react";
 import "./buttonstyle.css";
 
 export default function Button() {
-  const [btn, setBtn] = useState(0);
+  const [number, setNumber] = useState(0);
 
-  const handleIncrement = () => setBtn((btn) => btn + 1);
+  const handleIncrement = () => setNumber((number) => number + 1);
 
   // The way AJ preferred
-  // const handleDecrement = () => setBtn((btn) => Math.max(btn - 1, 0));
+  // const handleDecrement = () => setNumber((number) => Math.max(number - 1, 0));
 
   // Chat GPT
   // const handleDecrement = () => {
-  //   setBtn((btn) => (btn > 0 ? btn - 1 : 0));
+  //   setNumber((number) => (number > 0 ? number - 1 : 0));
   // };
 
   // Example I was doing first
   const handleDecrement = () => {
-    setBtn((btn) => {
-      if (btn > 0) {
-        return btn - 1;
+    setNumber((number) => {
+      if (number > 0) {
+        return number - 1;
       }
       // setBtn(btn);
-      return 0
+      return 0;
     });
   };
 
-  // const handleDecrement = () => {
-  //   setBtn((btn) => {
-  //     if (btn >= 1) {
-  //       return btn - 1;
-  //     }
-  //     return 0;
-  //   });
-  // };
-
-  const handleReset = () => setBtn(0);
-
+  const handleReset = () => setNumber(0);
+  const handleMultiplyByTwo = () => setNumber((number) => number * 2);
   // const handleAlert = () => setBtn(alert(btn));
-
-  const handleMultiplyByTwo = () => setBtn((btn) => btn * 2);
 
   return (
     <>
       <section>
-        <p>{btn}</p>
+        <p>{number}</p>
         <button onClick={handleIncrement}>Add</button>
         <button onClick={handleDecrement}>Subtract</button>
         <button onClick={handleReset}>Reset</button>

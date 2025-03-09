@@ -1,4 +1,4 @@
-export const todos = [
+export const data = [
   { id: 0, task: "Walk 20 mins" },
   { id: 1, task: "Cook Dinner" },
   { id: 2, task: "Watch Movie" },

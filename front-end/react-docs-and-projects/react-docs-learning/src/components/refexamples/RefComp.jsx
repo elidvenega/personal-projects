@@ -1,16 +1,12 @@
-import { useRef } from 'react';
+import { useRef } from "react";
 
 export default function RefComp() {
   let ref = useRef(0);
 
-  function handleClick() {
+  const handleClick = () => {
     ref.current = ref.current + 1;
-    alert('You clicked ' + ref.current + ' times!');
-  }
+    alert("You clicked " + ref.current + " times!");
+  };
 
-  return (
-    <button onClick={handleClick}>
-      Click me!
-    </button>
-  );
+  return <button onClick={handleClick}>Click me!</button>;
 }

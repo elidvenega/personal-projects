@@ -1,21 +1,19 @@
 import { useState } from "react";
-import { todos } from "./data";
-import "./todos.css";
+import { data } from "./data";
 
-let nextId = 6;
+let nextId = 5;
 export default function PracticeList() {
-  const [addTask, setAddTask] = useState("");
-  const [task, setTask] = useState(todos);
+  const [newTask, setNewTask] = useState("");
+  const [todos, setTodos] = useState(data);
 
-  const handleNewTask = (e) => setAddTask(e.target.value);
   const handleSubmit = () => {
-    if (addTask.trim() !== "") {
-      const newList = {
+    if (newTask.trim() !== "") {
+      const newTodos = {
         id: nextId++,
-        task: addTask,
+        task: newTask,
       };
-      setTask([...task, newList]);
-      setAddTask("");
+      setTodos([...todos, newTodos]);
+      setNewTask("");
     }
   };
 
@@ -25,40 +23,34 @@ export default function PracticeList() {
       handleSubmit();
     }
   };
-
-  const handleDelete = (index) => {
-    const newTodos = task.filter((t) => t.id !== index);
-    setTask(newTodos);
+  const handleDelete = (i) => {
+    const newList = todos.filter((todo) => todo.id !== i);
+    setTodos(newList);
   };
-
   return (
     <>
-      <div className="container">
-        <form action="">
-          <h1>Todo List</h1>
-          <input
-            type="text"
-            placeholder="Add Todo"
-            value={addTask}
-            onChange={handleNewTask}
-            onKeyDown={handleKeyDown}
-          />
-          <button type="submit" onClick={handleSubmit}>
-            Add
-          </button>
-        </form>
+      <h1>Todo List</h1>
+      <input
+        type="text"
+        placeholder="Add Todo"
+        value={newTask}
+        onChange={(e) => setNewTask(e.target.value)}
+        onKeyDown={handleKeyDown}
+      />
+      <button type="button" onClick={handleSubmit}>
+        Add Todo
+      </button>
 
-        <ul>
-          {task.map((todo) => (
-            <li key={todo.id}>
-              {todo.task}
-              <button type="button" onClick={() => handleDelete(todo.id)}>
-                Delete
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul>
+        {todos.map((todo) => (
+          <li key={todo.id}>
+            {todo.task}
+            <button type="button" onClick={() => handleDelete(todo.id)}>
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
     </>
   );
 }
