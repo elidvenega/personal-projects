@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import { useReducer } from "react";
 import AddTask from "./AddTask";
 import TaskList from "./TaskList";
 import "./todolist.css";
@@ -25,14 +25,9 @@ const todoList: Task[] = [
 const reducer = (tasks: Task[], action: TaskAction): Task[] => {
   switch (action.type) {
     case "added":
-      return [
-        ...tasks,
-        { id: action.id!, text: action.text!, done: false },
-      ];
+      return [...tasks, { id: action.id!, text: action.text!, done: false }];
     case "changed":
-      return tasks.map((t) =>
-        t.id === action.task?.id ? action.task : t
-      );
+      return tasks.map((t) => (t.id === action.task?.id ? action.task : t));
     case "delete":
       return tasks.filter((t) => t.id !== action.id);
     default:
@@ -40,7 +35,7 @@ const reducer = (tasks: Task[], action: TaskAction): Task[] => {
   }
 };
 
-export const TaskApp: React.FC = () => {
+export default function TaskApp() {
   const [tasks, dispatch] = useReducer(reducer, todoList);
 
   return (
@@ -50,4 +45,4 @@ export const TaskApp: React.FC = () => {
       <TaskList tasks={tasks} dispatch={dispatch} />
     </div>
   );
-};
+}

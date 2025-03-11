@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 interface AddTaskProps {
   dispatch: React.Dispatch<{
@@ -10,7 +10,7 @@ interface AddTaskProps {
 
 let nextId = 3;
 
-const AddTask: React.FC<AddTaskProps> = ({ dispatch }) => {
+export default function AddTask({ dispatch }: AddTaskProps) {
   const [task, setTask] = useState("");
 
   const handleAddTask = () => {
@@ -31,6 +31,4 @@ const AddTask: React.FC<AddTaskProps> = ({ dispatch }) => {
       </button>
     </>
   );
-};
-
-export default AddTask;
+}
