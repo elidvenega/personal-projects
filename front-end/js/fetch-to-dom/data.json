@@ -14,5 +14,37 @@
     "gender": "Female",
     "profileURL": "img/woman.jpg",
     "email": "jane.doe@example.com"
+  },
+  {
+    "username": "richie1",
+    "firstName": "Ricardo",
+    "lastName": "ALvarez",
+    "gender": "Male",
+    "profileURL": "img/men.jpg",
+    "email": "john.doe@example.com"
+  },
+  {
+    "username": "KristyWhoops",
+    "firstName": "Kristy",
+    "lastName": "Mandon",
+    "gender": "Female",
+    "profileURL": "img/woman.jpg",
+    "email": "john.doe@example.com"
+  },
+  {
+    "username": "johnszero",
+    "firstName": "Jonathan",
+    "lastName": "Cortez",
+    "gender": "Male",
+    "profileURL": "img/men.jpg",
+    "email": "john.doe@example.com"
+  },
+  {
+    "username": "KimberlyAnne",
+    "firstName": "Kimberly",
+    "lastName": "Zap",
+    "gender": "female",
+    "profileURL": "img/woman.jpg",
+    "email": "john.doe@example.com"
   }
 ]

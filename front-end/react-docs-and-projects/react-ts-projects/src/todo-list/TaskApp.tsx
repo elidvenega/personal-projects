@@ -22,7 +22,7 @@ const todoList: Task[] = [
   { id: 2, text: "Exercise 30 mins", done: false },
 ];
 
-const reducer = (tasks: Task[], action: TaskAction): Task[] => {
+function reducer(tasks: Task[], action: TaskAction): Task[] {
   switch (action.type) {
     case "added":
       return [...tasks, { id: action.id!, text: action.text!, done: false }];
@@ -33,9 +33,13 @@ const reducer = (tasks: Task[], action: TaskAction): Task[] => {
     default:
       throw new Error("Unknown action: " + action.type);
   }
-};
+}
 
+<<<<<<< HEAD
 export default function TaskApp() {
+=======
+function TaskApp() {
+>>>>>>> d0bf7f018f343559b12918ea6844c5327b6ff165
   const [tasks, dispatch] = useReducer(reducer, todoList);
 
   return (
@@ -46,3 +50,8 @@ export default function TaskApp() {
     </div>
   );
 }
+<<<<<<< HEAD
+=======
+
+export default TaskApp;
+>>>>>>> d0bf7f018f343559b12918ea6844c5327b6ff165

@@ -10,7 +10,11 @@ interface AddTaskProps {
 
 let nextId = 3;
 
+<<<<<<< HEAD
 export default function AddTask({ dispatch }: AddTaskProps) {
+=======
+function AddTask({ dispatch }: AddTaskProps) {
+>>>>>>> d0bf7f018f343559b12918ea6844c5327b6ff165
   const [task, setTask] = useState("");
 
   const handleAddTask = () => {
@@ -32,3 +36,8 @@ export default function AddTask({ dispatch }: AddTaskProps) {
     </>
   );
 }
+<<<<<<< HEAD
+=======
+
+export default AddTask;
+>>>>>>> d0bf7f018f343559b12918ea6844c5327b6ff165

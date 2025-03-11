@@ -15,7 +15,11 @@ interface TaskListProps {
   }>;
 }
 
+<<<<<<< HEAD
 export default function TaskList({ tasks, dispatch }: TaskListProps) {
+=======
+function TaskList({ tasks, dispatch }: TaskListProps) {
+>>>>>>> d0bf7f018f343559b12918ea6844c5327b6ff165
   const [editingTaskId, setEditingTaskId] = useState<number | null>(null);
   const [newText, setNewText] = useState("");
 
@@ -66,16 +70,26 @@ export default function TaskList({ tasks, dispatch }: TaskListProps) {
           ) : (
             <>
               {task.text}
-              <button className="btn" onClick={() => handleEditTask(task)}>
-                Edit
-              </button>
+              <span className="btn-container">
+                <button className="btn" onClick={() => handleEditTask(task)}>
+                  Edit
+                </button>
+                <button
+                  className="del-btn"
+                  onClick={() => handleDeleteTask(task.id)}
+                >
+                  Delete
+                </button>
+              </span>
             </>
           )}
-          <button className="del-btn" onClick={() => handleDeleteTask(task.id)}>
-            Delete
-          </button>
         </li>
       ))}
     </ul>
   );
 }
+<<<<<<< HEAD
+=======
+
+export default TaskList;
+>>>>>>> d0bf7f018f343559b12918ea6844c5327b6ff165

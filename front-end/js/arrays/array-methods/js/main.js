@@ -14,37 +14,49 @@ const items = [
 //Filter
 // const filteredItems = items.filter((item) => item.name.length > 4);
 const filteredItems = items.filter((item) => item.price >= 200);
-console.log(filteredItems);
+output.innerHTML = filteredItems
+  .map(
+    (item) => `
+   <section>
+   <p> ${item.name} - ${item.price} - ${item.type} </p>
+   </section>
+`
+  )
+  .join(" ");
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 // Map
 
-const mapItems = items.map((item) => item.name);
+// const mapItems = items.map((item) => item.name);
 
-console.log(mapItems);
+// console.log(mapItems);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 //find
 
-const foundItem = items.find((item) => {
-  return item.name === "Bike";
-});
+// const foundItem = items.find((item) => {
+//   return item.name === "Bike";
+// });
 
 // console.log(foundItem);
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 //forEach
-items.forEach((item) => {
-  console.log(`${item.name} ${item.price}`);
-});
+// items.forEach((item) => {
+//   console.log(`${item.name} ${item.price}`);
+// });
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// const animals = ["Wolves", "Birds", "Lions", "Tigers", "Dogs"];
 
-const animals = ["Wolves", "Birds", "Lions", "Tigers", "Dogs"];
+// const animalList = animals.map((animal) => animal + ` Practice`)
+// console.log(animalList);
 
-const animalList = animals.map((animal) => animal)
-console.log(animalList);
- 
-output.textContent = animalList.join(" ");
+// const animalsOutput = `
+//  <p>${animalList.join("-")} </p>
+
+// `
+
+// output.innerHTML = animalsOutput
