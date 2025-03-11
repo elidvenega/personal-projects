@@ -35,7 +35,11 @@ function reducer(tasks: Task[], action: TaskAction): Task[] {
   }
 }
 
+<<<<<<< HEAD
+export default function TaskApp() {
+=======
 function TaskApp() {
+>>>>>>> d0bf7f018f343559b12918ea6844c5327b6ff165
   const [tasks, dispatch] = useReducer(reducer, todoList);
 
   return (
@@ -46,5 +50,8 @@ function TaskApp() {
     </div>
   );
 }
+<<<<<<< HEAD
+=======
 
 export default TaskApp;
+>>>>>>> d0bf7f018f343559b12918ea6844c5327b6ff165
