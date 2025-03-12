@@ -8,6 +8,7 @@ export default function Accordion() {
   return (
     <>
       <div className="container">
+        <h1>Anime and Video Games</h1>
         <Panel
           title="Naruto"
           img={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtikTCZQU4VBDNQ5xMJqLlIMUjNhDlPldeHQ&s`}

@@ -5,6 +5,8 @@
   --panel-container-width: 90%;
   --padding: 10px;
   --white-color: #fff;
+  --font-size-h1: 3rem;
+  --font-size-h2: 2rem;
 }
 
 .panel-container {
@@ -17,10 +19,17 @@
 }
 
 h1 {
+  font-size: var(--font-size-h1);
   padding: var(--padding);
+  text-align: center;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
 }
 
 .images {
+  border-radius: 100%;
   width: var(--image-size);
   height: var(--image-size);
   object-fit: cover;

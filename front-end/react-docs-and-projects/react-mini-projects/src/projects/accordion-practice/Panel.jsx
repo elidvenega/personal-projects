@@ -1,11 +1,10 @@
 import "./panel.css";
 
-// eslint-disable-next-line react/prop-types
 export default function Panel({ children, onShow, isActive, title, img }) {
   return (
     <>
       <div className="panel-container">
-        <h1>{title}</h1>
+        <h2>{title}</h2>
         {isActive ? (
           <section>
             <img className="images" src={img} alt={title} />
