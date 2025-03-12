@@ -1,33 +1,28 @@
-//1.Create two functions
-// 2.Append to the DOM
-
 async function getData() {
   try {
-    const resp = await fetch("data.json");
-    const data = await resp.json();
-    return data
+    let resp = await fetch("data.json");
+    let data = await resp.json();
     console.log(data);
+    return data;
   } catch (e) {
     console.log(e);
   }
 }
 
-async function renderUsers() {
+async function displayData() {
   let users = await getData();
   let html = "";
   users.map((user) => {
-    let ouput = `
-      <div>
-         <h1>${user.firstName}</h1>
-      </div>
-     
-     `;
-
-    html += ouput;
+    let htmlSegment = `
+        <div>
+        <h2>${user.firstName} ${user.lastName} </h2>
+        </div>
+        `;
+    html += htmlSegment;
   });
-
   let container = document.querySelector(".container");
+
   container.innerHTML = html;
 }
 
-renderUsers();
+displayData();
