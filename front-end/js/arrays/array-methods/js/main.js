@@ -13,21 +13,31 @@ const items = [
 ////////////////////////////////////////////////////////////////////////////////////////////
 //Filter
 // const filteredItems = items.filter((item) => item.name.length > 4);
-const filteredItems = items.filter((item) => item.price >= 200);
-output.innerHTML = filteredItems
-  .map(
-    (item) => `
-   <section>
-   <p> ${item.name} - ${item.price} - ${item.type} </p>
-   </section>
-`
-  )
-  .join(" ");
+// const filteredItems = items.filter((item) => item.price >= 200);
+// output.innerHTML = filteredItems
+//   .map(
+//     (item) => `
+//    <section>
+//    <p> ${item.name} - ${item.price} - ${item.type} </p>
+//    </section>
+// `
+//   )
+//   .join(" ");
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 // Map
 
 // const mapItems = items.map((item) => item.name);
+// output.innerHTML = items
+//   .map(
+//     (item) => `
+//     <section>
+//     <p> ${item.name} - ${item.price} - ${item.type} </p>
+//         </section>
+
+// `
+//   )
+//   .join(" ");
 
 // console.log(mapItems);
 
@@ -42,11 +52,17 @@ output.innerHTML = filteredItems
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
-//forEach
-// items.forEach((item) => {
-//   console.log(`${item.name} ${item.price}`);
-// });
+// forEach
+items.forEach((item) => {
+  console.log(`${item.name} ${item.price}`);
+});
 
+output.innerHTML = items.forEach(
+  (item) => `
+      <section>
+      <p> ${item.name} - ${item.price} - ${item.type} </p>
+          </section>`
+);
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // const animals = ["Wolves", "Birds", "Lions", "Tigers", "Dogs"];
