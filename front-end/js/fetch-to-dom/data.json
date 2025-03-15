@@ -4,7 +4,7 @@
     "firstName": "John",
     "lastName": "Doe",
     "gender": "Male",
-    "profileURL": "img/men.jpg",
+    "profileURL": "img/guy-one.jpg",
     "email": "john.doe@example.com"
   },
   {
@@ -12,7 +12,7 @@
     "firstName": "Jane",
     "lastName": "Doe",
     "gender": "Female",
-    "profileURL": "img/woman.jpg",
+    "profileURL": "img/girl-one.avif",
     "email": "jane.doe@example.com"
   },
   {
@@ -20,7 +20,7 @@
     "firstName": "Ricardo",
     "lastName": "ALvarez",
     "gender": "Male",
-    "profileURL": "img/men.jpg",
+    "profileURL": "img/guy-two.jpg",
     "email": "john.doe@example.com"
   },
   {
@@ -28,7 +28,7 @@
     "firstName": "Kristy",
     "lastName": "Mandon",
     "gender": "Female",
-    "profileURL": "img/woman.jpg",
+    "profileURL": "img/girl-two.jpg",
     "email": "john.doe@example.com"
   },
   {
@@ -36,7 +36,7 @@
     "firstName": "Jonathan",
     "lastName": "Cortez",
     "gender": "Male",
-    "profileURL": "img/men.jpg",
+    "profileURL": "img/guy-three.jpg",
     "email": "john.doe@example.com"
   },
   {
@@ -44,7 +44,7 @@
     "firstName": "Kimberly",
     "lastName": "Zap",
     "gender": "female",
-    "profileURL": "img/woman.jpg",
+    "profileURL": "img/girl-three.jpg",
     "email": "john.doe@example.com"
   }
 ]

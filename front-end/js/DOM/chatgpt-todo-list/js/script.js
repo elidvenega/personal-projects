@@ -5,7 +5,7 @@ const taskList = document.getElementById("task-list");
 
 // Function to add a new task
 function addTask() {
-    // trim() removes whote space from the left and right
+    // trim() removes white space from the left and right
   const taskText = newTaskInput.value.trim();
   if (taskText === "") {
     alert("Please enter a task.");

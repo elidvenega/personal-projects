@@ -4,7 +4,7 @@ const str = `Hello world how are you and what are you doing`;
 
 str.split("");
 
-console.log(str.split(""));
+console.log(str.split(" "));
 
 // Reduce Method Practice
 
@@ -30,6 +30,11 @@ console.log(result);
 // Expected output: Array ["exuberant", "destruction", "present"]
 
 // fill method also
+/* 
+The fill() method of Array instances changes all elements 
+within a range of indices in an array to a static value. It returns the modified array.
+
+*/
 const fillExample = [1, 4, 5, 6, 7];
 console.log(fillExample);
 console.log(fillExample.fill(31, 4), "fill()");
@@ -110,3 +115,10 @@ const concatArr2 = [4, 5, 6, 7];
 
 const sumArr = concatArr.concat(concatArr2);
 console.log(sumArr);
+
+// every method
+const isBelowThreshold = (currentValue) => currentValue < 40;
+const arrayOne = [1, 30, 39, 29, 10, 13];
+
+console.log(arrayOne.every(isBelowThreshold));
+// Expected output: true

@@ -10,14 +10,10 @@ interface AddTaskProps {
 
 let nextId = 3;
 
-<<<<<<< HEAD
 export default function AddTask({ dispatch }: AddTaskProps) {
-=======
-function AddTask({ dispatch }: AddTaskProps) {
->>>>>>> d0bf7f018f343559b12918ea6844c5327b6ff165
   const [task, setTask] = useState("");
 
-  const handleAddTask = () => {
+  const handleSubmit = () => {
     dispatch({ type: "added", id: nextId++, text: task });
     setTask("");
   };
@@ -30,14 +26,9 @@ function AddTask({ dispatch }: AddTaskProps) {
         value={task}
         onChange={(e) => setTask(e.target.value)}
       />
-      <button className="btn" onClick={handleAddTask}>
+      <button type="button" className="btn" onClick={handleSubmit}>
         Add
       </button>
     </>
   );
 }
-<<<<<<< HEAD
-=======
-
-export default AddTask;
->>>>>>> d0bf7f018f343559b12918ea6844c5327b6ff165

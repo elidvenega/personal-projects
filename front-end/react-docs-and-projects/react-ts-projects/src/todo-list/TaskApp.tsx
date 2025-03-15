@@ -1,7 +1,7 @@
 import { useReducer } from "react";
 import AddTask from "./AddTask";
 import TaskList from "./TaskList";
-import "./todolist.css";
+import "./todolist.css"
 
 interface Task {
   id: number;
@@ -17,9 +17,9 @@ interface TaskAction {
 }
 
 const todoList: Task[] = [
-  { id: 0, text: "Go to work", done: false },
-  { id: 1, text: "Read 15 mins", done: false },
-  { id: 2, text: "Exercise 30 mins", done: false },
+  { id: 0, text: "Clean House", done: false },
+  { id: 1, text: "Move Furniture", done: false },
+  { id: 2, text: "Wax Car", done: false },
 ];
 
 function reducer(tasks: Task[], action: TaskAction): Task[] {
@@ -31,17 +31,12 @@ function reducer(tasks: Task[], action: TaskAction): Task[] {
     case "delete":
       return tasks.filter((t) => t.id !== action.id);
     default:
-      throw new Error("Unknown action: " + action.type);
+      throw Error("Unknown Action" + action.type);
   }
 }
 
-<<<<<<< HEAD
 export default function TaskApp() {
-=======
-function TaskApp() {
->>>>>>> d0bf7f018f343559b12918ea6844c5327b6ff165
   const [tasks, dispatch] = useReducer(reducer, todoList);
-
   return (
     <div className="container">
       <h1>Todo List</h1>
@@ -50,8 +45,3 @@ function TaskApp() {
     </div>
   );
 }
-<<<<<<< HEAD
-=======
-
-export default TaskApp;
->>>>>>> d0bf7f018f343559b12918ea6844c5327b6ff165
