@@ -14,17 +14,9 @@ interface TaskListProps {
     task?: Task;
   }>;
 }
-
-<<<<<<< HEAD
 export default function TaskList({ tasks, dispatch }: TaskListProps) {
-=======
-function TaskList({ tasks, dispatch }: TaskListProps) {
->>>>>>> d0bf7f018f343559b12918ea6844c5327b6ff165
   const [editingTaskId, setEditingTaskId] = useState<number | null>(null);
   const [newText, setNewText] = useState("");
-
-  const handleToggleTask = (task: Task) =>
-    dispatch({ type: "changed", task: { ...task, done: !task.done } });
 
   const handleDeleteTask = (taskId: number) =>
     dispatch({ type: "delete", id: taskId });
@@ -48,11 +40,6 @@ function TaskList({ tasks, dispatch }: TaskListProps) {
     <ul>
       {tasks.map((task) => (
         <li key={task.id}>
-          <input
-            type="checkbox"
-            checked={task.done}
-            onChange={() => handleToggleTask(task)}
-          />
           {editingTaskId === task.id ? (
             <>
               <input
@@ -60,17 +47,20 @@ function TaskList({ tasks, dispatch }: TaskListProps) {
                 value={newText}
                 onChange={(e) => setNewText(e.target.value)}
               />
-              <button className="btn" onClick={() => handleSaveTask(task.id)}>
-                Save
-              </button>
-              <button className="btn" onClick={handleCancelEdit}>
-                Cancel
-              </button>
+              <div className="btn-container">
+                <button className="btn" onClick={() => handleSaveTask(task.id)}>
+                  Save
+                </button>
+                <button className="btn" onClick={handleCancelEdit}>
+                  Cancel
+                </button>
+              </div>
             </>
           ) : (
             <>
               {task.text}
-              <span className="btn-container">
+
+              <div className="btn-container">
                 <button className="btn" onClick={() => handleEditTask(task)}>
                   Edit
                 </button>
@@ -80,7 +70,7 @@ function TaskList({ tasks, dispatch }: TaskListProps) {
                 >
                   Delete
                 </button>
-              </span>
+              </div>
             </>
           )}
         </li>
@@ -88,8 +78,3 @@ function TaskList({ tasks, dispatch }: TaskListProps) {
     </ul>
   );
 }
-<<<<<<< HEAD
-=======
-
-export default TaskList;
->>>>>>> d0bf7f018f343559b12918ea6844c5327b6ff165

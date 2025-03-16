@@ -15,10 +15,10 @@ interface TaskAction {
   task?: Task;
 }
 
-const todoList: Task[] = [
-  { id: 0, text: "Clean House", done: false },
-  { id: 1, text: "Move Furniture", done: false },
-  { id: 2, text: "Wax Car", done: false },
+const todos: Task[] = [
+  { id: 0, text: "Walk 20 mins", done: false },
+  { id: 1, text: "Buy groceries", done: false },
+  { id: 2, text: "Cook Dinner", done: false },
 ];
 
 function reducer(tasks: Task[], action: TaskAction): Task[] {
@@ -35,12 +35,12 @@ function reducer(tasks: Task[], action: TaskAction): Task[] {
 }
 
 export default function TaskApp() {
-  const [tasks, dispatch] = useReducer(reducer, todoList);
+  const [tasks, dispatch] = useReducer(reducer, todos);
   return (
     <div>
       <h1>Todo List</h1>
       <AddTask dispatch={dispatch} />
-      <TaskList tasks={tasks} dispatch={dispatch} />
+      <TaskList dispatch={dispatch} tasks={tasks} />
     </div>
   );
 }
