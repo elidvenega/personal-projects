@@ -1,8 +1,10 @@
 // import AccordionPractice from "./projects/accordion/AccordionPractice";
 // import SecondAccordion from "./projects/accordion/SecondAccordion";
 
+import SeventhAccordion from "./projects/accordion/SeventhAccordion";
+
 // import FifthAccordion from "./projects/accordion/FifthAccordion";
-import SixthAccordion from "./projects/accordion/SixthAccordion";
+// import SixthAccordion from "./projects/accordion/SixthAccordion";
 
 // import FourthAccordion from "./projects/accordion/FourthAccordion";
 
@@ -18,7 +20,8 @@ export default function App() {
       {/* <Accordion /> */}
       {/* <FourthAccordion /> */}
       {/* <FifthAccordion /> */}
-      <SixthAccordion />
+      {/* <SixthAccordion /> */}
+      <SeventhAccordion />
     </>
   );
 }
