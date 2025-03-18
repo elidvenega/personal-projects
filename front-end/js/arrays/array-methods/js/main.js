@@ -61,8 +61,8 @@ output.innerHTML = items.forEach(
   (item) => `
       <section>
       <p> ${item.name} - ${item.price} - ${item.type} </p>
-          </section>`
-);
+      </section>`
+).join(" ");
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // const animals = ["Wolves", "Birds", "Lions", "Tigers", "Dogs"];

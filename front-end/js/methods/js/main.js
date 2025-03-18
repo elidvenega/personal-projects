@@ -16,7 +16,7 @@ console.log(sum);
 
 // map
 // Will create a shallow copy and bring new array
-console.log(arr.map((x) => x * 2));
+console.log(arr.map((x) => x * 2), "map()");
 
 // at method
 console.log(arr.at(1), "at()");
@@ -37,7 +37,7 @@ within a range of indices in an array to a static value. It returns the modified
 */
 const fillExample = [1, 4, 5, 6, 7];
 console.log(fillExample);
-console.log(fillExample.fill(31, 4), "fill()");
+console.log(fillExample.fill(31, 1), "fill()");
 
 // left off on find()
 
@@ -47,18 +47,21 @@ const officeEmployees = [
   {
     employeeOne: "James",
     title: "Accountant",
+    hobby: "Golf"
   },
   {
     employeeTwo: "Chuck",
     title: "Engineer",
+    hobby: "Art"
   },
   {
     employeeThree: "Dave",
     title: "Executive",
+    hobby: "Hiking"
   },
 ];
 
-const jobTitles = officeEmployees.flatMap((job) => job.title);
+const jobTitles = officeEmployees.flatMap((job, art) =>  job.title + art.hobby);
 
 console.log(jobTitles, "flatMap");
 
@@ -79,7 +82,7 @@ const animals = [
 // console.log(animals);
 
 // slice
-const resultSlice = animals.slice(1, 3);
+const resultSlice = animals.slice(0, 4);
 console.log(resultSlice, "using slice");
 
 // findIndex() returns the index that resolves the solution
