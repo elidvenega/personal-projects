@@ -35,8 +35,6 @@ const quotes = [
   },
 ];
 
-
-
 app.get("/random-quote", (req, res) => {
   const randomQuote = Math.floor(Math.random() * quotes.length);
   res.json(quotes[randomQuote]);
@@ -45,10 +43,3 @@ app.get("/random-quote", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Your server is in http://localhost:${PORT}`);
 });
-<<<<<<< HEAD
-=======
-
-
-
-
->>>>>>> b39d82d1a1f5ea083b32536b7d4ecffe56de6769
