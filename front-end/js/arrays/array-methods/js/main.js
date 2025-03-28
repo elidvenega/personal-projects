@@ -53,16 +53,16 @@ const items = [
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 // forEach
-items.forEach((item) => {
-  console.log(`${item.name} ${item.price}`);
-});
+// items.forEach((item) => {
+//   console.log(`${item.name} ${item.price}`);
+// });
 
-output.innerHTML = items.forEach(
-  (item) => `
-      <section>
-      <p> ${item.name} - ${item.price} - ${item.type} </p>
-      </section>`
-).join(" ");
+// output.innerHTML = items.forEach(
+//   (item) => `
+//       <section>
+//       <p> ${item.name} - ${item.price} - ${item.type} </p>
+//       </section>`
+// ).join(" ");
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // const animals = ["Wolves", "Birds", "Lions", "Tigers", "Dogs"];
@@ -76,3 +76,13 @@ output.innerHTML = items.forEach(
 // `
 
 // output.innerHTML = animalsOutput
+
+const band = ["Kurt", "Khris", "Dave"];
+
+const [singer, bass, drums] = band;
+console.log(singer);
+
+document.body.innerHTML = `
+
+<p> The singer was ${singer}</p>
+`;
