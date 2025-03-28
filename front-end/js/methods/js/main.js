@@ -16,7 +16,10 @@ console.log(sum);
 
 // map
 // Will create a shallow copy and bring new array
-console.log(arr.map((x) => x * 2), "map()");
+console.log(
+  arr.map((x) => x * 2),
+  "map()"
+);
 
 // at method
 console.log(arr.at(1), "at()");
@@ -47,21 +50,21 @@ const officeEmployees = [
   {
     employeeOne: "James",
     title: "Accountant",
-    hobby: "Golf"
+    hobby: "Golf",
   },
   {
     employeeTwo: "Chuck",
     title: "Engineer",
-    hobby: "Art"
+    hobby: "Art",
   },
   {
     employeeThree: "Dave",
     title: "Executive",
-    hobby: "Hiking"
+    hobby: "Hiking",
   },
 ];
 
-const jobTitles = officeEmployees.flatMap((job, art) =>  job.title + art.hobby);
+const jobTitles = officeEmployees.flatMap((job) => job.title + job.hobby);
 
 console.log(jobTitles, "flatMap");
 
