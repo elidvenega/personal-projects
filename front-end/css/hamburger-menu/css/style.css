@@ -1,10 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Tiro+Gurmukhi&display=swap");
 
 :root {
-  --primary-color: #252529;
-  --secondary-color: #3d3d3d;
-  --btn-dark: #2c3a47;
-  --btn-dark-two: #303952;
+  --nav-bg-color: #615fff;
 }
 
 * {
@@ -12,54 +9,27 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   font-family: "Tiro Gurmukhi", serif;
   line-height: 1.4;
 }
-#img {
-  background: #0c0404 url("../images/jacks-bar.jpg") no-repeat center
-    center/cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  max-width: 100%;
-  position: relative;
-}
-#layer {
-  background: #0c0404;
-  height: 100%;
-  opacity: 0.6;
-  position: absolute;
-  width: 100%;
-}
-#img h1 {
-  color: #fff;
-  font-size: 7rem;
-  margin-top: 125px;
-  z-index: 1;
-}
-#img p {
-  color: #fff;
-  font-size: 2rem;
-  z-index: 1;
-}
-#bar {
-  font-size: 5rem;
-  margin: 10px;
-}
-/* Top nav */
+
+/* navigation */
 .top-nav {
+  background-color: var(--nav-bg-color);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background: #2d3436;
   color: #fff;
   height: 55px;
-  padding: 26px;
+  padding: 36px 20px;
 }
 
+.logo {
+  font-size: 1.8rem;
+}
 .menu {
   display: flex;
   flex-direction: row;
@@ -123,6 +93,40 @@ body {
 #menu-toggle:checked + .menu-button-container .menu-button::after {
   margin-top: 0px;
   transform: rotate(-405deg);
+}
+
+/* Bar Image */
+#img {
+  background: #0c0404 url("../images/jacks-bar.jpg") no-repeat center
+    center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  max-width: 100%;
+  position: relative;
+}
+#layer {
+  background: #0c0404;
+  height: 100%;
+  opacity: 0.6;
+  position: absolute;
+  width: 100%;
+}
+#img h1 {
+  color: #fff;
+  font-size: 7rem;
+  margin-top: 125px;
+  z-index: 1;
+}
+#img p {
+  color: #fff;
+  font-size: 2rem;
+  z-index: 1;
+}
+#bar {
+  font-size: 5rem;
+  margin: 10px;
 }
 
 h4 {
