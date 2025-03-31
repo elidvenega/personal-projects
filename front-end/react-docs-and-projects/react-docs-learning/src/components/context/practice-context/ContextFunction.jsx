@@ -11,6 +11,8 @@ function Section({ level, children }) {
   );
 }
 
+// Working with context
+
 function Heading({ children }) {
   const level = useContext(PracticeContext);
   switch (level) {
