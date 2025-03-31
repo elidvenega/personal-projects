@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      .navbar {
+        display: flex;
+        background-color: rgb(18, 126, 126);
+        justify-content: space-between;
+        padding: 15px 20px;
+      }
+
+      .title {
+        color: #fff;
+        font-size: 1.4rem;
+        font-weight: bold;
+      }
+
+      .navbar ul {
+        display: flex;
+        gap: 15px;
+        list-style: none;
+      }
+
+      .navbar ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 8px 12px;
+        transition: color 0.3s ease-in-out;
+      }
+
+      .navbar ul li a:hover {
+        color: yellow;
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 10px 20px;
+        }
+
+        .navbar ul {
+          flex-direction: column;
+          width: 100%;
+          gap: 10px;
+          padding-top: 10px;
+        }
+        .navbar ul {
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <span class="title">Title</span>
+        <ul>
+          <li><a href="#">One</a></li>
+          <li><a href="#">Second</a></li>
+          <li><a href="#">Third</a></li>
+          <li><a href="#">Fourth</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>
