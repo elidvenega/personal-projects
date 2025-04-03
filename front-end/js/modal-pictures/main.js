@@ -23,11 +23,11 @@ Make modal work on all images
 //   modal.style.display = "none";
 // };
 
-var modal = document.getElementById("myModal");
-var i;
+const modal = document.getElementById("myModal");
+let i;
 
-var img = document.getElementsByClassName("myImg");
-var modalImg = document.getElementById("img01");
+const img = document.getElementsByClassName("myImg");
+const modalImg = document.getElementById("img01");
 
 for (i = 0; i < img.length; i++) {
   img[i].onclick = function () {
@@ -36,7 +36,7 @@ for (i = 0; i < img.length; i++) {
   };
 }
 
-var span = document.getElementsByClassName("close")[0];
+let span = document.getElementsByClassName("close")[0];
 
 span.onclick = function () {
   modal.style.display = "none";
