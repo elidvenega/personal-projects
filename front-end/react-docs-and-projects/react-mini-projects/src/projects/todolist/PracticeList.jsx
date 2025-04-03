@@ -9,7 +9,7 @@ export default function PracticeList() {
   const handleSubmit = () => {
     if (newTask.trim() !== "") {
       const newTodos = {
-        id: nextId++,
+        id: todos.length,
         task: newTask,
       };
       setTodos([...todos, newTodos]);
@@ -33,6 +33,7 @@ export default function PracticeList() {
       <input
         type="text"
         placeholder="Add Todo"
+        name="todo-list"
         value={newTask}
         onChange={(e) => setNewTask(e.target.value)}
         onKeyDown={handleKeyDown}

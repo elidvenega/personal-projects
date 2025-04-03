@@ -4,8 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node ./practice-server.js",
-    "dev": "nodemon ./practice-server.js"
+    "start": "node ./emoji-server.js",
+    "dev": "nodemon ./emoji-server.js"
   },
   "keywords": [],
   "author": "",
