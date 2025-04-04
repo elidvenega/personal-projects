@@ -19,7 +19,9 @@ const quotes = [
 function getRandomQuote() {
   const randomQuote = Math.floor(Math.random() * quotes.length);
   const quote = `
-  <p>${quotes[randomQuote]}</p>
+ <div class="quote">
+ <p>${quotes[randomQuote]}</p>
+ </div>
   
   `;
 
