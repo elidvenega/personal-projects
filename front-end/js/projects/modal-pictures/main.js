@@ -42,6 +42,6 @@ for (i = 0; i < img.length; i++) {
 let span = document.getElementsByClassName("close")[0];
 
 // when I click on image modal will close
-span.onclick = () => {
+span.onclick =  () => {
   modal.style.display = "none";
 };

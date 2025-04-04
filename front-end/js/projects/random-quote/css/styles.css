@@ -21,6 +21,15 @@ h1 {
   padding: 20px;
 }
 
+.quote {
+  background-color: oklch(58.5% 0.233 277.117);
+  border-radius: 5px;
+  color: #fff;
+  padding: 2rem;
+  max-width: 24rem;
+  margin: auto;
+}
+
 p {
   font-size: 2.3rem;
 }

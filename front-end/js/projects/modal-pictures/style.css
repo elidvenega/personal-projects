@@ -116,6 +116,7 @@ body {
     grid-template-columns: repeat(6, 1fr); */
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 15px;
   overflow: hidden;
