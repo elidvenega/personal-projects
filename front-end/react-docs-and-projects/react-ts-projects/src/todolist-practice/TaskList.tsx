@@ -7,7 +7,7 @@ interface Task {
 }
 
 interface TaskListProps {
-  task: Task[];
+  tasks: Task[];
   dispatch: React.Dispatch<{
     type: "changed" | "delete";
     id?: number;
@@ -16,21 +16,47 @@ interface TaskListProps {
 }
 
 export default function TaskList({ tasks, dispatch }: TaskListProps) {
-  const[editingTaskId, setEditingTaskId] = useState<number | null>(null);
+  const [editingTaskId, setEditingTaskId] = useState<number | null>(null);
   const [newText, setNewText] = useState("");
 
-const handleDeleteTask = (taskId: number) => dispatch({ type: "delete", id: taskId})
+  const handleDeleteTask = (taskId: number) =>
+    dispatch({ type: "delete", id: taskId });
 
-const handleEditTask = (task: Task) => {
-  setEditingTaskId(task.id)
-  setNewText(task.text)
-}
+  const handleEditTask = (task: Task) => {
+    setEditingTaskId(task.id);
+    setNewText(task.text);
+  };
 
-const handleCancelEdit = () => setEditingTaskId(null)
+  const handleSaveTask = (taskId: number) => {
+    dispatch({
+      type: "changed",
+      task: { id: taskId, text: newText, done: false },
+    });
+    setEditingTaskId(null);
+  };
+
+  const handleCancelEdit = () => setEditingTaskId(null);
   return (
-   <ul>
-
-    
-   </ul>
-  )
+    <ul>
+      {tasks.map((task) => (
+        <li key={task.id}>
+          {editingTaskId === task.id ? (
+            <>
+              <input
+                type="text"
+                value={newText}
+                onChange={(e) => setNewText(e.target.value)}
+              />
+              <div className="btn-container">
+                <button onClick={() => handleSaveTask(task.id)}>save</button>
+                <button onClick={handleCancelEdit}>Cancel</button>
+              </div>
+            </>
+          ) : (
+            <></>
+          )}
+        </li>
+      ))}
+    </ul>
+  );
 }
