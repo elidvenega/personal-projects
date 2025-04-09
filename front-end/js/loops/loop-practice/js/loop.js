@@ -8,6 +8,16 @@ for (let i = 0; i < arr.length; i++) {
 
 document.body.innerText = emptyArr;
 
+let allNums = []
+
+for( let i = 1; i <=10; i++) {
+  console.log(allNums.push([i]));
+  
+}
+
+console.log(allNums);
+
+
 // const output = document.querySelector('.output').innerHTML = arr;
 //  output.innerText = emptyArr;
 
@@ -50,6 +60,12 @@ const data = {
 
 for (const elem in data) {
   console.log(elem, data[elem]);
+}
+
+const animals = ['wolf', 'tiger','dogs']
+for(const a of animals) {
+  console.log(a);
+  
 }
 
 // //////////////////////////////////////////////////////////////////////////////////////////////////////////////
