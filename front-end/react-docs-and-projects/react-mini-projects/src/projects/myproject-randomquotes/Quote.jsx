@@ -6,6 +6,7 @@ const quotes = [
   "Work Hard and Believe in God",
   "Victory Is Around The Corner",
   "Believe in Yourself",
+  "Persist and dont't surrender",
 ];
 
 export default function Quote() {

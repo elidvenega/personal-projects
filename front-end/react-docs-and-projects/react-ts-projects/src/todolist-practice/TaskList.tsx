@@ -53,7 +53,15 @@ export default function TaskList({ tasks, dispatch }: TaskListProps) {
               </div>
             </>
           ) : (
-            <></>
+            <>
+              {task.text}
+              <div>
+                <button onClick={() => handleEditTask(task)}>Edit</button>
+                <button onClick={() => handleDeleteTask(task.id)}>
+                  Delete
+                </button>
+              </div>
+            </>
           )}
         </li>
       ))}
