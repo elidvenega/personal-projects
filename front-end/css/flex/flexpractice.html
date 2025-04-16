@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      * {
+      *,
+      *::before,
+      *::after {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
@@ -15,12 +17,8 @@
         background-color: #eab308;
         font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
           "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-      }
-
-      h1 {
-        text-align: center;
-        color: azure;
-        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
       }
 
       .flex-container {
@@ -36,7 +34,6 @@
         flex-direction: row;
         /* flex-wrap: wrap; */
         justify-content: space-evenly;
-        margin: auto;
         margin-top: 2rem;
       }
 
@@ -48,8 +45,6 @@
     </style>
   </head>
   <body>
-    <h1>Working with flex</h1>
-
     <div class="flex-container">
       <div class="flex-square"></div>
       <div class="flex-square"></div>
@@ -58,25 +53,11 @@
       <div class="flex-square"></div>
       <div class="flex-square"></div>
       <div class="flex-square"></div>
-      <!-- <div class="flex-square"></div>
-      <div class="flex-square"></div>
-      <div class="flex-square"></div>
-      <div class="flex-square"></div>
-      <div class="flex-square"></div> -->
-    </div>
-    <div class="flex-container">
       <div class="flex-square"></div>
       <div class="flex-square"></div>
       <div class="flex-square"></div>
       <div class="flex-square"></div>
       <div class="flex-square"></div>
-      <div class="flex-square"></div>
-      <div class="flex-square"></div>
-      <!-- <div class="flex-square"></div>
-      <div class="flex-square"></div>
-      <div class="flex-square"></div>
-      <div class="flex-square"></div>
-      <div class="flex-square"></div> -->
     </div>
   </body>
 </html>
