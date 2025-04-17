@@ -46,3 +46,14 @@ const array = [1, 2, 3, 4];
 const multiplyByTwo = array.map((x) => x * 2);
 
 console.log(multiplyByTwo);
+
+////////////////////////////////////////
+// Practive
+
+const animalList = ["Dog's", "Cat", "Bird", "Fish", "Rabbit", "Lizard"];
+const animalList2 = ["Wolf's", "Birds"];
+
+for (let i = 0; i < animalList.length; i++) {
+  animalList2.push(animalList[i]);
+}
+console.log(animalList2);
