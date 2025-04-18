@@ -17,7 +17,7 @@ let amountsPlusOne = [];
 // The greatest benefit of a forEach loop is being able
 // to access each item
 amounts.forEach((i) => {
-  amountsPlusOne.push(i * 3);
+  amountsPlusOne.push(i + 1);
 });
 
 console.log(amountsPlusOne);

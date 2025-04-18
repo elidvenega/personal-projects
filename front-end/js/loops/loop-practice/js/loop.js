@@ -6,16 +6,18 @@ for (let i = 0; i < arr.length; i++) {
   output.innerText = emptyArr.push(arr[i]);
 }
 
-document.body.innerText = emptyArr;
+// output.style.fontSize = "2rem";
+// document.body.innerText = emptyArr;
+// output.textContent = emptyArr
 
-let allNums = []
+// let allNumbers = []
 
-for( let i = 1; i <=10; i++) {
-  console.log(allNums.push([i]));
+// for( let i = 1; i <=10; i++) {
+//   console.log(allNumbers.push([i]));
   
-}
+// }
 
-console.log(allNums);
+// console.log(allNums);
 
 
 // const output = document.querySelector('.output').innerHTML = arr;
@@ -69,7 +71,15 @@ for(const a of animals) {
 }
 
 // //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const numbers = [1,2,3,4,5,6,7,8,9,10];
+const evenNumber = [];
 
-// /* Output Array to the DOM */
+for(let i = 0; i < numbers.length; i++) {
+  if(numbers[i] % 2 === 0) {
+    evenNumber.push(numbers[i])
+  }
+}
 
-// for()
+console.log(evenNumber);
+
+
