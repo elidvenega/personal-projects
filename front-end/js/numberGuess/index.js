@@ -1,4 +1,6 @@
 "use strict";
+const button = document.querySelector(".button");
+
 // Improve the game a bit
 function guessNumber() {
   let randomNum = Math.floor(Math.random() * 20);
@@ -21,4 +23,4 @@ function guessNumber() {
   }
 }
 
-guessNumber();
+button.addEventListener("click", guessNumber);
