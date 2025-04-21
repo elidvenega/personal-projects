@@ -81,7 +81,7 @@ function searchOutput() {
   const filter = searchInput.value.toLowerCase();
 
   return itemList.forEach((item) => {
-    item.style.display = item.textContent.toLocaleLowerCase().includes(filter)
+    item.style.display = item.textContent.toLowerCase().includes(filter)
       ? "block"
       : "none";
   });
