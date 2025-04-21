@@ -36,8 +36,12 @@ console.log(firstPerson(info));
 // output.innerHTML = firstPerson(info);
 
 
-function example() {
-  return `Hello this is a test`;
+const testExample = {
+  info: "My first test"
+}
+
+function example({test}) {
+  return `${test}`;
 }
 
 output.innerHTML = example();
