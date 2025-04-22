@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        margin: 0 auto;
+        margin-top: 190px;
+        padding: 1rem;
+        animation-name: square-animation;
+        animation-duration: 10s;
+      }
+
+      @keyframes square-animation {
+        from {
+          background-color: green;
+          scale: 2;
+         transform: rotate(0.5turn);
+        }
+        to {
+          background-color: yellow;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>
