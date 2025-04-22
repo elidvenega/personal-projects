@@ -1,10 +1,10 @@
 // import NineAccordion from "./projects/accordion/NineAccordion";
-import PracticeList from "./projects/todolist/PracticeList";
+import Destructuring from "./projects/destructuring/Destructuring";
 
 export default function App() {
   return (
     <>
-   <PracticeList />
+      <Destructuring />
     </>
   );
 }

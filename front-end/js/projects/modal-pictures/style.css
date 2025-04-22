@@ -103,21 +103,14 @@ body {
   cursor: pointer;
 }
 
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px) {
-  .modal-content {
-    width: 100%;
-  }
-}
-
 /* food pics */
 .food-images {
-  /* display: grid;
-    grid-template-columns: repeat(6, 1fr); */
-  display: flex;
+  display: grid;
+    grid-template-columns: repeat(3, 3fr);
+  /* display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-evenly; */
   gap: 15px;
   overflow: hidden;
   padding-bottom: 15px;
@@ -154,4 +147,11 @@ body {
   background: url("../images/b-6.jpg") no-repeat center center/cover;
   height: 40vh;
   width: 17vw;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
 }

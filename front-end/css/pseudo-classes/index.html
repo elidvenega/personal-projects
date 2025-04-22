@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* section:has(p) {
+            color: blue;
+            font-size: 1.2rem;
+        } */
+
+        section:nth-child(1){
+          color: orange;
+        }
+
+      /* .a ~ .b {
+          color: purple
+        } */
+
+      /* .a + .b {
+        color: purple;
+      } */
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <section>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+        laboriosam quisquam blanditiis nihil vitae?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+        laboriosam quisquam blanditiis nihil vitae?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+        laboriosam quisquam blanditiis nihil vitae?
+      </p>
+    </section>
+    <section>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+        laboriosam quisquam blanditiis nihil vitae?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+        laboriosam quisquam blanditiis nihil vitae?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+        laboriosam quisquam blanditiis nihil vitae?
+      </p>
+      <div class="a">
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
+          consectetur laudantium quam.
+        </p>
+      </div>
+      <div class="b">
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
+          consectetur laudantium quam.
+        </p>
+      </div>
+      <div class="a">
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
+          consectetur laudantium quam.
+        </p>
+      </div>
+      <div class="b">
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
+          consectetur laudantium quam.
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
