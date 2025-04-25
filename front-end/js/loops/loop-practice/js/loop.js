@@ -14,11 +14,10 @@ for (let i = 0; i < arr.length; i++) {
 
 // for( let i = 1; i <=10; i++) {
 //   console.log(allNumbers.push([i]));
-  
+
 // }
 
 // console.log(allNums);
-
 
 // const output = document.querySelector('.output').innerHTML = arr;
 //  output.innerText = emptyArr;
@@ -64,22 +63,20 @@ for (const elem in data) {
   console.log(elem, data[elem]);
 }
 
-const animals = ['wolf', 'tiger','dogs']
-for(const a of animals) {
+const animals = ["wolf", "tiger", "dogs"];
+for (const a of animals) {
   console.log(a);
-  
 }
 
 // //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-const numbers = [1,2,3,4,5,6,7,8,9,10];
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const evenNumber = [];
 
-for(let i = 0; i < numbers.length; i++) {
-  if(numbers[i] % 2 === 0) {
-    evenNumber.push(numbers[i])
-  }
+for (let i = 0; i < numbers.length; i++) {
+  // if(numbers[i] % 2 === 0) {
+  //   evenNumber.push(numbers[i])
+  // }
+  numbers[i] % 2 === 0 ? evenNumber.push(numbers[i]) : "Wrong";
 }
 
 console.log(evenNumber);
-
-
