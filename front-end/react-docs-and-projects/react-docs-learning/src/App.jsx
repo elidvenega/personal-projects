@@ -1,14 +1,9 @@
-// import CardGallery from "./challenge-questions/props/Gallery";
-// import Rendering from "./components/conditionalrender/Rendering";
-// import ContextFunc from "./components/context/ContextFunc";
-import Button from "./components/events/Button";
+import Gallery from "./challenge-questions/props/challenge-one/Gallery";
+
 export default function App() {
   return (
     <>
-      {/* <CardGallery /> */}
-      {/* <Rendering /> */}
-      {/* <ContextFunc /> */}
-      <Button />
+      <Gallery />
     </>
   );
 }

@@ -1,10 +1,12 @@
 // import NineAccordion from "./projects/accordion/NineAccordion";
-import Destructuring from "./projects/destructuring/Destructuring";
+import DarkTheme from "./projects/dark-theme/DarkTheme";
+// import Destructuring from "./projects/destructuring/Destructuring";
 
 export default function App() {
   return (
     <>
-      <Destructuring />
+      {/* <Destructuring /> */}
+      <DarkTheme />
     </>
   );
 }
