@@ -6,9 +6,9 @@ for (let i = 0; i < arr.length; i++) {
   output.innerText = emptyArr.push(arr[i]);
 }
 
-// output.style.fontSize = "2rem";
+output.style.fontSize = "2rem";
 // document.body.innerText = emptyArr;
-// output.textContent = emptyArr
+output.textContent = emptyArr;
 
 // let allNumbers = []
 
@@ -72,11 +72,33 @@ for (const a of animals) {
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const evenNumber = [];
 
-for (let i = 0; i < numbers.length; i++) {
+for (let i = 1; i < numbers.length; i += 2) {
   // if(numbers[i] % 2 === 0) {
   //   evenNumber.push(numbers[i])
   // }
-  numbers[i] % 2 === 0 ? evenNumber.push(numbers[i]) : "Wrong";
+  // numbers[i] % 2 === 0 ? evenNumber.push(numbers[i]) : "Wrong";
+  evenNumber.push(numbers[i]);
 }
 
 console.log(evenNumber);
+
+for (let i = 1; i <= 6; i++) {
+  console.log(`${(i, "Da ba dee da ba daa")}`);
+}
+
+// Nested loops
+
+const nestedArr = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+
+for (let i = 0; i < nestedArr.length; i++) {
+  const rows = nestedArr[i];
+
+  for (let j = 0; j < rows.length; j++) {
+    const columns = rows[j];
+    console.log(columns);
+  }
+}

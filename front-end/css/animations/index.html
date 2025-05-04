@@ -5,30 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      div {
-        width: 100px;
-        height: 100px;
-        background-color: red;
+      div,svg {
+        width: 150px;
+        height: 150px;
+        background-color: oklch(63.7% 0.237 25.331);
         margin: 0 auto;
         margin-top: 190px;
         padding: 1rem;
+        animation-delay: 1s;
+        animation-direction: reverse;
         animation-name: square-animation;
         animation-duration: 10s;
+        animation-iteration-count: infinite;
       }
 
       @keyframes square-animation {
         from {
-          background-color: green;
+          background-color: oklch(79.2% 0.209 151.711);
+          border-radius: 50%;
+           animation-duration: 7s;
+          aspect-ratio: 1;
           scale: 2;
-         transform: rotate(0.5turn);
+          transform: rotate(0.9turn);
         }
         to {
-          background-color: yellow;
+          background-color: oklch(54.1% 0.281 293.009);
         }
       }
     </style>
   </head>
   <body>
     <div></div>
+    <svg height="220" width="500" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="100,10 150,190 50,190" />
+    </svg>
   </body>
 </html>
