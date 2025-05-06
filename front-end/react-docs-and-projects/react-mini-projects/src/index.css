@@ -14,3 +14,12 @@ body {
   min-height: 100vh;
 }
 
+.dark {
+  background-color: #000;
+  color: #fff;
+}
+
+.light {
+  background-color: rgb(60, 216, 216);
+  color: #fff;
+}
