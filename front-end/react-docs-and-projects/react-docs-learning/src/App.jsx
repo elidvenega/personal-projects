@@ -1,9 +1,9 @@
-import Gallery from "./challenge-questions/props/challenge-one/Gallery";
+import Rendering from './components/conditionalrender/Rendering'
 
 export default function App() {
   return (
     <>
-      <Gallery />
+     <Rendering />
     </>
   );
 }
