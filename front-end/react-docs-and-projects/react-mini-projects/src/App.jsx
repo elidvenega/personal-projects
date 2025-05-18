@@ -1,5 +1,6 @@
 // import { useState } from "react";
 import Gallery from "./projects/image-slide-project/Gallery"
+import GalleryPractice from "./projects/image-slide-project/GalleryPractice";
 
 // import NineAccordion from "./projects/accordion/NineAccordion";
 // import DarkTheme from "./projects/dark-theme/DarkTheme";
@@ -37,6 +38,9 @@ export default function App() {
     // </div>
     <>
     <Gallery />
+    <div style={{ marginTop: "2rem"}}>
+      <GalleryPractice />
+    </div>
     </>
   );
 }
