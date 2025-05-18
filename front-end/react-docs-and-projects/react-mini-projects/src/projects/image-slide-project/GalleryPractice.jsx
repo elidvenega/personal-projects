@@ -7,15 +7,26 @@ export default function GalleryPractice() {
 
   const currentIndex = index < sculptureList.length - 1;
   const handleIndex = () => {
+    if(currentIndex) {
+      setIndex(index + 1)
+    } else {
+      setIndex(0)
+    }
     
   }
 
   const handleShow = () => setIsShown(!isShown);
 
-  const art = sculptureList[currentIndex]
+  const artWorks = sculptureList[index]
   return (
     <div>
-
+      <button onClick={handleIndex}>Next</button>
+      <h2>{artWorks.name } by {artWorks.artist}</h2>
+      <h3>({index + 1} of {sculptureList.length})</h3>
+        <img src={artWorks.url} alt={artWorks.alt} />
+       <div>
+         <button>Show Details</button>
+       </div>
     </div>
   )
 }
