@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { data } from "./data";
 
-let nextId = 5;
+// let nextId = 5;
 export default function PracticeList() {
   const [newTask, setNewTask] = useState("");
   const [todos, setTodos] = useState(data);
