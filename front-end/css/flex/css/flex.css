@@ -34,7 +34,7 @@ h1 {
   max-width: 85rem;
   /* margin: auto; */
   /* padding: 5rem; */
-  /* height: 100vh; */
+  min-height: 100vh; 
   background-color: #ddd;
   border: 12px solid black;
 }
@@ -50,7 +50,7 @@ h1 {
   background-color: var(--color-two);
   color: var(--white-color);
   padding: 2rem;
-  flex: 2;
+  flex: 6;
 }
 
 .color-container-three {
@@ -63,5 +63,5 @@ h1 {
 .color-container-four {
   background-color: var(--color-four);
   color: var(--white-color);
-  padding: 4rem;
+  padding: 8rem;
 }
