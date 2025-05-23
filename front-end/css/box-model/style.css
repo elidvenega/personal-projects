@@ -24,13 +24,14 @@ h1 {
   text-align: center;
 }
 
-.wrapper {
+/* .wrapper {
   display: flex;
-}
+} */
 
 .box-one {
   --color-one: #ddd;
-  background: var(--color-one);
+  --new-color: #000;
+  background: var(var(--new-color));
   border: var(--border-colorone) 1rem solid;
   color: var(--white-color);
   padding: 3rem;
