@@ -1,3 +1,8 @@
+const drinkMenu = [
+  { name: "tea", price: 2.5 },
+  { name: "coffee", price: 3.0 },
+]
+
 function Drink({ name }) {
   return (
     <section>
