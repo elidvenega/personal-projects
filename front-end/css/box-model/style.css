@@ -1,8 +1,8 @@
 :root {
   --color-one: #14532d;
   --color-two: #115e59;
-  --border-colorone: #312e81;
-  --border-colortwo: #be185d;
+  --border-color-one: #312e81;
+  --border-color-two: #be185d;
   --white-color: #fff;
 }
 
@@ -30,19 +30,20 @@ h1 {
 
 .box-one {
   --color-one: #ddd;
-  --new-color: #000;
-  background: var(var(--new-color));
-  border: var(--border-colorone) 1rem solid;
+  --new-color: #505dd3cc;
+  background-color: var(--new-color);
+  border: var(--border-color-one) 10px solid;
   color: var(--white-color);
   padding: 3rem;
   min-height: 100%;
   max-width: 50%;
+  /* Adds spacing below the box to separate it from other elements */
   margin-bottom: 2rem;
 }
 
 .box-two {
   background: var(--color-two);
-  border: var(--border-colortwo) 15px solid;
+  border: var(--border-color-two) 15px solid;
   color: var(--white-color);
   padding: 3rem;
   height: 100%;

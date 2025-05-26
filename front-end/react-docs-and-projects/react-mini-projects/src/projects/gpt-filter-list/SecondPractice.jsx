@@ -5,7 +5,7 @@ export default function SecondPractice() {
   const [searchItem, setSearchItem] = useState("");
 
   const filteredList = fruits.filter((item) =>
-    item.fruit.toLocaleLowerCase().includes(searchItem)
+    item.fruit.toLowerCase().includes(searchItem)
   );
 
   return (

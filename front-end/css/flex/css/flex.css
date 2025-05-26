@@ -42,21 +42,21 @@ h1 {
 .color-container-one {
   background-color: var(--color-one);
   color: var(--white-color);
-  padding: 2rem;
+  padding: 5rem;
   flex: 2;
 }
 
 .color-container-two {
   background-color: var(--color-two);
   color: var(--white-color);
-  padding: 2rem;
+  padding: 5rem;
   flex: 6;
 }
 
 .color-container-three {
   background-color: var(--color-three);
   color: var(--white-color);
-  padding: 2rem;
+  padding: 5rem;
   flex: 1;
 }
 
