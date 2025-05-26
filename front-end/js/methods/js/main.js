@@ -128,3 +128,11 @@ const arrayOne = [1, 30, 39, 29, 10, 13];
 
 console.log(arrayOne.every(isBelowThreshold));
 // Expected output: true
+
+const arrayReversed = ["one", "two", "three"];
+console.log("array1:", arrayReversed);
+// Expected output: "array1:" Array ["one", "two", "three"]
+
+const reversed = arrayReversed.reverse();
+console.log("reversed:", reversed);
+// Expected output: "reversed:" Array ["three", "two", "one"]
