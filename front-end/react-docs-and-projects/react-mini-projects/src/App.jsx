@@ -1,11 +1,12 @@
 import GalleryPractice from "./projects/image-slide-project/GalleryPractice";
-import PracticeGalleryOne from "./projects/image-slide-project/PracticeGalleryOne";
+import GalleryPracticeTwo from "./projects/image-slide-project/GalleryPracticeTwo";
 
 export default function App() {
   return (
     <>
       <GalleryPractice />
-      <PracticeGalleryOne />
+      <GalleryPracticeTwo />
+    
     </>
   );
 }
