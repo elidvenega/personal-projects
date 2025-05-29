@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { sculptureList } from "./data";
+import "./image-gallery.css";
 
 export default function GalleryPractice() {
   const [index, setIndex] = useState(0);
@@ -29,13 +30,13 @@ const hasNext = index < sculptureList.length - 1;
   const artWorks = sculptureList[index];
   return (
     <div>
+      <img className="gallery-image" src={artWorks.url} alt={artWorks.alt} />
       <h2>
         {artWorks.name} by {artWorks.artist}
       </h2>
       <h3>
         ({index + 1} of {sculptureList.length})
       </h3>
-      <img src={artWorks.url} alt={artWorks.alt} />
       <div>
         <button onClick={handleIndex}>Next</button>
         <button onClick={handleShow}>
