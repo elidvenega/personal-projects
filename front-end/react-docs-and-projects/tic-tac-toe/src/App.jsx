@@ -1,9 +1,9 @@
-import TicTacToe from "./components/TicTacToe";
+import Board from "./components/TicTacToe";
 
 function App() {
   return (
     <>
-      <TicTacToe />
+      <Board />
     </>
   );
 }
