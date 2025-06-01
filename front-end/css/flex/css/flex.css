@@ -28,7 +28,7 @@ h1 {
 
 .container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content:flex-end;
   /* align-items: stretch; */
   flex-wrap: wrap;
   max-width: 85rem;
