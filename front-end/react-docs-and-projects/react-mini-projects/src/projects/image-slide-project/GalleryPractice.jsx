@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { sculptureList } from "./data";
-import "./image-gallery.css";
+// import "./image-gallery.css";
 
 export default function GalleryPractice() {
   const [index, setIndex] = useState(0);
