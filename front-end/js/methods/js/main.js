@@ -110,8 +110,10 @@ console.log(sortArr.toSorted(), "toSorted()");
 
 const arrLocation = [1, 2, 4, 5, 6];
 
-console.log(arrLocation.at(1), "at()");
+console.log(arrLocation.at(), "at()");
 console.log(arrLocation.at(2), "at()");
+console.log(arrLocation.at(-1), "at() last element"); // This will return the last element
+console.log(arrLocation[arrLocation.length - 1], "last Element");
 // This will return undefined
 console.log(arrLocation.at(6), "at()");
 
