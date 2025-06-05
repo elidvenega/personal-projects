@@ -1,13 +1,32 @@
-import React from 'react';
+import MainImg from "../../assets/image-victor.jpg"
+import "./profile.css";
 
 export default function ProfileCard() {
   return (
     <>
     <div className='card-container'>
       <div className="card-body">
-        <img src="" alt="" />
+        <img src={MainImg} alt="victor crest" />
         <div className="card-text">
-          <p></p>
+          <h3>Victor Crest <span>26</span></h3>
+          <p>London</p>
+        </div>
+        <hr />
+        <div>
+          <div className="card-stats">
+            <div className="stat">
+              <h4>80K</h4>
+              <p>Followers</p>
+            </div>
+            <div className="stat">
+              <h4>803K</h4>
+              <p>Likes</p>
+            </div>
+            <div className="stat">
+              <h4>1.4K</h4>
+              <p>Photos</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
