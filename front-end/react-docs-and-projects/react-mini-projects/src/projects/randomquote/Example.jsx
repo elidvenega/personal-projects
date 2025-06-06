@@ -1,6 +1,6 @@
 import { useState } from "react";
-
-const quotes = ["Work", "Play", "never Give Up"];
+import { quotes } from "./data";
+import "./quote.css";
 
 export default function Example() {
   const [newQuote, setNewQuote] = useState(quotes[0]);
@@ -10,9 +10,14 @@ export default function Example() {
     setNewQuote(quotes[randomQuote]);
   };
   return (
-    <div>
-      {newQuote}
-      <button onClick={handleQuote}>Quote</button>
+    <div className="quote-container">
+      <p className="quote-text">{newQuote.text}</p>
+      <p className="quote-show">{newQuote.show}</p>
+      <div style={{ padding: "20px"}}>
+        <button className="quote-button" onClick={handleQuote}>
+        Quote
+      </button>
+      </div>
     </div>
   );
 }

@@ -1,9 +1,9 @@
-import ProfileCard from "./frontend-mentor/profile-card/ProfileCard";
+ import Example from "./projects/randomquote/Example";
 
 export default function App() {
   return (
     <>
-      <ProfileCard />
+      <Example />
     </>
   );
 }
