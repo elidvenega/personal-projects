@@ -1,0 +1,38 @@
+.quote-container {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: oklch(58.5% 0.233 277.117);
+  color: oklch(95.3% 0.051 180.801);
+}
+
+.quote-text {
+  font-size: 2.3rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+.quote-show {
+  font-size: 3rem;
+}
+
+.quote-button {
+  background-color: oklch(95.3% 0.051 180.801);
+  color: oklch(58.5% 0.233 277.117);
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.quote-button:hover {
+  background-color: oklch(70.4% 0.191 22.216);
+  color: oklch(95.3% 0.051 180.801);
+}
