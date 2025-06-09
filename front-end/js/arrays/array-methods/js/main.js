@@ -84,5 +84,5 @@ console.log(singer);
 
 document.body.innerHTML = `
 
-<p> The singer was ${singer}</p>
+<p> The singer was ${singer} and the drummer was ${drums}</p>
 `;
