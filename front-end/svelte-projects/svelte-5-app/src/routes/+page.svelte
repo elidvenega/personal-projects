@@ -1,5 +1,6 @@
 <script lang="ts">
-  import Playground from "./playground/Playground.svelte";
+  import Hobbies from "./looping/Hobbies.svelte";
+  // import Playground from "./playground/Playground.svelte";
 
   // import Counter from "./counter/Counter.svelte";
   // import Select from "./selectmultiple/Select.svelte";
@@ -12,4 +13,5 @@
 <!-- <Counter />
 <Select /> -->
 
-<Playground />
+<!-- <Playground /> -->
+ <Hobbies  name="James" age=21/>
