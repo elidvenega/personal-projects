@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      div,svg {
+      div,
+      svg {
         width: 150px;
         height: 150px;
         background-color: oklch(63.7% 0.237 25.331);
@@ -13,17 +14,18 @@
         margin-top: 190px;
         padding: 1rem;
         animation-delay: 1s;
-        animation-direction: reverse;
+        /* animation-direction: reverse; */
         animation-name: square-animation;
         animation-duration: 10s;
         animation-iteration-count: infinite;
+        animation-timing-function: ease-in;
       }
 
       @keyframes square-animation {
         from {
           background-color: oklch(79.2% 0.209 151.711);
           border-radius: 50%;
-           animation-duration: 7s;
+          animation-duration: 7s;
           aspect-ratio: 1;
           scale: 2;
           transform: rotate(0.9turn);
@@ -36,8 +38,8 @@
   </head>
   <body>
     <div></div>
-    <svg height="220" width="500" xmlns="http://www.w3.org/2000/svg">
+    <!-- <svg height="220" width="500" xmlns="http://www.w3.org/2000/svg">
       <polygon points="100,10 150,190 50,190" />
-    </svg>
+    </svg> -->
   </body>
 </html>
