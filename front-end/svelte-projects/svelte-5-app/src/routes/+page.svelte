@@ -1,5 +1,7 @@
 <script lang="ts">
-  import AwaitBlock from "./awaitblock/AwaitBlock.svelte";
+  import App from "../routes/runes/rawstate/App.svelte";
+
+
 </script>
 
-<AwaitBlock />
+<App />
