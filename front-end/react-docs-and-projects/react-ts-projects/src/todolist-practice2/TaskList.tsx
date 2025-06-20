@@ -19,6 +19,26 @@ interface TaskListProps {
 
 export default function TaskList({ tasks, dispatch}: TaskListProps) {
   const [editingTaskId, setEditingTaskId] = useState<number | null >(null);
+  const [newText, setNewText] = useState("");
+
+  const handleDeleteTask = (taskId: number) {
+    dispatch({ type: "delete", id: taskId})
+  }
+
+  const handleEditTask = (task: Task) => {
+    setEditingTaskId(task.id);
+    setNewText(task.text);
+  }
+
+const handleSaveTask = (taskId: number) => {
+  dispatch({
+    type: "changed",
+    task: {id: taskId, text: newText, done: false}
+
+  })
+  setEditingTaskId(null)
+}
+
   return (
     <div>TaskList</div>
   )
