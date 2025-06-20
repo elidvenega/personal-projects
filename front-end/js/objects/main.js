@@ -30,12 +30,33 @@ const exampleObj = {
   firstName: "Jack",
   lastName: "Harry",
   occupation: "Mechanic",
+  work: "Construction",
+  hobby: "Playing Guitar",
+  favoriteMovie: "Mario",
 };
 
-const { firstName, lastName, occupation } = exampleObj;
+const { firstName, lastName, occupation, hobby: passion } = exampleObj;
 
-output.textContent = `${firstName} ${lastName} is a ${occupation}`;
+output.textContent = `${firstName} ${lastName} is a ${occupation} and my hobby is ${passion}`;
 //output.textContent = Object.output(exampleObj)
+
+let person = { name: "Alice", age: 30 };
+let userName, userAge;
+
+// Reassign values using object destructuring
+// when not using const or let you need the ()
+/* 
+
+When using object destructuring for 
+reassignment without a declaration keyword, 
+the entire destructuring assignment must be enclosed in parentheses (). 
+This is because a leading curly brace 
+{ would otherwise be interpreted as the start of a code block.
+*/
+({ name: userName, age: userAge } = person); // Parentheses are required for object destructuring in assignment statements
+
+console.log(userName); // Output: Alice
+console.log(userAge); // Output: 30
 
 // Example Chat GPT code how to display array object data to the dom
 
