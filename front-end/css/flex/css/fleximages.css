@@ -17,12 +17,12 @@
 body {
   font-family: "Courier New", Courier, monospace;
   max-width: 100%;
+  min-height: 100vh;
   min-height: 100dvh;
 }
 
 h1 {
   text-align: center;
-  /* margin-top: 1rem; */
   padding: 1rem;
 }
 
@@ -32,34 +32,39 @@ h1 {
   /* align-items: stretch; */
   flex-wrap: wrap;
   max-width: 80%;
-  margin: auto;
+  margin: 0 auto;
   /* padding: 5rem; */
-  min-height: 100vh;
+  min-height: 20rem;
   background-color: #ddd;
   border: 12px solid black;
 
   .color-container-one {
-    background: url("https://hips.hearstapps.com/hmg-prod/images/ripe-apple-royalty-free-image-1659454396.jpg?crop=0.924xw:0.679xh;0.0197xw,0.212xh&resize=980:*") no-repeat center center/cover;
-    flex: 8;
+    background: url("https://hips.hearstapps.com/hmg-prod/images/ripe-apple-royalty-free-image-1659454396.jpg?crop=0.924xw:0.679xh;0.0197xw,0.212xh&resize=980:*")
+      no-repeat center center/cover;
+    width: 25%;
+    aspect-ratio: 1/1;
+    ;
   }
 
   .color-container-two {
-    background-color: var(--color-two);
-    color: var(--white-color);
-    padding: 5rem;
-    flex: 6;
+    background: url("https://hips.hearstapps.com/hmg-prod/images/ripe-apple-royalty-free-image-1659454396.jpg?crop=0.924xw:0.679xh;0.0197xw,0.212xh&resize=980:*")
+      no-repeat center center/cover;
+    width: 25%;
+    aspect-ratio: 1/1;
   }
 
   .color-container-three {
-    background-color: var(--color-three);
-    color: var(--white-color);
-    padding: 5rem;
-    flex: 1;
+    background: url("https://hips.hearstapps.com/hmg-prod/images/ripe-apple-royalty-free-image-1659454396.jpg?crop=0.924xw:0.679xh;0.0197xw,0.212xh&resize=980:*")
+      no-repeat center center/cover;
+    width: 25%;
+    aspect-ratio: 1/1;
   }
 
   .color-container-four {
-    background-color: var(--color-four);
-    color: var(--white-color);
-    padding: 8rem;
+    background: url("https://hips.hearstapps.com/hmg-prod/images/ripe-apple-royalty-free-image-1659454396.jpg?crop=0.924xw:0.679xh;0.0197xw,0.212xh&resize=980:*")
+      no-repeat center center/cover;
+    width: 25%;
+    aspect-ratio: 1/1;
   }
 }
+
