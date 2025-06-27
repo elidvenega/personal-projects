@@ -146,6 +146,6 @@ const arrayCopy = ["a", "b", "c", "d", "e"];
 // Expected output: Array ["d", "b", "c", "d", "e"]
 
 // Copy to index 1 all elements from index 3 to the end
-console.log(arrayCopy.copyWithin(1, 3));
+console.log(arrayCopy.copyWithin(1, 2),"copywithin");
 // Expected output: Array ["d", "d", "e", "d", "e"]
 
