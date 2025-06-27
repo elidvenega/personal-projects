@@ -57,8 +57,8 @@ output.innerHTML = example(testExample);
 
 const animals = ["Wolves", "Birds", "Cats", "Ravens"];
 
-const [firstAnimal , secondAnimal, thirdAnimal] = animals;
-console.log(firstAnimal)
+const [firstAnimal , secondAnimal, ...all] = animals;
+console.log(all)
 
 
 
