@@ -28,12 +28,9 @@ h1 {
 
 .container {
   display: flex;
-  /* justify-content:flex-end; */
-  /* align-items: stretch; */
-  flex-wrap: wrap;
-  max-width: 80%;
-  margin: 0 auto;
-  /* padding: 5rem; */
+  flex-direction: column;
+  max-width: 100%;
+  justify-content: center;
   min-height: 20rem;
   background-color: #ddd;
   border: 12px solid black;
@@ -41,30 +38,45 @@ h1 {
   .color-container-one {
     background: url("https://hips.hearstapps.com/hmg-prod/images/ripe-apple-royalty-free-image-1659454396.jpg?crop=0.924xw:0.679xh;0.0197xw,0.212xh&resize=980:*")
       no-repeat center center/cover;
-    width: 25%;
+    width: 100%;
     aspect-ratio: 1/1;
-    ;
   }
 
   .color-container-two {
     background: url("https://hips.hearstapps.com/hmg-prod/images/ripe-apple-royalty-free-image-1659454396.jpg?crop=0.924xw:0.679xh;0.0197xw,0.212xh&resize=980:*")
       no-repeat center center/cover;
-    width: 25%;
+    width: 100%;
     aspect-ratio: 1/1;
   }
 
   .color-container-three {
     background: url("https://hips.hearstapps.com/hmg-prod/images/ripe-apple-royalty-free-image-1659454396.jpg?crop=0.924xw:0.679xh;0.0197xw,0.212xh&resize=980:*")
       no-repeat center center/cover;
-    width: 25%;
+    width: 100%;
     aspect-ratio: 1/1;
   }
 
   .color-container-four {
     background: url("https://hips.hearstapps.com/hmg-prod/images/ripe-apple-royalty-free-image-1659454396.jpg?crop=0.924xw:0.679xh;0.0197xw,0.212xh&resize=980:*")
       no-repeat center center/cover;
-    width: 25%;
+    width: 100%;
     aspect-ratio: 1/1;
   }
 }
 
+@media (min-width: 660px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 80%;
+    margin: auto;
+
+    .color-container-one,
+    .color-container-two,
+    .color-container-three,
+    .color-container-four {
+      width: 25%;
+    }
+  }
+}

@@ -1,86 +1,16 @@
-"use strict";
-const animalList = [
-  {
-    name: "Mike",
-    species: "dog",
-    price: 30,
-  },
-  {
-    name: "Jimmy",
-    species: "dog",
-    price: 50,
-  },
-  {
-    name: "Alex",
-    species: "lizard",
-    price: 10,
-  },
-  {
-    name: "Jack",
-    species: "hamster",
-    price: 80,
-  },
-  {
-    name: "Ike",
-    species: "deer",
-    price: 90,
-  },
-  {
-    name: "Jack",
-    species: "Rabbit",
-    price: 80,
-  },
-];
+" use strict";
 
-// reduce methos
-const totalOutput = animalList.reduce((val, output) => val + output.price, 0);
-
-console.log(totalOutput);
-
-// map
-// const species = animalList.map((x) => x.species);
-const species = animalList.map((x) => x.price);
-console.log(species);
-
-//  Example of closure gets a value outside of function
-let x = 4;
-
-function multiply(num) {
-  return x * num;
+// Currying function
+function multiply(a) {
+  return function (b) {
+    return a * b;
+  };
 }
 
-console.log(multiply(2));
+// Usage
+const double = multiply(2)(6); // returns a function that multiplies by 2
+console.log(double); // Output: 12
 
-// A side effect function
-
-let name = "Kevin";
-
-function effectFunc() {
-  name = "Sam";
-  return name;
-}
-
-console.log(effectFunc());
-
-// A function that calls itself until it doesn't
-// Recursion
-let countDownFrom = (num) => {
-  if (num === 0) return;
-  console.log(num);
-  countDownFrom(num - 1);
-};
-countDownFrom(11);
-
-
-// Higher Order Function
-const copyArrayAndMultiplyBy2 = (array) => {
-   const output = [];
-   for(let i = 0; i < array.length; i++) {
-    output.push(array[i] * 2)
-   }
-   return output;
-}
-
-const myArray = [1,2,3];
-const result = copyArrayAndMultiplyBy2(myArray)
-console.log(result);
+// Or in ES6 arrow function style:
+const add = (a) => (b) => a + b;
+console.log(add(3)(4)); // Output: 7

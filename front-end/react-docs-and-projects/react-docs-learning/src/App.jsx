@@ -1,9 +1,11 @@
-import Rendering from './components/conditionalrender/Rendering'
+import FormExample from './components/form/FormExample';
+// import Form from "./components/form/Form"
 
 export default function App() {
   return (
     <>
-     <Rendering />
+    <FormExample />
+    {/* <Form /> */}
     </>
   );
 }
