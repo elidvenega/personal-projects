@@ -1,6 +1,7 @@
 "use strict";
 
 const jokeDisplay = document.querySelector(".joke");
+const jokeId= document.querySelector(".jokeId");
 const button = document.querySelector(".button");
 
 async function getDadJoke() {
