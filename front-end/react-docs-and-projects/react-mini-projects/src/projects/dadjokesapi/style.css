@@ -5,7 +5,7 @@
   --white: #fff;
 }
 
-*,
+/* *,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -21,7 +21,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+} */
 
 h1 {
   font-size: 4rem;
