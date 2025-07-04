@@ -1,9 +1,17 @@
-:root {
+/* :root {
   --color-one: #dc2626;
   --color-two: #166534;
   --color-three: #0e7490;
   --color-four: #7c3aed;
   --white-color: #fff;
+} */
+
+:root {
+  --primary-color: #dc2626; /* Main brand or action color */
+  --secondary-color: #166534; /* Secondary or accent color */
+  --info-color: #0e7490; /* Informational elements */
+  --accent-color: #7c3aed; /* Highlights or special accents */
+  --text-on-dark: #fff; /* Text color for dark backgrounds */
 }
 
 *,
@@ -38,7 +46,28 @@ h1 {
   background-color: #ddd;
   border: 12px solid black;
 
-  .color-container-one {
+  .color-container-primary {
+    background-color: var(--primary-color);
+    color: var(--text-on-dark);
+  }
+
+  .color-container-secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-on-dark);
+  }
+
+  .color-container-info {
+    background-color: var(--info-color);
+    color: var(--text-on-dark);
+  }
+
+  .color-container-accent {
+    background-color: var(--accent-color);
+    color: var(--text-on-dark);
+  }
+
+  /* My code */
+  /* .color-container-one {
     background-color: var(--color-one);
     color: var(--white-color);
     padding: 5rem;
@@ -63,5 +92,5 @@ h1 {
     background-color: var(--color-four);
     color: var(--white-color);
     padding: 8rem;
-  }
+  } */
 }
