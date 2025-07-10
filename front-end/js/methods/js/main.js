@@ -30,6 +30,17 @@ const words = ["spray", "elite", "exuberant", "destruction", "present"];
 const result = words.filter((word) => word.length > 6);
 
 console.log(result);
+
+function isBigEnough(value) {
+  return value >= 10;
+}
+
+const filtered = [12, 5, 8, 130, 44].filter(isBigEnough);
+
+console.log(filtered, "filtered");
+
+// filtered is [12, 130, 44]
+
 // Expected output: Array ["exuberant", "destruction", "present"]
 
 // fill method also
@@ -146,6 +157,5 @@ const arrayCopy = ["a", "b", "c", "d", "e"];
 // Expected output: Array ["d", "b", "c", "d", "e"]
 
 // Copy to index 1 all elements from index 3 to the end
-console.log(arrayCopy.copyWithin(1, 2),"copywithin");
+console.log(arrayCopy.copyWithin(1, 2), "copywithin");
 // Expected output: Array ["d", "d", "e", "d", "e"]
-
