@@ -1,12 +1,24 @@
-import React from 'react';
+import React from "react";
 
-interface AddTask {
-    
+interface Task {
+  id: number;
+  text: string;
+  done: boolean;
 }
 
 
+interface TaskAction {
+
+}
+
+const taskList: Task[] = [
+  {},
+  {},
+  {}
+]
+
+
+
 export default function TaskApp() {
-  return (
-    <div>TaskApp</div>
-  )
+  return <div>TaskApp</div>;
 }
