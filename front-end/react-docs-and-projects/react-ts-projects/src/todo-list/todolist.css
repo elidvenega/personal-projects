@@ -1,10 +1,11 @@
 /* Variables for consistent theming */
 :root {
-  --button-color: #0f766e;
-  --button-color-hover: #0d9488;
+  --container-bg-color: ;
+  --button-color: #0d9488;
+  --button-color-hover: #0f766e; 
   --white-color: #ffffff;
-  --delete-button-color: #dc2626;
-  --delete-button-hover: #ef4444;
+  --delete-button-color: #ef4444;
+  --delete-button-hover: #dc2626;
   --todo-list-bg-color: #1e1b4b;
 }
 
@@ -15,7 +16,7 @@
   text-align: center;
   padding: 2rem;
   background-color: var(--white-color);
-  border-radius: 2px;
+  border-radius: 5px;
 }
 
 h1 {
