@@ -1,9 +1,9 @@
-import DadJokesAPI from "./projects/dadjokesapi/DadJokesAPI";
+import SixthTodoList from "./projects/todolist/SixthTodoList";
 
 export default function App() {
   return (
     <>
-      <DadJokesAPI />
+     <SixthTodoList />
     </>
   );
 }
