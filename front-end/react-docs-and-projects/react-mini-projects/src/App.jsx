@@ -1,9 +1,9 @@
-import SixthTodoList from "./projects/todolist/SixthTodoList";
+import SeventhTodoList from "./projects/todolist/SeventhTodoList";
 
 export default function App() {
   return (
     <>
-     <SixthTodoList />
+     <SeventhTodoList />
     </>
   );
 }
