@@ -6,26 +6,20 @@ interface Task {
   done: boolean;
 }
 
-
 interface TaskAction {
-  type: "added" | "changed"| "delete";
+  type: "added" | "changed" | "delete";
   id?: number;
   text?: string;
   task?: Task;
-
 }
 
 const taskList: Task[] = [
-  {id: 0, text: "Work", done: false},
-  {id: 1, text: "Exercise", done: false},
-  {id: 2, text: "Cook Dinner", done: false}
-]
+  { id: 0, text: "Work", done: false },
+  { id: 1, text: "Exercise", done: false },
+  { id: 2, text: "Cook Dinner", done: false },
+];
 
-
-function reducer() {
-
-}
-
+function reducer(tasks: Task[], action: TaskAction[]): Task[] {}
 
 export default function TaskApp() {
   return <div>TaskApp</div>;
