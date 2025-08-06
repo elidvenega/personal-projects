@@ -18,7 +18,8 @@ interface TaskListProps {
 export default function TaskList({ tasks, dispatch }: TaskListProps) {
   const [editingTaskId, setEditingTaskId] = useState<number | null>(null);
   const [newText, setNewText] = useState("");
-
+ 
+  // Check Point look this line and see where is been used
   const handleDeleteTask = (taskId: number) =>
     dispatch({ type: "delete", id: taskId });
 
