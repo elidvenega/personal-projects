@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 export default function UsersList() {
   const [users, setUsers] = useState([]);
+  // I see how usefel null and how it's being used
   const [error, setError] = useState(null);
 
   useEffect(() => {

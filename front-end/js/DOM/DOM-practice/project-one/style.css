@@ -1,6 +1,17 @@
+:root {
+  --bg-color: oklch(64.5% 0.246 16.439);
+  --white-color: #fff;
+}
+
+body {
+  background: var(--bg-color);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
 .content {
   text-align: center;
-  color: blue;
+  color:  var(--white-color);
 }
 
 .font {
