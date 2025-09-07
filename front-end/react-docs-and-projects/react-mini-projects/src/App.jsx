@@ -1,9 +1,9 @@
-import EightTodoList from "./projects/todolist/EightTodoList";
+import UseEffectPractice from "./projects/useEffect/UseEffectPractice";
 
 export default function App() {
   return (
     <>
-    <EightTodoList />
+      <UseEffectPractice />
     </>
   );
 }
