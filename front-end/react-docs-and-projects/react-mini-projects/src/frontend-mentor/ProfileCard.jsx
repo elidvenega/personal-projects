@@ -1,10 +1,11 @@
-import MainImg from "../../assets/image-victor.jpg"
+import MainImg from "./images/image-victor.jpg"
 import "./profile.css";
 
 export default function ProfileCard() {
   return (
     <>
-    <div className='card-container'>
+    <div className="bg-color">
+      <div className='card-container'>
       <div className="card-body">
         <img src={MainImg} alt="victor crest" />
         <div className="card-text">
@@ -29,6 +30,7 @@ export default function ProfileCard() {
           </div>
         </div>
       </div>
+    </div>
     </div>
     </>
   )

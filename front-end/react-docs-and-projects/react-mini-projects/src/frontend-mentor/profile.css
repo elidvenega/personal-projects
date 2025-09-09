@@ -1,0 +1,16 @@
+.bg-color {
+   
+     /* font-size: 11px;  */
+     /* text-align: center;  */
+    color: hsl(228, 45%, 44%); 
+    height: 100vh;
+}
+
+.card-container {
+     background: url(./images/bg-pattern-card.svg);
+    max-width: 20rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    /* margin-top: 100px; */
+}
