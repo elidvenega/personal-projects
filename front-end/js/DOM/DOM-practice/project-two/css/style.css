@@ -1,3 +1,8 @@
+:root {
+  --bg-color: darkblue;
+  --white: #fff;
+}
+
 *,
 *::before,
 *::after {
@@ -10,6 +15,28 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   max-width: 100%;
   min-height: 100%;
+}
+
+.navbar {
+  /* display: flex;
+  flex-direction: row; */
+  background: var(--bg-color);
+  padding: 1rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+
+.nav li {
+  list-style: none;
+}
+
+.nav a {
+  color: var(--white);
+  text-decoration: none;
 }
 
 .card-container {

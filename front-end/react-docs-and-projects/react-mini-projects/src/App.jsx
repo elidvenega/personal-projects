@@ -1,9 +1,10 @@
-import UseEffectPractice from "./projects/useEffect/UseEffectPractice";
+import ProfileCard from "./frontend-mentor/ProfileCard"
+
 
 export default function App() {
   return (
     <>
-      <UseEffectPractice />
+    <ProfileCard />
     </>
   );
 }
