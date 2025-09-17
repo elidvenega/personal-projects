@@ -1,12 +1,10 @@
-// import ProfileCard from "./frontend-mentor/ProfileCard"
 
-import DadJokesTwo from "./projects/dadjokesapi/DadJokesTwo";
+import DadJokesThree from "./projects/dadjokesapi/DadJokesThree";
 
 export default function App() {
   return (
     <>
-      {/* <ProfileCard /> */}
-      <DadJokesTwo />
+      <DadJokesThree />
     </>
   );
 }
