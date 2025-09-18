@@ -34,7 +34,7 @@ p {
   font-size: 1.8rem;
 }
 
-.dadjoke-container {
+.dadjoke {
   display: flex;
   flex-direction: column;
   align-items: center;

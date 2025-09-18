@@ -1,10 +1,10 @@
+import FifthDadJoke from "./projects/dadjokesapi/FifthDadJoke";
 
-import DadJokesThree from "./projects/dadjokesapi/DadJokesThree";
 
 export default function App() {
   return (
     <>
-      <DadJokesThree />
+    <FifthDadJoke />
     </>
   );
 }
