@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import "./style.css";
 
-export default function FifthDadJoke() {
-  const [dadJoke, setDadJoke] = useState("Click button to get dad joke");
+export default function SixthDadJoke() {
+  const [dadJoke, setDadJoke] = useState(
+    "Get a dad joke by clicking the button."
+  );
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -10,20 +12,20 @@ export default function FifthDadJoke() {
     setLoading(true);
     setError(null);
     try {
-      const resp = await fetch(`https://icanhazdadjoke.com/`, {
+      const resp = await fetch(`https://icanhazdadjoke.com/ `, {
         headers: {
           Accept: "application/json",
         },
       });
-      if (!resp.ok) {
-        throw Error("Network response was not ok");
+      if(!resp.ok) {
+        // El mesanje que estoy usando no describe muy bien el trow Error
+        throw Error("Something went wrong");
       }
       const data = await resp.json();
-      setDadJoke(data.joke);
-      console.log(data.joke);
-    } catch (err) {
-      console.error("Something went wrong:", err);
-      setError("Failed getting joke.");
+      setDadJoke(data.joke)
+    } catch (error) {
+      console.error("Something went wrong", error);
+      setError("Failed to fetch API");
     } finally {
       setLoading(false);
     }
@@ -35,10 +37,10 @@ export default function FifthDadJoke() {
 
   return (
     <div className="dadjoke">
-      <h1>Dad Joke's</h1>
+      <h1>Get dad joke's</h1>
       <p>{dadJoke}</p>
       <button onClick={getDadJoke} disabled={loading}>
-        {loading ? "Loading" : "Get dad joke"}
+        {loading ? "Loading" : "Get Joke"}
       </button>
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
