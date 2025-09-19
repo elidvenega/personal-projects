@@ -15,8 +15,11 @@ export default function DadJokesThree() {
           Accept: "application/json",
         },
       });
+      if (!resp.ok) {
+        throw new Error("Network response was not ok");
+      }
       const data = await resp.json();
-      setDadJOke(data);
+      setDadJOke(data.joke);
       console.log(data);
     } catch (err) {
       setError("Failed to fetch. Try again");
@@ -29,11 +32,14 @@ export default function DadJokesThree() {
   useEffect(() => {
     dadJokeAPI();
   }, []);
+
   return (
     <div className="dadjoke-container">
-      <h1>Dad Joke</h1>
-      <p>{dadJoke.joke}</p>
-      <button onClick={dadJokeAPI}>{loading ? "Loading" : "Get Joke"}</button>
+      <h1>Dad Jokes</h1>
+      <p>{dadJoke}</p>
+      <button onClick={dadJokeAPI} disabled={loading}>
+        {loading ? "Loading" : "Get Joke"}
+      </button>
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );

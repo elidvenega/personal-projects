@@ -1,9 +1,10 @@
-import TaskApp from "./todo-list/TaskApp";
+import DadJoke from "./dadjoke-api/DadJoke";
+
 
 export default function App() {
   return (
     <>
-      <TaskApp />
+   <DadJoke />
     </>
   );
 }
