@@ -8,13 +8,10 @@ async function dogImg() {
     const data = await resp.json();
     console.log(data);
 
-    const dogImg = `
-    <div class="container">
-     <img class="img" src=${data.message}  alt="dog-image"/>
-    </div>
-    
+    const img = `
+      <img class="img" src="${data.message}"  alt="dog-image"/>
     `;
-    return (container.innerHTML = dogImg);
+    return (container.innerHTML = img);
   } catch (err) {
     console.error(err);
   }
