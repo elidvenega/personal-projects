@@ -17,48 +17,42 @@ const buttonStyles = {
   padding: "8px",
   textAlign: "center",
   margin: "5px",
+  cursor: "pointer",
 };
 
 export default function IfPractice() {
   const [showContent, setShowContent] = useState(false);
-  const handleShowContent = () => setShowContent(true);
+  const handleShowContent = () => setShowContent((prev) => !prev);
   const handleReset = () => setShowContent(false);
-  let content;
-  if (showContent) {
-    content = (
-      <>
-        <h1>Pumpkin Pie</h1>
-        <img
-          style={{
-            borderRadius: "50%",
-            width: "20rem",
-            height: "20rem",
-            objectFit: "cover",
-            padding: "1rem",
-          }}
-          src="https://www.allrecipes.com/thmb/CQrgVw7qjs2QQfKqy0GMerfppsM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/229932-Simple-Pumpkin-Pie-vat-hero-4x3-LSH-ae211272471a4e7aa9f10716cdcf4bc3.jpg"
-          alt="food"
-        />
-        <p>Enjoy The Pie</p>
-      </>
-    );
-  } else {
-    content = (
-      <>
-        <h2 style={{ fontSize: "3rem" }}>Hello</h2>
-        <p>Click to show Content</p>
-      </>
-    );
-  }
 
   return (
     <>
-      <section style={sectionStyles}>{content}</section>
+      <section style={sectionStyles}>
+        {showContent ? (
+          <>
+            <h1>Pumpkin Pie</h1>
+            <img
+              style={{
+                borderRadius: "10%",
+                width: "22rem",
+                height: "22rem",
+                objectFit: "cover",
+                padding: "1rem",
+              }}
+              src="https://www.allrecipes.com/thmb/CQrgVw7qjs2QQfKqy0GMerfppsM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/229932-Simple-Pumpkin-Pie-vat-hero-4x3-LSH-ae211272471a4e7aa9f10716cdcf4bc3.jpg"
+              alt="Pumpkin Pie Dessert"
+            />
+            <p>Enjoy The Pie</p>
+          </>
+        ) : (
+          <>
+            <h2 style={{ fontSize: "3rem" }}>Hello</h2>
+            <p>Click to show Content</p>
+          </>
+        )}
+      </section>
       <button style={buttonStyles} type="button" onClick={handleShowContent}>
-        Show
-      </button>
-      <button style={buttonStyles} type="button" onClick={handleReset}>
-        Reset
+        {showContent ? "Hide Dessert" : "Show Dessert"}
       </button>
     </>
   );
