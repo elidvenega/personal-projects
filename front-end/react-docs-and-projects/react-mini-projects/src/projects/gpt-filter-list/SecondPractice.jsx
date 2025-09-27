@@ -19,6 +19,7 @@ export default function SecondPractice() {
       />
 
       <ul>
+        {/* If the list is greater than 0 than lopp through it  */}
         {filteredList.length > 0 ? (
           filteredList.map((item) => <li key={item.id}>{item.fruit}</li>)
         ) : (
