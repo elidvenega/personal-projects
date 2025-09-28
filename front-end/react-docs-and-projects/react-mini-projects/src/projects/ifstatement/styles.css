@@ -1,14 +1,21 @@
 .sectionStyles {
-  background-color: #1f2937;
+  background-color: #ff6467;
+  height: 100vh;
+  max-width: 100%;
   font-size: 1.5rem;
   color: #fff;
-  padding: 3.5rem;
   margin: auto;
   text-align: center;
 }
 
+.image {
+  height: 70vh;
+  width: 70%;
+  object-fit: cover; 
+}
+
 .buttonStyles {
-  background-color: #a855f7;
+  background-color: #615fff;
   border: none;
   border-radius: 5px;
   color: #fff;
@@ -17,4 +24,8 @@
   margin: 5px;
   cursor: pointer;
   font-size: 1rem;
+}
+
+.buttonStyles:hover {
+  background-color: #432dd7;
 }
