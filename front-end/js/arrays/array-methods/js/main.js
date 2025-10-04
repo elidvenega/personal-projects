@@ -28,16 +28,17 @@ const items = [
 // Map
 
 // const mapItems = items.map((item) => item.name);
-// output.innerHTML = items
-//   .map(
-//     (item) => `
-//     <section>
-//     <p> ${item.name} - ${item.price} - ${item.type} </p>
-//         </section>
+// output.innerHTML = mapItems.join(" - ");
+// // output.innerHTML = items
+// //   .map(
+// //     (item) => `
+// //     <section>
+// //     <p> ${item.name} - ${item.price} - ${item.type} </p>
+// //         </section>
 
-// `
-//   )
-//   .join(" ");
+// // `
+// //   )
+// //   .join(" ");
 
 // console.log(mapItems);
 
@@ -65,24 +66,27 @@ const items = [
 // ).join(" ");
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// const animals = ["Wolves", "Birds", "Lions", "Tigers", "Dogs"];
+const animals = ["Wolves", "Birds", "Lions", "Tigers", "Dogs"];
 
-// const animalList = animals.map((animal) => animal + ` Practice`)
-// console.log(animalList);
+const animalList = animals.map((animal) => `Practice ` + animal);
+console.log(animalList);
 
-// const animalsOutput = `
-//  <p>${animalList.join("-")} </p>
+const animalsOutput = `
+ <p>${animalList.join(" - ")} </p>
 
-// `
-
-// output.innerHTML = animalsOutput
-
-const band = ["Kurt", "Khris", "Dave"];
-
-const [singer, bass, drums] = band;
-console.log(singer);
-
-document.body.innerHTML = `
-
-<p> The singer was ${singer} and the drummer was ${drums}</p>
 `;
+
+output.innerHTML = animalsOutput;
+
+/*
+ * Used this array and outputed the information to the DOM
+ */
+// const band = ["Kurt", "Khris", "Dave"];
+
+// const [singer, bass, drums] = band;
+// console.log(singer);
+
+// document.body.innerHTML = `
+
+// <p> The singer was ${singer} and the drummer was ${drums}</p>
+// `;
