@@ -10,7 +10,7 @@ export default function CardComponent() {
         {frameworks.map(
           (
             card: {
-              headingColor: unknown;
+              headingColor: string;
               framework: string;
               img: string | undefined;
               alt: string | undefined;

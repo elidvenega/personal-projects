@@ -1,10 +1,11 @@
-import DadJoke from "./dadjoke-api/DadJoke";
+// import CardComponent from "./card-project/CardComponent";
+import Counter from "./small-projects/Counter";
 
 
 export default function App() {
   return (
     <>
-   <DadJoke />
+    <Counter />
     </>
   );
 }

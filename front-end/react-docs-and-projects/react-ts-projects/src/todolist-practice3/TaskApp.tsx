@@ -1,4 +1,6 @@
 import { useReducer } from "react";
+import AddTask from "./AddTask";
+import TaskList from "./TaskList";
 
 interface Task {
   id: number;
@@ -22,5 +24,12 @@ const taskList: Task[] = [
 function reducer(tasks: Task[], action: TaskAction[]): Task[] {}
 
 export default function TaskApp() {
-  return <div>TaskApp</div>;
+  const[tasks, dispatch] = useReducer(reducer, todos);
+  return (
+    <>
+    <h1>Todo List</h1>
+    <AddTask  dispatch={dispatch}/>
+    <TaskList tasks={tasks} dispatch={dispatch}/>
+    </>
+  )
 }
