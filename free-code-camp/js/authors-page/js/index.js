@@ -10,12 +10,14 @@ function fetchAuthors() {
     .then((res) => res.json())
     .then((data) => {
       authorDataArr = data;
+      // need to figured out what slice does here
       displayAuthors(authorDataArr.slice(startingIndex, endingIndex));
     })
     .catch((err) => {
       authorContainer.innerHTML =
         '<p class="error-msg">There was an error loading the authors</p>';
     });
+    // using a loop through everything
   const displayAuthors = (authors) => {
     authors.forEach(({ author, image, url, bio }, index) => {
       authorContainer.innerHTML += `
