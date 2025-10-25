@@ -26,6 +26,7 @@ body {
   font-family: "Courier New", Courier, monospace;
   max-width: 100%;
   min-height: 100dvh;
+  min-height: 100vh;
 }
 
 h1 {
@@ -35,35 +36,37 @@ h1 {
 }
 
 .container {
+  --padding: 5rem;
   display: flex;
-  /* justify-content:flex-end; */
-  /* align-items: stretch; */
+  justify-content: center;
   flex-wrap: wrap;
   max-width: 80%;
   margin: auto;
-  /* padding: 5rem; */
   min-height: 100vh;
-  background-color: #ddd;
   border: 12px solid black;
 
   .color-container-primary {
     background-color: var(--primary-color);
     color: var(--text-on-dark);
+    padding: var(--padding);
   }
 
   .color-container-secondary {
     background-color: var(--secondary-color);
     color: var(--text-on-dark);
+    padding: var(--padding);
   }
 
   .color-container-info {
     background-color: var(--info-color);
     color: var(--text-on-dark);
+    padding: var(--padding);
   }
 
   .color-container-accent {
     background-color: var(--accent-color);
     color: var(--text-on-dark);
+    padding: var(--padding);
   }
 
   /* My code */
