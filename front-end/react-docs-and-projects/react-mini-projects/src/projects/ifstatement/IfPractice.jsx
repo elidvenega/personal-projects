@@ -23,7 +23,7 @@ const buttonStyles = {
 export default function IfPractice() {
   const [showContent, setShowContent] = useState(false);
   const handleShowContent = () => setShowContent((prev) => !prev);
-  const handleReset = () => setShowContent(false);
+  // const handleReset = () => setShowContent(!showContent);
 
   return (
     <>
