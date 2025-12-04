@@ -42,9 +42,9 @@ h1 {
   background: #8e44ad;
 }
 
-#quote {
+/* #quote {
   color: #fff;
-}
+} */
 
 @media (max-width: 650px) {
   .container {
@@ -60,13 +60,13 @@ h1 {
     padding: 1rem;
   }
 
-  .card {
+  /* .card {
     background: #0984e3;
     margin-top: 3rem;
     text-align: center;
     padding: 3rem;
     border-radius: 1%;
-  }
+  } */
 
   .button {
     background: #9b59b6;
@@ -83,7 +83,7 @@ h1 {
     background: #8e44ad;
   }
 
-  #quote {
+  /* #quote {
     color: #fff;
-  }
+  } */
 }
