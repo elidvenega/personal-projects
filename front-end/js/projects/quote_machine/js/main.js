@@ -1,4 +1,5 @@
 const button = document.querySelector(".button");
+const quote = document.querySelector("#quote");
 const quotes = [
   "When something is important enough, you do it even if the odds are not in your favor.(Elon Musk)",
   "If you get up in the morning and think the future is going to be better, it is a bright day. Otherwise, it's not.(Elon Musk)",
@@ -8,17 +9,22 @@ const quotes = [
   "There’s only one certainty in life. A strong man stands above and conquers all.(Vegeta)",
 ];
 
-function displayQuote() {
-  //create an index of a random number
-  //convert it into between 0 to length of quotes[]
-  const index = Math.floor(Math.random() * quotes.length);
+// function displayQuote() {
+//   //create an index of a random number
+//   //convert it into between 0 to length of quotes[]
+//   const index = Math.floor(Math.random() * quotes.length);
 
-  //display the quote of that index
-  const quote = `<div class="card">
-     <p>${quotes[index]}</p>
-    </div>
-     `;
-  const div = (document.querySelector("#quote").innerHTML = quote);
+//   //display the quote of that index
+//   const quote = `<div class="card">
+//      <p>${quotes[index]}</p>
+//     </div>
+//      `;
+//   const div = (document.querySelector("#quote").innerHTML = quote);
+// }
+
+function displayQuoteTwo() {
+  const randomQuote = Math.floor(Math.random() * quotes.length);
+  quote.textContent = quotes[randomQuote];
 }
 
-button.addEventListener("click", displayQuote);
+button.addEventListener("click", displayQuoteTwo);
