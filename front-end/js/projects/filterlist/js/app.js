@@ -1,11 +1,15 @@
-const searchItems = document.querySelector(".searchItems");
-const listOutput = document.querySelectorAll(".listItems li")
+const searchItems = document.querySelector(".fruitSearch"); 
+const listItems = document.querySelectorAll(".listItems li");
 
-function searchForItem() {
+
+function filterList() {
   const filter = searchItems.value.toLowerCase();
-  listOutput.forEach((item) => {
-    searchItems.style.display = item.value.textContent.toLowerCase().includes(filter) ? "block" : "none";
-  })
+  searchItems.forEach((item) => {
+    item.style.display = listItems.toLowerCase().includes(filter)
+      ? "block"
+      : "none";
+  });
 }
 
-searchItems.addEventListener("keyup", searchForItem);
+searchItems.addEventListener("keyup", filterList);
+
