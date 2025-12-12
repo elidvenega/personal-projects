@@ -11,7 +11,7 @@ async function dogImg() {
     const img = `
       <img class="img" src="${data.message}"  alt="dog-image"/>
     `;
-    return (container.innerHTML = img);
+    container.innerHTML = img
   } catch (err) {
     console.error(err);
   }

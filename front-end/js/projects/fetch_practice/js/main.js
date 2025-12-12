@@ -1,5 +1,5 @@
 // function to get API data
- const getUsers = async() => {
+ async function getUsers()  {
   const url = fetch("https://jsonplaceholder.typicode.com/users")
   // using fetch as well try and catch
   try {
