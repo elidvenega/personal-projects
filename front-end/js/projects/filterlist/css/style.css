@@ -58,4 +58,5 @@ h1 {
 
 .listItems li:hover {
   background-color: var(--hover-color);
+  cursor: pointer;
 }
