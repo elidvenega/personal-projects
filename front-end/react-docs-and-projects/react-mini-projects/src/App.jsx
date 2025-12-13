@@ -1,11 +1,9 @@
-// import Desserts from "./projects/carousel/Desserts"
-import IfPractice from "./projects/ifstatement/IfPractice";
+import Desserts from "./projects/carousel/Desserts";
 
 export default function App() {
   return (
     <>
-      {/* <Desserts /> */}
-      <IfPractice />
+     <Desserts />
     </>
   );
 }

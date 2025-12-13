@@ -3,23 +3,20 @@ import { useState } from "react";
 import { desserts } from "./data";
 import "./styles.css";
 
-// Dessert data
-
 export default function Desserts() {
   const [index, setIndex] = useState(0);
 
   // No entiendo porque se esta usando modulo
-  // I don't understand this part at all I need to look at CHatGPT
+  // I don't understand this part at all I need to look at ChatGPT
   const handleNextDessert = () => {
     setIndex((prevIndex) => (prevIndex + 1) % desserts.length);
   };
 
-  // const handlePrevDessert = () => {
-  //   setIndex(
-  //     (prevIndex) => (prevIndex - 1 + desserts.length) % desserts.length
-  //   );
-  // };
-   
+  const handlePrevDessert = () => {
+    setIndex(
+      (prevIndex) => (prevIndex - 1 + desserts.length) % desserts.length
+    );
+  };
 
   const dessert = desserts[index];
 
@@ -37,13 +34,13 @@ export default function Desserts() {
         >
           Next Dessert
         </button>
-        {/* <button
+        <button
           className="buttonStyles"
           type="button"
           onClick={handlePrevDessert}
         >
           Last Dessert
-        </button> */}
+        </button>
       </section>
     </>
   );
