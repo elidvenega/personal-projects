@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import "./style.css";
 
-export default function SixthDadJoke() {
-  const [dadJoke, setDadJoke] = useState(
-    "Get a dad joke by clicking the button."
-  );
+export default function SeventhDadJokesAPI() {
+  const [dadJoke, setDadJoke] = useState("Click to get a dad joke.");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -12,21 +10,22 @@ export default function SixthDadJoke() {
     setLoading(true);
     setError(null);
     try {
-      const resp = await fetch(`https://icanhazdadjoke.com/ `, {
+      const dadJokeFetch = await fetch(`https://icanhazdadjoke.com`, {
         headers: {
           Accept: "application/json",
         },
       });
-      if(!resp.ok) {
-        // El mesanje que estoy usando no describe muy bien el throw Error
+      if (!dadJokeFetch.ok) {
         throw Error("Failed to fetch data");
       }
-      const data = await resp.json();
-      setDadJoke(data.joke)
-    } catch (error) {
-      console.error("Something went wrong", error);
+      const data = await dadJokeFetch.json();
+      setDadJoke(data.joke);
+      console.log(data);
+    } catch (err) {
+      console.error("failed to fetch", err);
       setError("Failed to fetch API");
     } finally {
+        // "Finnally" runs after "try" and "catch" main purpose of finally is essential clean up actions
       setLoading(false);
     }
   }
@@ -37,10 +36,10 @@ export default function SixthDadJoke() {
 
   return (
     <div className="dadjoke">
-      <h1>Get dad joke's</h1>
+      <h1>Dad Joke's API</h1>
       <p>{dadJoke}</p>
       <button onClick={getDadJoke} disabled={loading}>
-        {loading ? "Loading" : "Get Joke"}
+        {loading ? "Loading Joke" : "Get a dad joke"}
       </button>
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
