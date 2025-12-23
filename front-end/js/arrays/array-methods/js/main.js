@@ -12,11 +12,11 @@ const items = [
 
 // const itemsArr = [];
 
-// for(let i = 0; i < items.length; i++){
-//   itemsArr.push(items[i].name)
+for(let i = 0; i < items.length; i++){
+  itemsArr.push(items[i].name)
   
-//   output.textContent = itemsArr;
-// }
+  output.textContent = itemsArr;
+}
 
 
 // const emptyarr = [];
