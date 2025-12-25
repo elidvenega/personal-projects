@@ -1,9 +1,9 @@
-import Desserts from "./projects/carousel/Desserts";
+import DessertCarousel from "./projects/carousel-gpt/DessertCarousel";
 
 export default function App() {
   return (
     <>
-      <Desserts />
+      <DessertCarousel />
     </>
   );
 }
