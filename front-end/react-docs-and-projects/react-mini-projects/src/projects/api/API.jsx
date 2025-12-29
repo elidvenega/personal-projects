@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 export default function API() {
   const [api, setApi] = useState([]);
 
-  const fetchApi = async () => {
+  async function fetchApi() {
     try {
       const resp = await fetch(`https://jsonplaceholder.typicode.com/users`);
       const data = await resp.json();
@@ -11,7 +11,7 @@ export default function API() {
     } catch (e) {
       console.log(e);
     }
-  };
+  }
 
   useEffect(() => {
     fetchApi();
