@@ -13,39 +13,28 @@ import "./styles.css";
 export default function DessertPracticeThree() {
   const [index, setIndex] = useState(0);
 
-  const handleNextDessert = () => {
-    setIndex((nextDessert) => (nextDessert + 1) % desserts.length);
+  const handleNextIndex = () => {
+    setIndex((nextIndex) => (nextIndex + 1) % desserts.length);
   };
 
-  const handlePrevDessert = () => {
+  const handlePrevIndex = () => {
     setIndex(
-      (prevDessert) => (prevDessert - 1 + desserts.length) % desserts.length
+      (prevIndex) => (prevIndex - 1 + desserts.length) % desserts.length
     );
   };
 
   const dessert = desserts[index];
-
   return (
-    <>
-      <section className="sectionStyles">
-        <h1>{dessert.name}</h1>
-        <img className="image" src={dessert.image} alt="dessert" />
-        <p>{dessert.message}</p>
-        <button
-          type="button"
-          className="buttonStyles"
-          onClick={handleNextDessert}
-        >
-          Next Dessert
-        </button>
-         <button
-          type="button"
-          className="buttonStyles"
-          onClick={handlePrevDessert}
-        >
-          Prev Dessert
-        </button>
-      </section>
-    </>
+    <section className="sectionStyles">
+      <h1>{dessert.name}</h1>
+      <img className="image" src={dessert.image} alt={dessert.name} />
+      <p>{dessert.message}</p>
+      <button className="buttonStyles" type="button" onClick={handleNextIndex}>
+        Next
+      </button>
+      <button className="buttonStyles" type="button" onClick={handlePrevIndex}>
+        Prev
+      </button>
+    </section>
   );
 }

@@ -1,13 +1,9 @@
-// import TenthAccordion from "./projects/accordion/TenthAccordion";
-
-import DessertPracticeThree from "./projects/carousel/DessertPracticeThree";
+import DessertCarousel from "./projects/carousel-gpt/DessertCarousel";
 
 export default function App() {
   return (
     <>
-    
-     {/* <TenthAccordion /> */}
-     <DessertPracticeThree />
+      <DessertCarousel />
     </>
   );
 }

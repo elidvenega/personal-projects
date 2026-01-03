@@ -17,7 +17,10 @@ export default function DessertCarousel() {
   }, [paused]);
 
   const handleNextDessert = () => {
+    // index 0 === 3 - 1 and thats 0 if not add by one
+    // Thats how I understand the code
     setIndex((prevIndex) =>
+      // index is 1 === 2 it goes to the next one
       prevIndex === desserts.length - 1 ? 0 : prevIndex + 1
     );
   };
