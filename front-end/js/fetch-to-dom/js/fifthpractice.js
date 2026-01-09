@@ -26,7 +26,7 @@ async function showUser() {
   });
 
   const container = document.querySelector(".container");
-  container.innerHTML = html;
+  container.textContent = html;
 }
 
 showUser();
