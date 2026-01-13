@@ -42,4 +42,5 @@ h1 {
 
 .btn:hover {
   background-color: var(--btn-hover-color);
+  cursor: pointer;
 }
