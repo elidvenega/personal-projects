@@ -2,7 +2,7 @@
 // import Counter from "./projects/useEffect-practice/counterEffect/Counter";
 // import UseEffectPractice from "./projects/useEffect-practice/projectone/UseEffectPractice";
 
-import SixthCounter from "./projects/useEffect-practice/counterEffect/SixthCounter";
+import TimerFour from "./projects/useEffect-practice/times/TimerFour";
 
 export default function App() {
   return (
@@ -10,8 +10,7 @@ export default function App() {
       {/* <DessertCarousel /> */}
       {/* <UseEffectPractice /> */}
       {/* <Counter /> */}
-      <SixthCounter />
-    
+      <TimerFour />
     </>
   );
 }
