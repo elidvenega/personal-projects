@@ -2,7 +2,8 @@
 // import Counter from "./projects/useEffect-practice/counterEffect/Counter";
 // import UseEffectPractice from "./projects/useEffect-practice/projectone/UseEffectPractice";
 
-import TimerFour from "./projects/useEffect-practice/times/TimerFour";
+import DogImage from "./projects/useEffect-practice/random-dog-api/DogImage";
+
 
 export default function App() {
   return (
@@ -10,7 +11,7 @@ export default function App() {
       {/* <DessertCarousel /> */}
       {/* <UseEffectPractice /> */}
       {/* <Counter /> */}
-      <TimerFour />
+      <DogImage />
     </>
   );
 }
