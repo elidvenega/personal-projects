@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./style.css";
 
 export default function DogImage() {
   const [image, setImage] = useState(null);
@@ -25,11 +26,19 @@ export default function DogImage() {
   }, []);
 
   return (
-    <div>
-      <h1>Random Dog</h1>
-      {image && <img src={image} alt="Random dog" width="300" />}
-      <button type="button" onClick={handleGetDogImg}>
-        new image
+    <div className="dog-img-container">
+      <h1>Random Dog Image</h1>
+      {error && <p className="error-message" style={{ color: "red" }}>{error}</p>}
+      <div>
+        {image && <img className="dog-image" src={image} alt="Random dog" />}
+      </div>
+      <button
+        disabled={isLoading}
+        className="dog-image-button"
+        type="button"
+        onClick={handleGetDogImg}
+      >
+        {isLoading ? "Loading..." : "New Image"}
       </button>
     </div>
   );
