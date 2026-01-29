@@ -1,0 +1,69 @@
+:root {
+  --btn-color: #00bba7;
+  --btn-hover-color: #00bc7d;
+  --error-color: #dc3545;
+}
+
+.dog-img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 15px;
+  margin: 0;
+}
+
+.dog-image {
+  border-radius: 8px;
+  width: 22rem;
+  aspect-ratio: 1;
+  object-fit: cover;
+  box-shadow:  0 4px 6px rgba(0,0,0,0.1);
+}
+
+.dog-image-button {
+  background-color: var(--btn-color);
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #fff;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+}
+
+.dog-image-button:hover:not(:disabled) {
+  background-color: var(--btn-hover-color);
+
+}
+
+.dog-image-button:focus {
+    outline: 2px solid var(--btn-color);
+    outline-offset: 2px;
+}
+
+
+.dog-image-button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.error-message {
+  color: var(--error-color);
+  font-weight: 500;
+  margin: 0;
+  padding: 10px;
+  background-color: #f8d7da;
+  border-radius: 4px;
+  border-left: 4px solid var(--error-color);
+}
+
+
