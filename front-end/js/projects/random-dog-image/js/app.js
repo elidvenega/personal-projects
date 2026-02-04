@@ -1,26 +1,22 @@
-const url = `https://dog.ceo/api/breeds/image/random`;
-const container = document.querySelector(".container");
+const dogImage = document.querySelector(".dog-image");
 const btn = document.querySelector(".btn");
 
-async function dogImg() {
+async function getDogImage() {
+  btn.disabled = true;
+  btn.textContent = "Loading...";
   try {
-    const resp = await fetch(url);
+    const resp = await fetch(`https://dog.ceo/api/breeds/image/random`);
     const data = await resp.json();
     console.log(data);
-
-    // const img = `
-    //   <img class="img" src="${data.message}"  alt="dog-image"/>
-    // `;
-    // container.innerHTML = img
-    const img = document.createElement("img");
-    img.src = `${data.message}`;
-    img.alt = `Random dog image`;
-    container.appendC(img);
+    dogImage.src = `${data.message}`;
   } catch (err) {
     console.error(err);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "Get Random Dog";
   }
 }
 
-dogImg();
+getDogImage()
 
-btn.addEventListener("click", dogImg);
+btn.addEventListener("click", getDogImage);
