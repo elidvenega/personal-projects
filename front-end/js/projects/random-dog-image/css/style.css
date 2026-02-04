@@ -1,5 +1,5 @@
 :root {
-  --btn-color: #a29bfe;
+  --btn-color: #00B8DB;
   --btn-hover-color: #6c5ce7;
 }
 
@@ -26,7 +26,7 @@ h1 {
   /* margin: 10px; */
 }
 
-.img {
+.dog-image {
   border-radius: 5px;
   width: 25rem;
   aspect-ratio: 1;
@@ -34,10 +34,12 @@ h1 {
 
 .btn {
   background-color: var(--btn-color);
-  border-radius: 2%;
+  border-radius: 8px;
   color: #fff;
   border: none;
-  padding: 12px;
+  font-size: 1rem;
+  transition: 0.3s ease;
+  padding: 15px;
 }
 
 .btn:hover {
