@@ -1,17 +1,17 @@
-const searchInput = document.querySelector(".searchInput");
-const listItems = document.querySelectorAll(".listItems li");
+// const searchInput = document.querySelector(".searchInput");
+// const listItems = document.querySelectorAll(".listItems li");
 
-function filterListItems() {
-  const filter = searchInput.value.toLowerCase();
+// function filterListItems() {
+//   const filter = searchInput.value.toLowerCase();
 
-  listItems.forEach((item) => {
-    item.style.display = item.textContent.toLowerCase().includes(filter)
-      ? "block"
-      : "none";
-  });
-}
+//   listItems.forEach((item) => {
+//     item.style.display = item.textContent.toLowerCase().includes(filter)
+//       ? "block"
+//       : "none";
+//   });
+// }
 
-searchInput.addEventListener("keyup", filterListItems);
+// searchInput.addEventListener("keyup", filterListItems);
 
 // Filters the list items based on the user's input in the search box by showing or hiding items that match the filter.
 // function filterListItems() {
@@ -27,3 +27,29 @@ searchInput.addEventListener("keyup", filterListItems);
 // }
 
 // searchInput.addEventListener("keyup", filterListItems);
+
+
+const searchInput = document.querySelector(".searchInput");
+const listItems = document.querySelectorAll(".listIte")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
