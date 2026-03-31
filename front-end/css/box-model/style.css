@@ -24,9 +24,10 @@ h1 {
   text-align: center;
 }
 
-/* .wrapper {
+.wrapper {
   display: flex;
-} */
+  flex-wrap: wrap;
+}
 
 .box-one {
   --color-one: #ddd;
@@ -38,7 +39,7 @@ h1 {
   min-height: 100%;
   max-width: 50%;
   /* Adds spacing below the box to separate it from other elements */
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
 }
 
 .box-two {
