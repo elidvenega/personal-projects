@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useCallback, useRef } from "react";
+import { useEffect, useReducer, useCallback, useRef } from "react";
 
 // ------------------------------
 // API CLIENT (with retry + abort)
@@ -94,7 +94,11 @@ export function useApi(endpoint) {
   }, [endpoint]);
 
   useEffect(() => {
+    // IMPORTANT: Reset mounted flag (fixes React StrictMode double-invoke bug)
+    mountedRef.current = true;
+
     fetchData();
+
     return () => {
       mountedRef.current = false;
     };
@@ -133,3 +137,4 @@ export default function App() {
     </div>
   );
 }
+
