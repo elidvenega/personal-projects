@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -29,8 +29,11 @@
       const memoizedSlowFunction = memoize(slowFunction);
 
       console.log(memoizedSlowFunction(5)); // "Computing..." and returns 10
+      console.log(memoizedSlowFunction(5));
+      console.log(memoizedSlowFunction(8));
       console.log(memoizedSlowFunction(5)); // Returns 10 from cache, no "Computing..."
-      console.log(memoizedSlowFunction(8))
+      console.log(memoizedSlowFunction(6));
+      console.log(memoizedSlowFunction(5));
     </script>
   </body>
 </html>
