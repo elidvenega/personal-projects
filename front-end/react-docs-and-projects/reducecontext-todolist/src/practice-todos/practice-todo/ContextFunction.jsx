@@ -9,6 +9,8 @@ const todoList = [
   { id: 3, todo: "Walk on the beach", completed: false },
 ];
 
+
+// null intentional absence of value
 const TasksContext = createContext(null);
 const TasksDispatch = createContext(null);
 
