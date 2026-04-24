@@ -16,7 +16,7 @@ async function fetchWithRetry(url, options = {}, retries = 3, delay = 500) {
     });
 
     clearTimeout(id);
-
+    // If there is no response error will be thrown
     if (!response.ok) throw new Error("API Error");
 
     return await response.json();
