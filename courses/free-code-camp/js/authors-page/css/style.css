@@ -5,14 +5,15 @@
 }
 
 :root {
-  --main-bg-color: #1b1b32;
+  --main-bg-color: #da7f68;
   --light-grey: #f5f6f7;
-  --dark-purple: #5a01a7;
-  --golden-yellow: #feac32;
+  --dark-purple: #b882e7;
+  --golden-yellow: #ffb13c;
 }
 
 body {
   background-color: var(--main-bg-color);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   text-align: center;
 }
 
