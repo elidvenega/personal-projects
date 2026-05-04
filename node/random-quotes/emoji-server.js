@@ -27,6 +27,14 @@ const emojis = [
     id: 5,
     emoji: "🐛",
   },
+   {
+    id: 6,
+    emoji: "😄",
+  },
+   {
+    id: 7,
+    emoji: "🧙🏽‍♂️",
+  },
 ];
 
 app.get("/emoji", (req, res) => {
