@@ -13,6 +13,8 @@ const track = audioCtx.createMediaElementSource(audioElement);
 const playButton = document.querySelector(".tape-controls-play");
 
 // play pause audio
+// Notes 
+// I don't fully understand the code and not sure on what to do with this code
 playButton.addEventListener(
   "click",
   function () {
