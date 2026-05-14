@@ -9,8 +9,10 @@ function fetchAuthors() {
   fetch("https://cdn.freecodecamp.org/curriculum/news-author-page/authors.json")
     .then((res) => res.json())
     .then((data) => {
+      // data will be put in an array
       authorDataArr = data;
       // need to figured out what slice does here
+      // I belive is placing the api data in row and cards
       displayAuthors(authorDataArr.slice(startingIndex, endingIndex));
     })
     .catch((err) => {
