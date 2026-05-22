@@ -117,3 +117,13 @@ for (let i = 0; i < items.length; i++) {
 
 // <p> The singer was ${singer} and the drummer was ${drums}</p>
 // `;
+
+
+// Some code from FCC
+let fruits = ["apple", "banana", "orange", "mango"];
+let indexToRemove = fruits.indexOf("orange");
+if (indexToRemove !== -1) {
+    fruits.splice(indexToRemove, 1);
+}
+
+console.log(fruits); // ["apple", "banana", "mango"]
