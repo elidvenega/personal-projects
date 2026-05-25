@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function isLeapYear(year) {
+      //   return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+      // }
+
+      //   My code
+      let year = 2024;
+
+      function isLeapYear(year) {
+        let result;
+        if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+          result = `${year} is a leap year.`;
+          console.log(result);
+        } else {
+          result = `${year} is not a leap year.`;
+          console.log(result);
+        }
+      }
+
+      isLeapYear(year);
+
+      //   Code from AI
+      function isLeapYear(yearParam) {
+        if (
+          (yearParam % 4 === 0 && yearParam % 100 !== 0) ||
+          yearParam % 400 === 0
+        ) {
+          return `${yearParam} is a leap year.`;
+        } else {
+          return `${yearParam} is not a leap year.`;
+        }
+      }
+
+      let year = 2024;
+
+      let result = isLeapYear(year);
+
+      console.log(result);
+    </script>
+  </body>
+</html>
