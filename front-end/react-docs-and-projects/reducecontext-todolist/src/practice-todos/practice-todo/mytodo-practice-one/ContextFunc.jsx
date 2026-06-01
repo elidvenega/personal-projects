@@ -1,23 +1,19 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useReducer } from "react";
 
-const todoList = [
-  { id: 0, todo: "Ride a bike", completed: false },
-  { id: 1, todo: "Guitar 20 mins", completed: false },
-  { id: 2, todo: "Japanese 10 mins", completed: false },
-  { id: 3, todo: "Walk on the beach", completed: false },
+const todos = [
+  { id: 0, todo: "Exercise 40 mins", completed: false },
+  { id: 1, todo: "Wash clother", completed: false },
+  { id: 2, todo: "Cook Dinner", completed: false },
+  { id: 3, todo: "Clean apartment", completed: false },
 ];
 
-// null intentional absence of value
 const TasksContext = createContext(null);
 const TasksDispatch = createContext(null);
 
-// custom hooks
 export const useTasks = () => useContext(TasksContext);
 export const useDispatch = () => useContext(TasksDispatch);
 
-function reduceFunc(tasks, action) {
+function reducerFunc(tasks, action) {
   switch (action.type) {
     case "added": {
       return [
@@ -45,13 +41,12 @@ function reduceFunc(tasks, action) {
     }
 
     default: {
-      throw Error("Unknown action" + action.type);
+      throw Error("Unknown Action" + action.type);
     }
   }
 }
-
-export default function ContextFunction({ children }) {
-  const [tasks, dispatch] = useReducer(reduceFunc, todoList);
+export default function ContextFunc({ children }) {
+  const [tasks, dispatch] = useReducer(reducerFunc, todos);
   return (
     <TasksContext.Provider value={tasks}>
       <TasksDispatch.Provider value={dispatch}>

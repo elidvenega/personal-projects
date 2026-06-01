@@ -1,0 +1,8 @@
+1. Read and understand code 
+2. Really understand every bit of code possible from the 
+hooks being used and techniques used in React
+3.Create my own many times until I finally understand just take my time 
+with this project and make a lot of mistakes
+4. Write a short essay or summary of what the code is doing and let AI review to see I'f Im understanding
+5. Add to this project Is never meant to be finished
+6. Style it so I can also practice CSS
