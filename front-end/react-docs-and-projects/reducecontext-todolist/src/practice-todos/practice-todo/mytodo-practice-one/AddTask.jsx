@@ -1,6 +1,5 @@
 import { useState } from "react";
-// We are using dispatch 
-import { useDispatch } from "./ContextFunction";
+import { useDispatch } from "./ContextFunc";
 
 let nextId = 4;
 export default function AddTask() {
@@ -17,6 +16,7 @@ export default function AddTask() {
       });
     }
   };
+
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
@@ -27,12 +27,13 @@ export default function AddTask() {
     <>
       <input
         type="text"
-        placeholder="Add Todo"
         value={inputValue}
         onChange={handleInput}
         onKeyDown={handleKeyDown}
       />
-      <button onClick={handleSubmit}>Add</button>
+      <button type="submit" onClick={handleSubmit}>
+        Add
+      </button>
     </>
   );
 }

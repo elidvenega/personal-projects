@@ -4,3 +4,16 @@ const loadMoreBtn = document.getElementById("load-more-btn");
 let startingIndex = 0;
 let endingIndex = 8;
 let authorDataArr = [];
+
+function fetchAuthors() {
+    fetch(`https://cdn.freecodecamp.org/curriculum/news-author-page/authors.json`)
+    .then((res) => res.json())
+    .then((data) => {
+        authorDataArr = data;
+        displayAuthors(authorDataArr.slice(startingIndex,endingIndex))
+    })
+    .catch((err) => {
+        authorContainer.innerHTML = `<p></p>`
+    })
+}
+
