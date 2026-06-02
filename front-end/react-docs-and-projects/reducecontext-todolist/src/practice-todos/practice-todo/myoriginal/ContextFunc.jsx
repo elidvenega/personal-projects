@@ -1,10 +1,10 @@
-import { createContext, useContext, useReducer } from "react";
+import { useReducer, useContext, createContext } from "react";
 
 const todos = [
-  { id: 0, todo: "Exercise 40 mins", completed: false },
-  { id: 1, todo: "Wash clother", completed: false },
-  { id: 2, todo: "Cook Dinner", completed: false },
-  { id: 3, todo: "Clean apartment", completed: false },
+  { id: 0, todo: "Walk", completed: false },
+  { id: 1, todo: "Do laundry", completed: false },
+  { id: 2, todo: "Go on hike", completed: false },
+  { id: 3, todo: "Budget", completed: false },
 ];
 
 const TasksContext = createContext(null);
@@ -41,14 +41,15 @@ function reducerFunc(tasks, action) {
     }
 
     default: {
-      throw Error("Unknown Action" + action.type);
+      throw new Error("Unknown action" + action.type);
     }
   }
 }
+
 export default function ContextFunc({ children }) {
-  const [tasks, dispatch] = useReducer(reducerFunc, todos);
+  const [task, dispatch] = useReducer(reducerFunc, todos);
   return (
-    <TasksContext.Provider value={tasks}>
+    <TasksContext.Provider value={task}>
       <TasksDispatch.Provider value={dispatch}>
         {children}
       </TasksDispatch.Provider>
