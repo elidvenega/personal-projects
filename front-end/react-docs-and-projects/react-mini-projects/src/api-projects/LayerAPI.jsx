@@ -117,11 +117,11 @@ export default function App() {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div className="p-4">
-      <h1 className="text-xl font-bold mb-4">Posts</h1>
+    <div className="">
+      <h1 className="">Posts</h1>
       <button
         onClick={refetch}
-        className="mb-4 px-4 py-2 bg-blue-500 text-white rounded"
+        className=""
       >
         Refetch
       </button>

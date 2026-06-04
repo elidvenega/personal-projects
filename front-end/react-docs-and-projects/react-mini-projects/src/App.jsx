@@ -3,7 +3,7 @@
 // import UseEffectPractice from "./projects/useEffect-practice/projectone/UseEffectPractice";
 // import RickAndMorty from "./projects/rick-and-morty/RickAndMorty";
 
-import LayerAPI from "./api-projects/LayerAPI";
+import Counter from "./custom-hooks/Counter";
 
 export default function App() {
   return (
@@ -12,7 +12,7 @@ export default function App() {
       {/* <UseEffectPractice /> */}
       {/* <Counter /> */}
       {/* <RickAndMorty /> */}
-      <LayerAPI />
+      <Counter />
     </>
   );
 }

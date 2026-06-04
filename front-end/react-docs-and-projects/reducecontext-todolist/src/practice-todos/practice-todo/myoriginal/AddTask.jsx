@@ -5,13 +5,12 @@ let nextId = 4;
 export default function AddTask() {
   const [inputValue, setInputValue] = useState("");
   const addTask = useDispatch();
-
   const handleInput = (e) => setInputValue(e.target.value);
   const handleSubmit = () => {
     if (inputValue.trim() !== "") {
       setInputValue("");
       addTask({
-        case: "added",
+        type: "added",
         id: nextId++,
         todo: inputValue,
       });
@@ -24,18 +23,18 @@ export default function AddTask() {
       handleSubmit();
     }
   };
+
   return (
     <>
       <input
         type="text"
-        placeholder="Enter todo"
+        placeholder="Add new task"
         value={inputValue}
         onChange={handleInput}
         onKeyDown={handleKeyDown}
       />
-
       <button type="submit" onClick={handleSubmit}>
-        Add
+        Add todo
       </button>
     </>
   );
