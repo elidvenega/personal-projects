@@ -1,10 +1,10 @@
-import { useContext, useReducer, createContext } from "react";
+import { useContext, createContext, useReducer } from "react";
 
 const todos = [
   { id: 0, todo: "Walk", completed: false },
   { id: 1, todo: "Go for groceries", completed: false },
-  { id: 2, todo: "Wash the dishes", completed: false },
-  { id: 3, todo: "Pay bills", completed: false },
+  { id: 2, todo: "Clean apartment", completed: false },
+  { id: 3, todo: "Wash dishes", completed: false },
 ];
 
 const TasksContext = createContext(null);
@@ -25,7 +25,6 @@ function reducerFunc(tasks, action) {
         },
       ];
     }
-
     case "changed": {
       return tasks.map((t) => {
         if (t.id === action.task.id) {
@@ -41,15 +40,15 @@ function reducerFunc(tasks, action) {
     }
 
     default: {
-      throw new Error("unknown action" + action.type);
+      throw new Error("Unknown action" + action.type);
     }
   }
 }
 
 export default function ContextFunc({ children }) {
-  const [task, dispatch] = useReducer(reducerFunc, todos);
+  const [tasks, dispatch] = useReducer(reducerFunc, todos);
   return (
-    <TasksContext.Provider value={task}>
+    <TasksContext.Provider value={tasks}>
       <TasksDispatch.Provider value={dispatch}>
         {children}
       </TasksDispatch.Provider>
