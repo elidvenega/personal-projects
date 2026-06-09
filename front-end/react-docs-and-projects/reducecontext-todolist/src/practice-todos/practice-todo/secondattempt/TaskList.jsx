@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useTasks, useDispatch } from "./ContextFunc";
+import { useTasks, useDispatch } from "./TasksProvider";
 
 export default function TaskList() {
   const tasks = useTasks();
@@ -17,9 +17,9 @@ export default function TaskList() {
 function Task({ task }) {
   const [isEditing, setIsEditing] = useState(false);
   const dispatch = useDispatch();
-  let tasksContent;
+  let tasksContext;
   if (isEditing) {
-    tasksContent = (
+    tasksContext = (
       <>
         <input
           type="text"
@@ -38,7 +38,7 @@ function Task({ task }) {
       </>
     );
   } else {
-    tasksContent = (
+    tasksContext = (
       <>
         {task.todo}
         <button onClick={() => setIsEditing(true)}>Edit</button>
@@ -46,33 +46,31 @@ function Task({ task }) {
     );
   }
   return (
-    <>
-      <label>
-        <input
-          type="checkbox"
-          value={task.completed}
-          onChange={(e) => {
-            dispatch({
-              type: "changed",
-              task: {
-                ...task,
-                completed: e.target.checked,
-              },
-            });
-          }}
-        />
-        {tasksContent}
-        <button
-          onClick={() =>
-            dispatch({
-              type: "delete",
-              id: task.id,
-            })
-          }
-        >
-          Delete
-        </button>
-      </label>
-    </>
+    <label>
+      <input
+        type="checkbox"
+        value={task.completed}
+        onChange={(e) => {
+          dispatch({
+            type: "changed",
+            task: {
+              ...task,
+              completed: e.target.checked,
+            },
+          });
+        }}
+      />
+      {tasksContext}
+      <button
+        onClick={() => {
+          dispatch({
+            type: "delete",
+            id: task.id,
+          });
+        }}
+      >
+        Delete
+      </button>
+    </label>
   );
 }

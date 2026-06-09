@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch } from "./ContextFunc";
+import { useDispatch } from "./TasksProvider";
 
 let nextId = 4;
 export default function AddTask() {
@@ -16,12 +16,13 @@ export default function AddTask() {
       });
     }
   };
-   const handleKeyDown = (e) => {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        handleSubmit();
-      }
-    };
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSubmit();
+    }
+  };
+
   return (
     <>
       <input
@@ -31,7 +32,9 @@ export default function AddTask() {
         onChange={handleInput}
         onKeyDown={handleKeyDown}
       />
-      <button type="submit" onClick={handleSubmit}>Add</button>
+      <button type="submit" onClick={handleSubmit}>
+        Add
+      </button>
     </>
   );
 }
