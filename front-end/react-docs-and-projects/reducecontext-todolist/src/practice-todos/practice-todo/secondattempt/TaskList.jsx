@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useTasks, useDispatch } from "./TasksProvider";
+import { useDispatch, useTasks } from "./TasksProvider";
 
 export default function TaskList() {
   const tasks = useTasks();
@@ -62,12 +62,13 @@ function Task({ task }) {
       />
       {tasksContext}
       <button
-        onClick={() => {
+        type="submit"
+        onClick={() =>
           dispatch({
             type: "delete",
             id: task.id,
-          });
-        }}
+          })
+        }
       >
         Delete
       </button>

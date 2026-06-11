@@ -1,9 +1,9 @@
-import TaskApp from "./practice-todos/practice-todo/secondattempt/TaskApp";
+import Todo from "./plaintodolist/Todo";
 
 export default function App() {
   return (
     <>
-     <TaskApp />
+     <Todo />
     </>
   );
 }
