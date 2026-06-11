@@ -7,14 +7,6 @@ const todos = [
   { id: 3, todo: "Clean apartment" },
 ];
 
-// const todos = [
-//   { id: 0, todo: "Walk" },
-//   { id: 1, todo: "Cook" },
-//   { id: 2, todo: "Pay Bills" },
-//   { id: 3, todo: "Clean apartment" },
-// ];
-
-
 // put up an input to add and a button
 // loop through array
 // also add delete button
