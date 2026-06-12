@@ -16,10 +16,15 @@ export default function useCounter(initialValue = 0) {
     setCount(initialValue);
   };
 
+  const multiplyByTwo = () => {
+    setCount((prev) => prev * 2);
+  };
+
   return {
     count,
     increment,
     decrement,
     reset,
+    multiplyByTwo
   };
 }

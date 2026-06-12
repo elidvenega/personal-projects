@@ -1,7 +1,7 @@
 import useCounter from "./useCounter";
 
 export default function Counter() {
-  const { count, increment, decrement, reset } = useCounter(10);
+  const { count, increment, decrement, reset, multiplyByTwo } = useCounter(10);
 
   return (
     <div>
@@ -10,6 +10,7 @@ export default function Counter() {
       <button onClick={increment}>+</button>
       <button onClick={decrement}>-</button>
       <button onClick={reset}>Reset</button>
+      <button onClick={multiplyByTwo}>x2</button>
     </div>
   );
 }
