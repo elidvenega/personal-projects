@@ -1,4 +1,4 @@
-const todos = [
+export const data = [
   { id: 0, todo: "Walk" },
   { id: 1, todo: "Cook" },
   { id: 2, todo: "Pay Bills" },
