@@ -5,9 +5,7 @@ let nextId = 5;
 export default function AddTask() {
   const [inputValue, setInputValue] = useState("");
   const addTask = useDispatch();
-
   const handleInput = (e) => setInputValue(e.target.value);
-
   const handleSubmit = () => {
     if (inputValue.trim() !== "") {
       addTask({
@@ -18,8 +16,7 @@ export default function AddTask() {
       setInputValue("");
     }
   };
-
-  const handleKeyDown = (e) => {
+  const handleKeydown = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
       handleSubmit();
@@ -29,12 +26,12 @@ export default function AddTask() {
     <>
       <input
         type="text"
-        placeholder="Add todo"
+        placeholder=" Add todo"
         value={inputValue}
         onChange={handleInput}
-        onKeyDown={handleKeyDown}
+        onKeyDown={handleKeydown}
       />
-      <button type="button" onClick={handleSubmit}>
+      <button type="delete" onClick={handleSubmit}>
         Add
       </button>
     </>

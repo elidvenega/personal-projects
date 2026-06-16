@@ -1,10 +1,9 @@
-import FourthTodoList from "./plaintodolist/FourthTodoList";
-
+import TaskApp from "./practice-todos/practice-todo/secondattempt/TaskApp";
 
 export default function App() {
   return (
     <>
-    <FourthTodoList/>
+      <TaskApp />
     </>
   );
 }

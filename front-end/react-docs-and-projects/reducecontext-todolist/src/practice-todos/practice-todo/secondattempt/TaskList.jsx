@@ -1,12 +1,82 @@
-import { useState } from 'react'
+import { useState } from "react";
+import { useTasks, useDispatch } from "./TasksProvider";
 
 export default function TaskList() {
+  const tasks = useTasks();
   return (
-    <div>TaskList</div>
-  )
+    <ul>
+      {tasks.map((task) => (
+        <li key={task.id}>
+          <Task task={task} />
+        </li>
+      ))}
+    </ul>
+  );
 }
 
-
 function Task({ task }) {
-  consy
+  const [isEditing, setIsEditing] = useState(false);
+  const dispatch = useDispatch();
+  let tasksContext;
+  if (isEditing) {
+    tasksContext = (
+      <>
+        <input
+          type="text"
+          value={task.todo}
+          onChange={(e) => {
+            dispatch({
+              type: "changed",
+              task: {
+                ...task,
+                todo: e.target.value,
+              },
+            });
+          }}
+        />
+        <button type="button" onClick={() => setIsEditing(false)}>
+          Save
+        </button>
+      </>
+    );
+  } else {
+    tasksContext = (
+      <>
+        {task.todo}
+        <button type="button" onClick={() => setIsEditing(true)}>
+          Edit
+        </button>
+      </>
+    );
+  }
+
+  return (
+    <label>
+      <input
+        type="checkbox"
+        value={task.completed}
+        onChange={(e) => {
+          dispatch({
+            type: "changed",
+            task: {
+              ...task,
+              completed: e.target.checked,
+            },
+          });
+        }}
+      />
+      {tasksContext}
+      <button
+        type="button"
+        onClick={() => {
+          dispatch({
+            type: "delete",
+            id: task.id,
+          });
+        }}
+      >
+        Delete
+      </button>
+    </label>
+  );
 }
