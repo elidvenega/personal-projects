@@ -13,10 +13,10 @@ export default function AddTask() {
         id: nextId++,
         todo: inputValue,
       });
-      setInputValue("");
     }
+    setInputValue("")
   };
-  const handleKeydown = (e) => {
+  const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
       handleSubmit();
@@ -26,12 +26,13 @@ export default function AddTask() {
     <>
       <input
         type="text"
-        placeholder=" Add todo"
+        placeholder="Add todo"
         value={inputValue}
         onChange={handleInput}
-        onKeyDown={handleKeydown}
+        onKeyDown={handleKeyDown}
       />
-      <button type="delete" onClick={handleSubmit}>
+
+      <button type="button" onClick={handleSubmit}>
         Add
       </button>
     </>
