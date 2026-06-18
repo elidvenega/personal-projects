@@ -18,21 +18,25 @@ function Task({ task }) {
   const [isEditing, setIsEditing] = useState(false);
   const dispatch = useDispatch();
   let tasksContext;
+
+  const handleSubmit = (e) => {
+    dispatch({
+      type: "changed",
+      task: {
+        ...task,
+        todo: e.target.value,
+      },
+    });
+  };
+
   if (isEditing) {
     tasksContext = (
       <>
         <input
           type="text"
           value={task.todo}
-          onChange={(e) => {
-            dispatch({
-              type: "changed",
-              task: {
-                ...task,
-                todo: e.target.value,
-              },
-            });
-          }}
+          onChange={handleSubmit}
+          onKeyDown={handleKeyDown}
         />
         <button type="button" onClick={() => setIsEditing(false)}>
           Save
@@ -49,7 +53,6 @@ function Task({ task }) {
       </>
     );
   }
-
   return (
     <label>
       <input

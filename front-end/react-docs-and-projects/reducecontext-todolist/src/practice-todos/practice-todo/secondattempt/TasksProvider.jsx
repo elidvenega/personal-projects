@@ -1,11 +1,11 @@
 import { useReducer, useContext, createContext } from "react";
 
 const todos = [
-  { id: 0, todo: "Walk 20 mins", completed: false },
-  { id: 1, todo: "Buy groceries", completed: false },
-  { id: 2, todo: "Pay bills", completed: false },
-  { id: 3, todo: "Have work meeting", completed: false },
-  { id: 4, todo: "Cook for dinner", completed: false },
+  { id: 0, todo: "Run 20 mins", completed: false },
+  { id: 1, todo: "Cook", completed: false },
+  { id: 2, todo: "Pay Bills", completed: false },
+  { id: 3, todo: "Practice guitar", completed: false },
+  { id: 4, todo: "Wash dishes", completed: false },
 ];
 
 const TasksContext = createContext(null);
@@ -42,7 +42,7 @@ function reducer(tasks, action) {
     }
 
     default: {
-      throw new Error(" Unknown Action" + action.type);
+      throw new Error("Unknown Action" + action.type);
     }
   }
 }
