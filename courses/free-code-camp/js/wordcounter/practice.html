@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Word Counter</h1>
+
+    <script>
+      //   function wordCounter(sentence, match) {
+      //     let count = 0;
+      //     for (const word of sentence) {
+      //       if (word === match) {
+      //         count++;
+      //       }
+      //       console.log(
+      //         `Checking "${word}" against "${match}" | Running count: ${count}`,
+      //       );
+      //     }
+      //     return count;
+      //   }
+
+      //   wordCounter(["Hello", "how", "are", "you"], "you");
+
+      //   function wordCounter(sentence, match) {
+      //     let count = 0;
+
+      //     for (const word of sentence) {
+      //       if (word === match) {
+      //         count++;
+      //       }
+      //       console.log(
+      //         `Checking: ${word} against ${match} | "Runnning count:" ${count}`,
+      //       );
+      //     }
+      //     return count;
+      //   }
+      //   console.log(
+      //     wordCounter(
+      //       ["He", "never", "learns", "to", "stop", "watching"],
+      //       "learns",
+      //     ),
+      //   );
+
+      function wordCounter(sentence, match) {
+        let count = 0;
+        for (const word of sentence) {
+          if (word === match) {
+            count++;
+          }
+          console.log(
+            `Checking ${word} is equal to ${match} | how many times ${count}`,
+          );
+        }
+        return count;
+      }
+
+      console.log(wordCounter(["It", "works ", "each", "day"], "day"));
+    </script>
+  </body>
+</html>
