@@ -27,7 +27,7 @@ function instrumentCards(instrumentCategory) {
       return ` 
         <div class="card">
           <h2>${instrument}</h2>
-          <p>${price}</p>
+          <p>$${price}</p>
         </div>
 
         `;

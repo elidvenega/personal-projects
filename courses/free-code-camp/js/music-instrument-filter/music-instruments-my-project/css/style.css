@@ -1,6 +1,7 @@
 :root {
-    --bg-color: oklch(78.5% 0.115 274.713);
-    --white: #fff;
+  --bg-color: oklch(50% 0.134 242.749);
+  --card-bordercolor: oklch(94.5% 0.129 101.54);
+  --white: #fff;
 }
 
 *,
@@ -11,30 +12,53 @@
   padding: 0;
 }
 
-
 body {
-    background-color: var(--bg-color);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 100%;
-    min-height: 100vh;
+  background-color: var(--bg-color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  max-width: 100%;
+  min-height: 100vh;
 }
 
 h1 {
-    font-size: 3rem;
-    color: var(--white);
-    text-align: center;
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--white);
+  padding: 1rem;
+  text-align: center;
 }
 
 .select-container {
-    
+  margin: auto;
+  display: flex;
+  width: 100%;
+  max-width: 32rem;
+  padding: 10px;
+}
+
+.product-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .card {
-    background-color: var(--white);
-    width: 10rem;
-    padding: 1rem;
-    margin: 10px;
+  background-color: var(--white);
+  border-radius: 5px;
+  border: 10px solid var(--card-bordercolor);
+  width: 100%;
+  max-width: 15rem;
+  padding: 1.3rem;
+  margin-top: 20px;
+}
+
+h2 {
+  color: var(--bg-color);
+}
+
+p {
+  color: var(--bg-color);
 }
