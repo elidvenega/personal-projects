@@ -1,35 +1,29 @@
 import { useState } from "react";
 import { instrumentsArr } from "./instruments";
-import "./styles.css";
 
-export default function MusicFilterTwo() {
+export default function MusicFilterThree() {
   const [category, setCategory] = useState("all");
 
-  const instrumentFilter =
+  const filteredList =
     category === "all"
       ? instrumentsArr
-      : instrumentsArr.filter((instrument) => instrument.category === category);
-
-  const handleInput = (e) => setCategory(e.target.value);
+      : instrumentsArr.filter((inst) => inst.category === category);
 
   return (
     <main>
-      <h1>Todo list</h1>
-      <select value={category} onChange={handleInput} className="select-container">
+        <h1>Instrument List</h1>
+      <select value={category} onChange={(e) => setCategory(e.target.value)}>
         <option value="all">All</option>
         <option value="woodwinds">Woodwinds</option>
         <option value="brass">Brass</option>
         <option value="percussion">Percussion</option>
       </select>
-       <div className="product-container">
-        
-      {instrumentFilter.map((item) => (
-        <div className="card" key={item.id}>
+      {filteredList.map((item) => (
+        <div>
           <h2>{item.instrument}</h2>
           <p>${item.price}</p>
         </div>
       ))}
-       </div>
     </main>
   );
 }
