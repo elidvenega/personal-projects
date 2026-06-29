@@ -3,7 +3,8 @@
 // import UseEffectPractice from "./projects/useEffect-practice/projectone/UseEffectPractice";
 // import RickAndMorty from "./projects/rick-and-morty/RickAndMorty";
 
-import MusicFilter from "./fcc-musicfilter/MusicFilter";
+// import MusicFilter from "./fcc-musicfilter/MusicFilter";
+import MusicFilterTwo from "./fcc-musicfilter/MusicFilterTwo";
 
 // import Counter from "./custom-hooks/Counter";
 
@@ -15,7 +16,8 @@ export default function App() {
       {/* <Counter /> */}
       {/* <RickAndMorty /> */}
       {/* <Counter /> */}
-      <MusicFilter />
+      {/* <MusicFilter /> */}
+      <MusicFilterTwo />
     </>
   );
 }
