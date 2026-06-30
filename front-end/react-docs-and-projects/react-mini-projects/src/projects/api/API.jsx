@@ -8,8 +8,8 @@ export default function API() {
       const resp = await fetch(`https://jsonplaceholder.typicode.com/users`);
       const data = await resp.json();
       setApi(data);
-    } catch (e) {
-      console.log(e);
+    } catch (error) {
+      console.log(error);
     }
   }
 

@@ -25,7 +25,7 @@ function getRandomQuote() {
   
   `;
 
-   container.innerHTML = quote;
+  container.innerHTML = quote;
 }
 
 button.addEventListener("click", getRandomQuote);
