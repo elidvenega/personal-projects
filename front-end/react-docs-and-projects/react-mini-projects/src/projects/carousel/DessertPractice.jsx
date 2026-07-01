@@ -7,10 +7,12 @@ export default function DessertPractice() {
   const [index, setIndex] = useState(0);
 
   const handleNextDessert = () => {
+    // 2 % 3
     setIndex((prevIndex) => (prevIndex + 1) % desserts.length);
   };
 
   const handlePrevDessert = () => {
+                // 4  % 3
     setIndex(
       (prevIndex) => (prevIndex - 1 + desserts.length) % desserts.length
     );
