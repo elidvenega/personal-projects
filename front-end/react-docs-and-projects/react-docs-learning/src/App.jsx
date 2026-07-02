@@ -1,11 +1,9 @@
-import FormExample from './components/form/FormExample';
-// import Form from "./components/form/Form"
+import CardGallery from "./challenge-questions/props/challenge-one/Gallery";
 
 export default function App() {
   return (
     <>
-    <FormExample />
-    {/* <Form /> */}
+    <CardGallery />
     </>
   );
 }

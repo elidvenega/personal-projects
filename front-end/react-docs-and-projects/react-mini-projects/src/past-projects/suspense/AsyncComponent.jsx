@@ -6,7 +6,7 @@ const fetchData = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve("Data loaded! Suspense Example");
-    }, 2000);
+    }, 8000);
   });
 };
 
