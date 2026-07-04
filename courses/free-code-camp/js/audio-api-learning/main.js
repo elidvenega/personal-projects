@@ -5,6 +5,7 @@ console.clear();
 // for cross browser
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioCtx = new AudioContext();
+const newVar = "jnjknjkn"
 
 // load some sound
 const audioElement = document.querySelector("audio");
