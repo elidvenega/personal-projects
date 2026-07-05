@@ -1,9 +1,10 @@
-import InputWithRef from "./past-projects/useref/refHook";
+
+import IfPracticeTwo from "./projects/ifstatement/IfPracticeTwo";
 
 export default function App() {
   return (
     <>
-     <InputWithRef />
+   <IfPracticeTwo />
     </>
   );
 }
