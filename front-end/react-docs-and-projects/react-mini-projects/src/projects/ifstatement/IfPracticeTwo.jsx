@@ -3,6 +3,7 @@ import { useState } from "react";
 export default function IfPracticeTwo() {
   const [showContent, setShowContent] = useState(false);
   const handleShowContent = () => setShowContent(!showContent);
+  const handleContent = () => setShowContent((prev) => !prev)
   return (
     <div>
       {showContent ? (
@@ -14,7 +15,7 @@ export default function IfPracticeTwo() {
           <h2>Hi how are you</h2>
         </>
       )}
-      <button type="button" onClick={handleShowContent}>
+      <button type="button" onClick={handleContent}>
         {showContent ? "Hide" : "Reveal"}
       </button>
     </div>
