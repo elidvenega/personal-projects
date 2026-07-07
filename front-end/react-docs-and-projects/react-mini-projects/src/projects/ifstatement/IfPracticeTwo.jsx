@@ -2,8 +2,8 @@ import { useState } from "react";
 
 export default function IfPracticeTwo() {
   const [showContent, setShowContent] = useState(false);
-  const handleShowContent = () => setShowContent(!showContent);
-  const handleContent = () => setShowContent((prev) => !prev)
+
+  const handleContent = () => setShowContent((prev) => !prev);
   return (
     <div>
       {showContent ? (
