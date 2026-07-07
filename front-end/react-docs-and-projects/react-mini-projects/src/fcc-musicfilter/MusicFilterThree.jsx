@@ -19,7 +19,7 @@ export default function MusicFilterThree() {
         <option value="percussion">Percussion</option>
       </select>
       {filteredList.map((item) => (
-        <div>
+        <div key={item.id}>
           <h2>{item.instrument}</h2>
           <p>${item.price}</p>
         </div>

@@ -6,7 +6,7 @@ export default function ItemList() {
   const [itemSearch, setItemSearch] = useState("");
 
   const filteredItems = fruits.filter((item) =>
-    item.fruit.toLowerCase().includes(itemSearch.toLowerCase())
+    item.fruit.toLowerCase().includes(itemSearch.toLowerCase()),
   );
 
   return (

@@ -29,7 +29,7 @@ export default function App() {
 
       <div className="product-container">
         {filtered.map((item) => (
-          <div className="card" key={item.instrument}>
+          <div className="card" key={item.id}>
             <h2>{item.instrument}</h2>
             <p>${item.price}</p>
           </div>
