@@ -1,26 +1,28 @@
 import React, { useState } from "react";
-import { fruits } from "./fruits.js";
+import { fruits } from "./fruits";
 import "./itemlist.css";
+
 // A div with class container
 // An input with a class searchInput
 //  A ul with a class itemList
 
 export default function FourthFilteredList() {
-  const [fruitSearch, setFruitSearch] = useState("");
+  const [search, setSearch] = useState("");
+
   const filteredList = fruits.filter((item) =>
-    item.fruit.toLowerCase().includes(fruitSearch.toLowerCase()),
+    item.fruit.toLowerCase().includes(search.toLowerCase()),
   );
 
   return (
     <div className="container">
-      <h2>Filtered List</h2>
+      <h1>Filtered List</h1>
       <input
-        className="searchInput"
         type="text"
-        value={fruitSearch}
-        onChange={(e) => setFruitSearch(e.target.value)}
+        className="searchInput"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
       />
-      <ul className="itemList">
+      <ul>
         {filteredList.length > 0 ? (
           filteredList.map((item) => <li key={item.id}>{item.fruit}</li>)
         ) : (
