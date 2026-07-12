@@ -11,7 +11,7 @@ export default function ItemList() {
 
   return (
     <div className="container">
-      <h2>Filter Items</h2>
+      <h1>Filter Items</h1>
       <input
         type="text"
         className="searchInput"

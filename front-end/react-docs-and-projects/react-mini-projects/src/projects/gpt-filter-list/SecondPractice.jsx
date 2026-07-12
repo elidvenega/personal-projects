@@ -10,7 +10,7 @@ export default function SecondPractice() {
 
   return (
     <>
-      <h1>Filter List</h1>
+      <h2>Filter List</h2>
       <input
         type="text"
         placeholder="Search"
