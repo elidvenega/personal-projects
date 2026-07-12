@@ -13,7 +13,7 @@ export default function ThirdFilteredList() {
   
   return (
     <div className="container">
-      <h2>Filtered List</h2>
+      <h1>Filtered List</h1>
       <input
         type="text"
         className="searchInput"
