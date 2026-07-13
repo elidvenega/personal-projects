@@ -7,21 +7,21 @@ import "./itemlist.css";
 //  A ul with a class itemList
 
 export default function ThirdFilteredList() {
-  const [search, setSearch] = useState("");
+  const [fruitSearch, setFruitSearch] = useState("");
 
-  const filteredList = fruits.filter((item) => item.fruit.toLowerCase().includes(search))
-  
+  const filteredList = fruits.filter((item) =>
+    item.fruit.toLowerCase().includes(fruitSearch.toLowerCase()),
+  );
   return (
     <div className="container">
-      <h1>Filtered List</h1>
+      <h1>Fruit List</h1>
       <input
-        type="text"
         className="searchInput"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        value={fruitSearch}
+        onChange={(e) => setFruitSearch(e.target.value)}
+        type="text"
       />
-
-      <ul className="itemList">
+      <ul>
         {filteredList.length > 0 ? (
           filteredList.map((item) => <li key={item.id}>{item.fruit}</li>)
         ) : (
