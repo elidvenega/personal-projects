@@ -14,12 +14,14 @@ export default function DessertPracticeThree() {
   const [index, setIndex] = useState(0);
 
   const handleNextIndex = () => {
+    //  1 % 3 will be at index 1  then 2 % 3 will be at index 2 and 3 % 3 will be at the first picture
     setIndex((nextIndex) => (nextIndex + 1) % desserts.length);
   };
 
   const handlePrevIndex = () => {
+    // prevIndex is 2 - 1 = 1 + 3 would equal 4 % 3 = 1
     setIndex(
-      (prevIndex) => (prevIndex - 1 + desserts.length) % desserts.length
+      (prevIndex) => (prevIndex - 1 + desserts.length) % desserts.length,
     );
   };
 
