@@ -1,9 +1,9 @@
-import FourthFilteredList from "./projects/gpt-filter-list/FourthFilteredList";
+import IfPracticeThree from "./projects/ifstatement/IfPracticeThree";
 
 export default function App() {
   return (
     <>
-      <FourthFilteredList />
+    <IfPracticeThree />
     </>
   );
 }
