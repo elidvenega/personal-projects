@@ -36,11 +36,11 @@ h1 {
 }
 
 .container {
-  --padding: 5rem;
+  --padding: 10rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 80%;
+  max-width: 90%;
   margin: auto;
   min-height: 100vh;
   border: 12px solid black;
@@ -49,18 +49,21 @@ h1 {
     background-color: var(--primary-color);
     color: var(--text-on-dark);
     padding: var(--padding);
+    flex: 6;
   }
 
   .color-container-secondary {
     background-color: var(--secondary-color);
     color: var(--text-on-dark);
     padding: var(--padding);
+    flex: 2;
   }
 
   .color-container-info {
     background-color: var(--info-color);
     color: var(--text-on-dark);
     padding: var(--padding);
+    flex: 2;
   }
 
   .color-container-accent {
