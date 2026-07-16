@@ -70,6 +70,7 @@ h1 {
     flex-direction: row;
     flex-wrap: wrap;
     max-width: 80%;
+    width: 65rem;
     margin: auto;
 
     .color-container-one,
