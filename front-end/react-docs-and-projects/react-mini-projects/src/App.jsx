@@ -1,9 +1,9 @@
-import IfPracticeThree from "./projects/ifstatement/IfPracticeThree";
+import FourthDessertPractice from "./projects/carousel/FourthDessertPractice";
 
 export default function App() {
   return (
     <>
-    <IfPracticeThree />
+     <FourthDessertPractice />
     </>
   );
 }
