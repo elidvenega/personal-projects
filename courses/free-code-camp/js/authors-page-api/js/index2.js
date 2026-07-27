@@ -1,8 +1,11 @@
-const authorContainer = document.getElementById("author-container");
-const loadMoreBtn = document.getElementById("load-more-btn");
+const authorContainer = document.querySelector("#author-container");
+const loadMoreBtn = document.querySelector("#load-more-btn");
 
+// variable where to start
 let startingIndex = 0;
-let endingIndex = 8;
+// The maximun that I want
+let endingIndex = 4;
+// The empty array where I will put the data
 let authorDataArr = [];
 
 function fetchAuthors() {
@@ -10,7 +13,7 @@ function fetchAuthors() {
     .then((res) => res.json())
     .then((data) => {
       authorDataArr = data;
-      displayAuthors(authorDataArr.slice(startingIndex, endingIndex));
+     displayAuthors(authorDataArr.slice(startingIndex, endingIndex))
     })
     .catch((err) => {
       authorContainer.innerHTML = `
@@ -18,7 +21,7 @@ function fetchAuthors() {
         `;
     });
   const displayAuthors = (authors) => {
-    authors.forEach(({ author, image, url, bio }) => {
+    authors.forEach(({ author, image, url, bio }, index) => {
       authorContainer.innerHTML += `
             <div id="${index}" class="user-card">
               <h2 class="author-name">${author}</h2>
@@ -32,4 +35,19 @@ function fetchAuthors() {
             `;
     });
   };
+  const fetchMoreAuthors = () => {
+    startingIndex += 8;
+    endingIndex += 8;
+
+    displayAuthors(authorDataArr.slice(startingIndex, endingIndex));
+    if (authorDataArr.length <= endingIndex) {
+      loadMoreBtn.disabled = true;
+
+      loadMoreBtn.textContent = "No more data to load";
+    }
+  };
+
+  loadMoreBtn.addEventListener("click", fetchMoreAuthors);
 }
+
+fetchAuthors();
