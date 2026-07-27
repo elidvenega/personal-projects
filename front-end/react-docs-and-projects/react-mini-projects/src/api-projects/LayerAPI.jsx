@@ -110,7 +110,7 @@ export function useApi(endpoint) {
 // ------------------------------
 // EXAMPLE COMPONENT
 // ------------------------------
-export default function App() {
+export default function LayerAPI() {
   const { data, loading, error, refetch } = useApi("/posts");
 
   if (loading) return <p>Loading...</p>;
