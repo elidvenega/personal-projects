@@ -13,7 +13,7 @@ function fetchAuthors() {
     .then((res) => res.json())
     .then((data) => {
       authorDataArr = data;
-     displayAuthors(authorDataArr.slice(startingIndex, endingIndex))
+      displayAuthors(authorDataArr.slice(startingIndex, endingIndex));
     })
     .catch((err) => {
       authorContainer.innerHTML = `
@@ -35,6 +35,18 @@ function fetchAuthors() {
             `;
     });
   };
+  // const fetchMoreAuthors = () => {
+  //   startingIndex += 8;
+  //   endingIndex += 8;
+
+  //   displayAuthors(authorDataArr.slice(startingIndex, endingIndex));
+  //   if (authorDataArr.length <= endingIndex) {
+  //     loadMoreBtn.disabled = true;
+
+  //     loadMoreBtn.textContent = "No more data to load";
+  //   }
+  // };
+
   const fetchMoreAuthors = () => {
     startingIndex += 8;
     endingIndex += 8;
@@ -42,7 +54,6 @@ function fetchAuthors() {
     displayAuthors(authorDataArr.slice(startingIndex, endingIndex));
     if (authorDataArr.length <= endingIndex) {
       loadMoreBtn.disabled = true;
-
       loadMoreBtn.textContent = "No more data to load";
     }
   };
