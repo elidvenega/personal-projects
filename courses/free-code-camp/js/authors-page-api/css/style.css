@@ -9,11 +9,12 @@
   --light-grey: #f5f6f7;
   --dark-purple: #b882e7;
   --golden-yellow: #ffb13c;
+  --font: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body {
   background-color: var(--main-bg-color);
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: var(--font);
   text-align: center;
 }
 
