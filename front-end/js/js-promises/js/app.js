@@ -60,17 +60,18 @@ fetchUser(1)
 // My attempt
 
 function testPromise(id) {
-  const newPromise = new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     if (id > 2) {
       resolve(3 + 3);
     } else {
       reject(new Error("It failed"));
     }
   });
-
-  return newPromise;
 }
 
 testPromise(1)
   .then((data) => console.log("Great", data))
-  .catch((err) => console.log("Something went wrong +", err.message));
+  .catch((err) => console.log("Something went wrong ", err.message));
+
+
+
