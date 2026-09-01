@@ -73,5 +73,19 @@ testPromise(1)
   .then((data) => console.log("Great", data))
   .catch((err) => console.log("Something went wrong ", err.message));
 
+// I'm practicing promises to see what I remember or understand without looking at the
+// code I got from claude
 
+function practicePromise(numberId) {
+  return new Promise((resolve, reject) => {
+    if (numberId <= 20) {
+      resolve("Success");
+    } else {
+      reject("Rejected");
+    }
+  });
+}
 
+practicePromise(110)
+  .then((data) => console.log(data))
+  .catch((err) => console.log(err));
