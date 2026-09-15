@@ -10,6 +10,9 @@ const items = [
   { name: "Keyboard", price: 25, type: "electronic" },
 ];
 
+
+const arrEx = [1,1,2,,33,4,4,4]
+arrEx.find(1)
 const itemsArr = [];
 
 for (let i = 0; i < items.length; i++) {
