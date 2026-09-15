@@ -1,11 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 
+
 const STATUS = {
   want: { label: "Want to read", color: "#3C6E71" },
   reading: { label: "Reading", color: "#A13D2C" },
   finished: { label: "Finished", color: "#1F2A24" },
 };
 
+
+// Random ID is given
 function uid() {
   return Math.random().toString(36).slice(2, 10);
 }
