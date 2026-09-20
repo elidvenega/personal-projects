@@ -1,9 +1,9 @@
-import Shelf from "./reading-shelf/reading-shelf";
+import FoodTodoList from "./projects/todolist/FoodTodoList";
 
 export default function App() {
   return (
     <>
-      <Shelf />
+      <FoodTodoList />
     </>
   );
 }
