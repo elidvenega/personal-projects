@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<!--
+  TODO LIST — built with plain HTML, CSS and JavaScript (no frameworks).
+
+  How this file is organised:
+    1. <head>   → page settings + all the CSS (the "look")
+    2. <body>   → the HTML structure (the "skeleton")
+    3. <script> → the JavaScript (the "behaviour")
+
+  My "style": instead of crossing finished tasks out, each finished task
+  gets swiped with a yellow highlighter — like marking things off on paper.
+-->
+<html lang="en">
+<head>
+  <!-- Tells the browser which character set to use, so emoji and accents work -->
+  <meta charset="UTF-8">
+
+  <!-- Makes the page scale properly on phones instead of showing a zoomed-out desktop view -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Today's list</title>
+
+  <!-- Load two fonts from Google Fonts: a characterful one for the heading, a very readable one for the tasks -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       CSS VARIABLES
+       Defining colours once here means I can change the whole
+       theme by editing just these lines. Use them with var(--name).
+       ============================================================ */
+    :root {
+      --sage:      #E3EBDF;  /* page background */
+      --paper:     #FFFFFF;  /* the card the list sits on */
+      --ink:       #1F3A34;  /* main text colour, a deep green */
+      --ink-soft:  #5E756E;  /* quieter text, like the counter */
+      --line:      #CFDCCB;  /* thin divider lines */
+      --marigold:  #F4C04A;  /* the highlighter colour */
+      --danger:    #B4442E;  /* delete button on hover */
+    }
+
+    /* Dark mode: if the person's device is set to dark, swap the variables.
+       Everything else updates automatically because it uses var(). */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --sage:     #16211E;
+        --paper:    #1F2D29;
+        --ink:      #E6EFEA;
+        --ink-soft: #9DB1AA;
+        --line:     #2F413B;
+        --marigold: #9C7A1E;
+        --danger:   #F08A73;
+      }
+    }
+
+    /* box-sizing: border-box makes width include padding and border,
+       which makes sizing elements much more predictable. */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--sage);
+      color: var(--ink);
+      font-family: "Atkinson Hyperlegible", system-ui, sans-serif; /* fallbacks in case the font fails to load */
+      font-size: 1.05rem;
+      line-height: 1.5;
+
+      /* Flexbox centres the card horizontally */
+      display: flex;
+      justify-content: center;
+      padding: 3rem 1rem;
+    }
+
+    /* The white card that holds everything */
+    .card {
+      width: 100%;
+      max-width: 34rem;           /* never wider than this, even on big screens */
+      background: var(--paper);
+      border-radius: 1.25rem;
+      padding: 2rem 1.75rem 1.5rem;
+      align-self: flex-start;     /* stops the card stretching to full page height */
+    }
+
+    /* ---------- Heading ---------- */
+    h1 {
+      font-family: "Bricolage Grotesque", system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 2.6rem;
+      line-height: 1;
+      margin: 0 0 0.35rem;
+      letter-spacing: -0.02em;    /* slightly tighter letters look better at large sizes */
+    }
+
+    /* The date under the heading (filled in by JavaScript) */
+    .date {
+      color: var(--ink-soft);
+      margin: 0 0 1.5rem;
+    }
+
+    /* ---------- The "add a task" form ---------- */
+    .add-form {
+      display: flex;              /* puts the input and button side by side */
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .add-form input {
+      flex: 1;                    /* input takes up all leftover space */
+      font: inherit;              /* inputs don't inherit fonts by default, so force it */
+      color: var(--ink);
+      background: transparent;
+      border: 2px solid var(--line);
+      border-radius: 0.75rem;
+      padding: 0.7rem 0.9rem;
+    }
+
+    .add-form input:focus {
+      outline: none;
+      border-color: var(--ink);   /* clear visual cue that you're typing here */
+    }
+
+    .add-form button {
+      font: inherit;
+      font-weight: 700;
+      background: var(--ink);
+      color: var(--paper);
+      border: none;
+      border-radius: 0.75rem;
+      padding: 0 1.1rem;
+      cursor: pointer;
+    }
+
+    /* ---------- Filter buttons (All / To do / Done) ---------- */
+    .filters {
+      display: flex;
+      gap: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .filters button {
+      font: inherit;
+      font-size: 0.95rem;
+      background: none;
+      border: none;
+      color: var(--ink-soft);
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;       /* a huge radius makes a pill shape */
+      cursor: pointer;
+    }
+
+    /* The active filter gets a filled background.
+       aria-pressed is an accessibility attribute; I reuse it for styling too. */
+    .filters button[aria-pressed="true"] {
+      background: var(--sage);
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    /* ---------- The task list ---------- */
+    .list {
+      list-style: none;           /* remove the default bullet points */
+      margin: 0;
+      padding: 0;
+    }
+
+    .task {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    /* A real checkbox, just styled bigger and in our colour */
+    .task input[type="checkbox"] {
+      width: 1.3rem;
+      height: 1.3rem;
+      accent-color: var(--ink);
+      cursor: pointer;
+      flex-shrink: 0;             /* never let the checkbox get squashed */
+    }
+
+    /* The task text. position: relative lets the highlighter
+       (::before below) be positioned relative to this text. */
+    .task-text {
+      flex: 1;
+      position: relative;
+      z-index: 0;
+      overflow-wrap: anywhere;    /* long words wrap instead of overflowing */
+    }
+
+    /* THE HIGHLIGHTER — the signature detail.
+       ::before creates an extra invisible box behind the text.
+       It starts at width 0 and grows to full width when the task is done. */
+    .task-text::before {
+      content: "";                /* pseudo-elements need content, even if empty */
+      position: absolute;
+      left: -0.2em;
+      top: 55%;
+      height: 0.65em;
+      width: 0;
+      background: var(--marigold);
+      border-radius: 0.2em;
+      z-index: -1;                /* sits behind the text */
+      transition: width 0.35s ease-out;  /* animates the swipe */
+    }
+
+    /* When the <li> has the class "done", the highlighter grows to full width */
+    .task.done .task-text::before {
+      width: calc(100% + 0.4em);
+    }
+
+    .task.done .task-text {
+      color: var(--ink-soft);
+    }
+
+    /* Delete button: a small × that turns red on hover */
+    .delete {
+      background: none;
+      border: none;
+      color: var(--ink-soft);
+      font-size: 1.4rem;
+      line-height: 1;
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.4rem;
+      cursor: pointer;
+    }
+
+    .delete:hover {
+      color: var(--danger);
+    }
+
+    /* Message shown when there are no tasks to display */
+    .empty {
+      color: var(--ink-soft);
+      text-align: center;
+      padding: 2rem 0 1rem;
+    }
+
+    /* ---------- Footer ---------- */
+    .footer {
+      display: flex;
+      justify-content: space-between;  /* counter on the left, button on the right */
+      align-items: center;
+      margin-top: 1rem;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+
+    .footer button {
+      font: inherit;
+      background: none;
+      border: none;
+      color: var(--ink-soft);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    /* Visible focus ring for keyboard users (pressing Tab to move around) */
+    button:focus-visible,
+    input:focus-visible {
+      outline: 3px solid var(--marigold);
+      outline-offset: 2px;
+    }
+
+    /* Respect people who've asked their device to reduce animations */
+    @media (prefers-reduced-motion: reduce) {
+      .task-text::before { transition: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <main> tells browsers and screen readers "this is the main content" -->
+  <main class="card">
+    <h1>Today's list</h1>
+    <!-- Empty for now; JavaScript fills in today's date -->
+    <p class="date" id="date"></p>
+
+    <!-- A <form> means pressing Enter in the input submits it, for free -->
+    <form class="add-form" id="add-form">
+      <!-- The label is hidden visually but read by screen readers -->
+      <label for="new-task" hidden>New task</label>
+      <input id="new-task" type="text" placeholder="What needs doing?" autocomplete="off">
+      <button type="submit">Add</button>
+    </form>
+
+    <!-- data-filter stores which filter each button represents; JS reads it later -->
+    <div class="filters" id="filters">
+      <button type="button" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" data-filter="active" aria-pressed="false">To do</button>
+      <button type="button" data-filter="done" aria-pressed="false">Done</button>
+    </div>
+
+    <!-- Tasks get added inside this <ul> by JavaScript -->
+    <ul class="list" id="list"></ul>
+
+    <div class="footer">
+      <span id="counter"></span>
+      <button type="button" id="clear-done">Clear finished</button>
+    </div>
+  </main>
+
+  <script>
+    /* ============================================================
+       1. STATE
+       "State" is the data the app is based on. The golden rule here:
+       we never edit the page directly when something changes.
+       We change the data, then call render() to redraw the page
+       from that data. This keeps everything in sync.
+       ============================================================ */
+
+    // An array of task objects. Each task looks like:
+    // { id: 1727190000000, text: "Buy milk", done: false }
+    let tasks = [
+      { id: 1, text: "Try adding a task above", done: false },
+      { id: 2, text: "Tick me off to see the highlighter", done: false },
+      { id: 3, text: "Open this file and read the comments", done: true },
+    ];
+
+    // Which filter is currently selected: "all", "active" or "done"
+    let currentFilter = "all";
+
+
+    /* ============================================================
+       2. GRAB THE ELEMENTS WE NEED
+       document.getElementById finds an element by its id="..."
+       We store them in variables so we don't have to search again.
+       ============================================================ */
+    const form       = document.getElementById("add-form");
+    const input      = document.getElementById("new-task");
+    const list       = document.getElementById("list");
+    const counter    = document.getElementById("counter");
+    const filters    = document.getElementById("filters");
+    const clearBtn   = document.getElementById("clear-done");
+    const dateEl     = document.getElementById("date");
+
+
+    /* ============================================================
+       3. SHOW TODAY'S DATE
+       toLocaleDateString formats a date in a human-friendly way,
+       e.g. "Thursday, 24 September".
+       ============================================================ */
+    dateEl.textContent = new Date().toLocaleDateString(undefined, {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+    });
+
+
+    /* ============================================================
+       4. RENDER — draw the list from the state
+       This function wipes the list and rebuilds it every time.
+       It's simple and, for a small list, plenty fast.
+       ============================================================ */
+    function render() {
+      // Start with an empty list
+      list.innerHTML = "";
+
+      // .filter() makes a NEW array containing only the tasks that pass the test
+      const visible = tasks.filter(function (task) {
+        if (currentFilter === "active") return !task.done; // only unfinished
+        if (currentFilter === "done")   return task.done;  // only finished
+        return true;                                       // "all": keep everything
+      });
+
+      // If nothing to show, display a helpful message instead
+      if (visible.length === 0) {
+        const empty = document.createElement("li");
+        empty.className = "empty";
+        empty.textContent =
+          currentFilter === "done" ? "Nothing finished yet." :
+          currentFilter === "active" ? "All done. Add something new above." :
+          "Your list is empty. Add a task above.";
+        list.appendChild(empty);
+      }
+
+      // Build one <li> for each visible task
+      visible.forEach(function (task) {
+        const li = document.createElement("li");
+        li.className = "task";
+        if (task.done) li.classList.add("done"); // this class triggers the highlighter CSS
+
+        // Store the task's id on the element so click handlers know which task it is
+        li.dataset.id = task.id;
+
+        // The checkbox
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = task.done;
+        checkbox.setAttribute("aria-label", "Mark as done");
+
+        // The text. IMPORTANT: use textContent, not innerHTML, for user input.
+        // innerHTML would run any HTML someone typed, which is a security risk.
+        const span = document.createElement("span");
+        span.className = "task-text";
+        span.textContent = task.text;
+
+        // The delete button
+        const del = document.createElement("button");
+        del.className = "delete";
+        del.type = "button";
+        del.textContent = "×";
+        del.setAttribute("aria-label", "Delete task");
+
+        // Put the three pieces inside the <li>, then the <li> inside the <ul>
+        li.append(checkbox, span, del);
+        list.appendChild(li);
+      });
+
+      // Update the counter. Count unfinished tasks across ALL tasks, not just visible ones.
+      const remaining = tasks.filter(t => !t.done).length;  // arrow function: a shorter way to write a function
+      counter.textContent = remaining === 1 ? "1 task left" : remaining + " tasks left";
+
+      // Only show "Clear finished" if there's something to clear
+      clearBtn.hidden = !tasks.some(t => t.done);
+    }
+
+
+    /* ============================================================
+       5. EVENT LISTENERS — respond to what the user does
+       ============================================================ */
+
+    // ADD a task when the form is submitted (clicking Add OR pressing Enter)
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();          // stop the form reloading the page (its default behaviour)
+
+      const text = input.value.trim(); // .trim() removes spaces from both ends
+      if (text === "") return;         // ignore empty tasks
+
+      // Add a new task object to the state.
+      // Date.now() gives the current time in milliseconds: an easy unique id.
+      tasks.push({ id: Date.now(), text: text, done: false });
+
+      input.value = "";                // clear the input for the next task
+      render();                        // redraw from the updated state
+    });
+
+    // TOGGLE and DELETE — using "event delegation".
+    // Instead of adding a listener to every checkbox and button (which get
+    // destroyed and recreated on each render), I add ONE listener to the
+    // parent <ul>. Clicks "bubble up" from the child to the parent, and
+    // event.target tells me exactly what was clicked.
+    list.addEventListener("click", function (event) {
+      const li = event.target.closest(".task"); // find the <li> the click happened inside
+      if (!li) return;                          // clicked somewhere else, e.g. the empty message
+
+      const id = Number(li.dataset.id);         // dataset values are always strings, so convert
+
+      if (event.target.matches('input[type="checkbox"]')) {
+        // Flip done between true and false for the matching task
+        const task = tasks.find(t => t.id === id);
+        task.done = !task.done;
+        render();
+      }
+
+      if (event.target.matches(".delete")) {
+        // Keep every task EXCEPT the one with this id
+        tasks = tasks.filter(t => t.id !== id);
+        render();
+      }
+    });
+
+    // SWITCH FILTER — again one listener on the parent
+    filters.addEventListener("click", function (event) {
+      const button = event.target.closest("button");
+      if (!button) return;
+
+      currentFilter = button.dataset.filter;    // "all", "active" or "done"
+
+      // Update which button looks pressed
+      filters.querySelectorAll("button").forEach(function (b) {
+        b.setAttribute("aria-pressed", b === button ? "true" : "false");
+      });
+
+      render();
+    });
+
+    // CLEAR all finished tasks
+    clearBtn.addEventListener("click", function () {
+      tasks = tasks.filter(t => !t.done);
+      render();
+    });
+
+
+    /* ============================================================
+       6. START
+       Draw the list for the first time when the page loads.
+       ============================================================ */
+    render();
+
+    /*
+      Ideas to try next:
+      - Save tasks so they survive a page refresh. Look up
+        localStorage.setItem() and JSON.stringify(), and call it
+        at the end of render(). (Works when you open this file
+        from your own computer.)
+      - Double-click a task to edit its text.
+      - Drag to reorder tasks.
+    */
+  </script>
+</body>
+</html>
