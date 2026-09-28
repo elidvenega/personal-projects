@@ -8,15 +8,19 @@ export default function FoodTodoList() {
 
   const handleAddTodo = () => {
     if (input.trim() !== "") {
-      const newFoods = [
-        {
-          id: nextId++,
-          food: input,
-        },
-      ];
+      const newFoods = {
+        id: nextId++,
+        food: input,
+      };
+
       setFoodList([...foodList, newFoods]);
       setInput("");
     }
+  };
+
+  const handleDelete = (food) => {
+    const newList = foodList.filter((i) => i.id !== food);
+    setFoodList(newList);
   };
 
   return (
@@ -36,7 +40,12 @@ export default function FoodTodoList() {
         {foodList.map((item) => (
           <li key={item.id}>
             {item.food}
-            <button type="button">Delete</button>
+            <button
+              onClick={() => handleDelete(item.id)}
+              type="button"
+            >
+              Delete
+            </button>
           </li>
         ))}
       </ul>
