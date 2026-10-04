@@ -1,54 +1,39 @@
 import { useState } from "react";
 import { foods } from "./foodData";
 
-let nextId = 6;
+let foodId = 6;
 export default function FoodTodoList() {
   const [input, setInput] = useState("");
-  const [foodList, setFoodList] = useState(foods);
+  const [data, setData] = useState(foods);
 
-  const handleAddTodo = () => {
-    if (input.trim() !== "") {
-      const newFoods = {
-        id: nextId++,
+  const handleAddFood = () => {
+    if (input.value !== "") {
+      const newFood = {
+        id: foodId++,
         food: input,
       };
 
-      setFoodList([...foodList, newFoods]);
+      setData([...data, newFood]);
       setInput("");
     }
   };
 
-  const handleDelete = (food) => {
-    const newList = foodList.filter((i) => i.id !== food);
-    setFoodList(newList);
-  };
-
   return (
-    <>
-      <h1>Todo List</h1>
+    <div>
+      <h1>Food List</h1>
       <input
         type="text"
-        value={input}
         placeholder="Add food"
         onChange={(e) => setInput(e.target.value)}
+        value={input}
       />
-      <button type="button" onClick={handleAddTodo}>
-        Add New Food
-      </button>
+      <button type="button">Add</button>
 
       <ul>
-        {foodList.map((item) => (
-          <li key={item.id}>
-            {item.food}
-            <button
-              onClick={() => handleDelete(item.id)}
-              type="button"
-            >
-              Delete
-            </button>
-          </li>
+        {data.map((food) => (
+          <li id="food.d">{food.food}</li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }
