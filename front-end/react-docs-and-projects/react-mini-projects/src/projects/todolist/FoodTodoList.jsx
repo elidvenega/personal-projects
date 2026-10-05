@@ -27,7 +27,7 @@ export default function FoodTodoList() {
         onChange={(e) => setInput(e.target.value)}
         value={input}
       />
-      <button type="button">Add</button>
+      <button type="button" onClick={handleAddFood}>Add</button>
 
       <ul>
         {data.map((food) => (
