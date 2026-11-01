@@ -18,9 +18,16 @@ export default function FoodTodoList() {
     }
   };
 
-const handleDelete = () => {
-    const newTodoList;
-}
+  const handleDelete = (listItem) => {
+    const newTodoList = data.filter((item) => item.id !== listItem);
+    setData(newTodoList);
+  };
+
+  const handleKeyEnter = (e) => {
+    if (e.key === "Enter") {
+      handleAddFood();
+    }
+  };
 
   return (
     <div>
@@ -29,14 +36,19 @@ const handleDelete = () => {
         type="text"
         placeholder="Add food"
         onChange={(e) => setInput(e.target.value)}
-        
+        onKeyDown={handleKeyEnter}
         value={input}
       />
-      <button type="button" onClick={handleAddFood}>Add</button>
+      <button type="button" onClick={handleAddFood}>
+        Add
+      </button>
 
       <ul>
         {data.map((food) => (
-          <li key={food.id}>{food.food}</li>
+          <li key={food.id}>
+            {food.food}
+            <button onClick={() => handleDelete(food.id)}>Delete</button>
+          </li>
         ))}
       </ul>
     </div>
